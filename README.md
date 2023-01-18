@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Leonid Vinikov</h1>
-<h3 align="center">A developer from Isreal</h3>
+<h3 align="center">Full stack developer from Isreal</h3>
 
 - 🔭 I’m currently working on [ZenFlux](https://github.com/ZenFlux/) a project to demonstrate my skills.
 
