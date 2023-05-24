@@ -8,6 +8,8 @@
 - 📫 How to reach me **leonidvinikov@gmail.com**
 
 - ⚡ Open to work
+
+- 📝 Working with test driven development
 ---
 <p align="center">
     <a href="https://backbonejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/backbonejs/backbonejs-original-wordmark.svg" alt="backbonejs" width="40" height="40" /> </a>
