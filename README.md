@@ -38,8 +38,6 @@
 
 
 ---
-<p align="center" data-sourcepos="14:1-14:426" dir="auto"><a href="https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only"><img src="https://camo.githubusercontent.com/a4183722594687fd2c5eb7eb56ceab9358a547055690e4431bdf669b2bfd40b2/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d694e65774c6567656e642673686f775f69636f6e733d74727565267468656d653d6461726b2367682d6461726b2d6d6f64652d6f6e6c79" alt="Anurag's GitHub stats-Dark" data-canonical-src="https://github-readme-stats.vercel.app/api?username=iNewLegend&amp;show_icons=true&amp;theme=dark#gh-dark-mode-only" style="width: 100%;"></a><a href="https://github.com/anuraghazra/github-readme-stats#gh-light-mode-only"><img src="https://camo.githubusercontent.com/061a0557adca8fbbfa208eb2ba9f923657ab0043dc4b2260beb90557793ea72e/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d694e65774c6567656e642673686f775f69636f6e733d74727565267468656d653d64656661756c742367682d6c696768742d6d6f64652d6f6e6c79" alt="Anurag's GitHub stats-Light" data-canonical-src="https://github-readme-stats.vercel.app/api?username=iNewLegend&amp;show_icons=true&amp;theme=default#gh-light-mode-only" style="width: 100%;"></a></p>
-
 
 <!--
 **iNewLegend/iNewLegend** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
