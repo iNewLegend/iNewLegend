@@ -1,13 +1,18 @@
 <h1 align="center">Hi 👋, I'm Leonid Vinikov</h1>
 <h3 align="center">Full stack developer from Isreal</h3>
 
+- ⚡ Open to work
+
 - 📄 Know about my experiences [Click here](https://docs.google.com/document/u/2/d/1Fvl9tajAf7YlyLfKBY-EHHbfsP8RD-bSD1JidNZ7ZJo/edit#heading=h.4wwmik6r5tke)
 
 - 📫 How to reach me **leonidvinikov@gmail.com**
 
-- ⚡ Open to work
-
 - 📝 Working with test driven development
+
+- 🔭 I’m currently working on, [vertix.gg](https://vertix.gg/) my personal project, using `typescript, react, nestjs, prisma, mongodb, jest, playwright, discord.js`
+
+- ☰ I'm one of elementor top [contributors](https://github.com/elementor/elementor/graphs/contributors)
+
 ---
 <p align="center">
     <a href="https://backbonejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/backbonejs/backbonejs-original-wordmark.svg" alt="backbonejs" width="40" height="40" /> </a>
