@@ -3,7 +3,7 @@
 
 - ⚡ Open to work
 
-- 📄 Know about my experiences [Click here](https://docs.google.com/document/u/2/d/1Fvl9tajAf7YlyLfKBY-EHHbfsP8RD-bSD1JidNZ7ZJo/edit#heading=h.4wwmik6r5tke)
+- 📄 Know about my experiences (CV) [Click here](https://docs.google.com/document/u/2/d/1Fvl9tajAf7YlyLfKBY-EHHbfsP8RD-bSD1JidNZ7ZJo/edit#heading=h.4wwmik6r5tke)
 
 - 📫 How to reach me **leonidvinikov@gmail.com**
 
