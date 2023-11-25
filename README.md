@@ -11,6 +11,8 @@
 
 - 🔭 I’m currently working on, [vertix.gg](https://vertix.gg/) my personal [project](https://github.com/vertixGG/), using `typescript, react, nestjs, prisma, mongodb, jest, playwright, discord.js`
 
+- 🎯 Practicing with different technologies at [ZenFlux](https://github.com/ZenFlux/)
+
 - ☰ I'm one of elementor top [contributors](https://github.com/elementor/elementor/graphs/contributors)
 
 ---
