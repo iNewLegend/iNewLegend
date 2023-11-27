@@ -42,7 +42,7 @@
     </a>
 </p>
 
-
+<a href="https://wakatime.com"><img src="https://wakatime.com/share/@iNewLegend/d8f83aa4-e2d6-44bc-8f91-b0d21a22a18d.png" /></a>
 
 
 <a href="https://github.com/inewlegend#gh-light-mode-only">
@@ -51,8 +51,10 @@
 <p align="center"><img src="https://wakatime.com/share/@iNewLegend/2272b7c7-f390-416b-8657-ec36a32dfed2.png" /></p>
 <a/>
 
-
-
+<a href="https://github.com/inewlegend#gh-dark-mode-only">
+<img src="https://wakatime.com/share/@iNewLegend/a7948183-2db8-46a6-a851-bab4d13984df.png" /></a>
+<a/>
+    
 <!--
 **iNewLegend/iNewLegend** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
