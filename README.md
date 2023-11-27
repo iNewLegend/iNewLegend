@@ -42,6 +42,8 @@
     </a>
 </p>
 
+---
+
 <a href="https://github.com/inewlegend#gh-light-mode-only">
 <p align="center"><img src="https://wakatime.com/share/@iNewLegend/f0ddc87c-b7f7-46a6-9f24-248f0496538f.png" /></p>
 <!-- <p align="center"><img src="https://wakatime.com/share/@iNewLegend/9505884f-b08f-4952-8109-4309e65eecb6.png" height="320" width="600" /></p> -->
@@ -49,7 +51,7 @@
 <a/>
 
 <a href="https://github.com/inewlegend#gh-dark-mode-only">
-<img src="https://wakatime.com/share/@iNewLegend/a7948183-2db8-46a6-a851-bab4d13984df.png" height="400" /></a>
+<p align="center"><img src="https://wakatime.com/share/@iNewLegend/a7948183-2db8-46a6-a851-bab4d13984df.png" height="400" width="600" /></p>
 <a/>
     
 <!--
