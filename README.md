@@ -46,10 +46,16 @@
 
 ---
 
+<a href="https://github.com/inewlegend#gh-light-mode-only">
 <p align="center"><img src="https://wakatime.com/share/@iNewLegend/f0ddc87c-b7f7-46a6-9f24-248f0496538f.png" /></p>
 <!-- <p align="center"><img src="https://wakatime.com/share/@iNewLegend/9505884f-b08f-4952-8109-4309e65eecb6.png" height="320" width="600" /></p> -->
 <p align="center"><img src="https://wakatime.com/share/@iNewLegend/2272b7c7-f390-416b-8657-ec36a32dfed2.png" /></p>
+<a/>
+<a href="https://github.com/inewlegend#gh-dark-mode-only">
+<p align="center"><img src="https://wakatime.com/share/@iNewLegend/4dddb300-68e3-43b7-aef0-11c2a87d9ba8.png" /></p>
 
+<p align="center"><img src="https://wakatime.com/share/@iNewLegend/ab87a6ac-481e-4f62-b889-f1fac6f049f4.png" /></p>
+<a/>
 </p>
 
 <!--
