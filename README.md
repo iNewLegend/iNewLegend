@@ -14,7 +14,7 @@
 - 🎯 Practicing with different technologies at [ZenFlux](https://github.com/ZenFlux/)
 
 - ☰ I'm one of elementor top [contributors](https://github.com/elementor/elementor/graphs/contributors)
-
+<!--
 ---
 <p align="center">
     <a href="https://backbonejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/backbonejs/backbonejs-original-wordmark.svg" alt="backbonejs" width="40" height="40" /> </a>
@@ -41,7 +41,7 @@
         <img src="https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/webpack/webpack-original-wordmark.svg" alt="webpack" width="40" height="40" />
     </a>
 </p>
-
+-->
 ---
 
 <a href="https://wakatime.com/@iNewLegend#gh-light-mode-only">
