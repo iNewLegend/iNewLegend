@@ -9,7 +9,7 @@
 
 - 📝 Working with test driven development
 
-- 🔭 I’m currently working on, [vertix.gg](https://vertix.gg/) my personal [project](https://github.com/vertixGG/), using `typescript, react, nestjs, prisma, mongodb, jest, playwright, discord.js`
+- 🔭 I’m currently working on, [vertix.gg](https://vertix.gg/) my personal [project](https://github.com/VertixGG/vertix.gg), using `typescript, react, nestjs, prisma, mongodb, jest, playwright, discord.js`
 
 - 🎯 Practicing with different technologies at [ZenFlux](https://github.com/ZenFlux/)
 
