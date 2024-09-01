@@ -230,87 +230,129 @@ classDiagram
     Walk <|-- Lion
     Walk <|-- Chameleon
 ```
+
 ```typescript
+// Ability interface
+interface Ability {
+  name: string;
+  execute(): void;
+}
+
 // Ability classes
-class FlyingAbility {
-    fly() {
-        console.log("Flying...");
-    }
+class FlyingAbility implements Ability {
+  name = 'fly';
+  execute() {
+    console.log("Flying...");
+  }
 }
-class SwimmingAbility {
-    swim() {
-        console.log("Swimming...");
-    }
+
+class SwimmingAbility implements Ability {
+  name = 'swim';
+  execute() {
+    console.log("Swimming...");
+  }
 }
-class ClimbingAbility {
-    climb() {
-        console.log("Climbing...");
-    }
+
+class ClimbingAbility implements Ability {
+  name = 'climb';
+  execute() {
+    console.log("Climbing...");
+  }
 }
-class RoaringAbility {
-    roar() {
-        console.log("Roaring...");
-    }
+
+class RoaringAbility implements Ability {
+  name = 'roar';
+  execute() {
+    console.log("Roaring...");
+  }
 }
-class ChirpingAbility {
-    chirp() {
-        console.log("Chirping...");
-    }
+
+class ChirpingAbility implements Ability {
+  name = 'chirp';
+  execute() {
+    console.log("Chirping...");
+  }
 }
-class HuntingAbility {
-    hunt() {
-        console.log("Hunting...");
-    }
+
+class HuntingAbility implements Ability {
+  name = 'hunt';
+  execute() {
+    console.log("Hunting...");
+  }
 }
-class CamouflageAbility {
-    hide() {
-        console.log("Hiding...");
-    }
+
+class CamouflageAbility implements Ability {
+  name = 'hide';
+  execute() {
+    console.log("Hiding...");
+  }
 }
 
 // Animal class with composition of abilities
-interface Ability {
-  [key: string]: () => void;
-}
 class Animal {
-  private abilities: Ability[];
-  constructor(...abilities: Ability[]) {
-    this.abilities = abilities;
+  private abilities: { [key: string]: Ability };
+
+  constructor(abilities: Ability[]) {
+    this.abilities = {};
+    for (const ability of abilities) {
+      this.abilities[ability.name] = ability;
+    }
   }
-  // Delegate ability methods to composed abilities
-  performAbilities() {
-    this.abilities.forEach(ability => {
-      Object.values(ability).forEach(method => method());
-    });
+
+  eat() {
+    console.log("Eating...");
+  }
+
+  sleep() {
+    console.log("Sleeping...");
+  }
+
+  useAbility(abilityName: string) {
+    const ability = this.abilities[abilityName];
+    if (ability) {
+      ability.execute();
+    } else {
+      console.log(`Ability ${abilityName} not found.`);
+    }
   }
 }
 
-// Specific animals
+// Compose abilities with animals
 class Sparrow extends Animal {
   constructor() {
-    super(new FlyingAbility(), new ChirpingAbility()); // Sparrow can fly and chirp
+    super([new FlyingAbility(), new ChirpingAbility()]);
   }
 }
+
 class Shark extends Animal {
   constructor() {
-    super(new SwimmingAbility(), new HuntingAbility()); // Shark can swim and hunt
-  }
-}
-class Chameleon extends Animal {
-  constructor() {
-    super(new ClimbingAbility(), new CamouflageAbility()); // Chameleon can climb and camouflage
+    super([new SwimmingAbility(), new HuntingAbility()]);
   }
 }
 
-// Example usage
+class Lion extends Animal {
+  constructor() {
+    super([new RoaringAbility()]);
+  }
+}
+
+// Example usage:
 const sparrow = new Sparrow();
-sparrow.performAbilities(); // Flying..., Chirping...
+sparrow.eat(); // Eating...
+sparrow.sleep(); // Sleeping...
+sparrow.useAbility('fly'); // Flying...
+sparrow.useAbility('chirp'); // Chirping...
 
 const shark = new Shark();
-shark.performAbilities(); // Swimming..., Hunting...
+shark.eat(); // Eating...
+shark.sleep(); // Sleeping...
+shark.useAbility('swim'); // Swimming...
+shark.useAbility('hunt'); // Hunting...
 
-const chameleon = new Chameleon();
-chameleon.performAbilities(); // Climbing..., Camouflaging...
+const lion = new Lion();
+lion.eat(); // Eating...
+lion.sleep(); // Sleeping...
+lion.useAbility('roar'); // Roaring...
 ```
 
 ### Explanation
@@ -320,11 +362,11 @@ chameleon.performAbilities(); // Climbing..., Camouflaging...
 
 ### Advantages of Composition
 - **Flexible Ability Assignment**: Animals can have multiple abilities, and abilities can be easily combined or changed without altering the class hierarchy.
-- **Code Reusability**: Ability classe
+- **Code Reusability**: Ability classes
 - **Easy Extension**: New abilities can be added or modified without affecting existing code.
 
 This composition-based approach provides a more flexible and maintainable solution compared to a rigid inheritance hierarchy.
 
 ### **Summary:**
 * **Inheritance:** Results in a rigid and complex hierarchy that is challenging to extend and manage, particularly when animals have multiple overlapping traits.
-* **Composition:** Provides a flexible, maintainable solution for sharing abilities among various animals.modular approach allowing for the easy combination of different abilities and behaviors, accommodating new traits and reducing complexity.
+* **Composition:** Provides a flexible, maintainable solution for sharing abilities among various animals. modular approach allowing for the easy combination of different abilities and behaviors, accommodating new traits and reducing complexity.
