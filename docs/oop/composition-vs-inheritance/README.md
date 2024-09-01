@@ -31,14 +31,8 @@
 * **Disadvantages:**
   * Can lead to more complex object management, with potentially many layers of delegation.
   * Sometimes more verbose and less straightforward than inheritance, especially for simple use cases.
-  * **Advantages:**
-      * Promotes loose coupling, making the system easier to maintain and extend.
-      * Enhances flexibility by allowing dynamic composition of objects at runtime.
-      * Easier to change behaviors by swapping out components without affecting the entire system.
-  * **Disadvantages:**
-      * Can lead to more complex object management, with potentially many layers of delegation.
-      * Sometimes more verbose and less straightforward than inheritance, especially for simple use cases.
-      * Requires careful design to ensure that composed objects interact correctly and consistently.
+  * Requires careful design to ensure that composed objects interact correctly and consistently.
+
 ### **Scenario: Animal Communication and Movement**
 Animals that can have different communication methods and modes of movement. Inheritance might lead to complexity and rigidity, whereas composition offers a more adaptable solution.
 
