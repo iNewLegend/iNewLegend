@@ -29,6 +29,7 @@
       <br /><br />
 * **Pulling Data** — Fetching data from a source system or API, typically initiated by the receiving system.
   * _Example_: A data warehouse pulling daily sales data from an e-commerce platform's API.
+      <br /><br />
 * **Dataset** — A dataset is a collection of related data that is typically organized in a structured format, such as a table, file, or database.
   * Each dataset consists of records (rows) and fields (columns) that represent individual data points.
   * What is the difference between **Datasets** and **Data Lakes**?
