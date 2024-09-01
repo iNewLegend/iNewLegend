@@ -1,9 +1,9 @@
 # Data Engineering Terms
 ## Terms:
 * **Data Warehouse** — A centralized repository for structured and processed data for querying and analysis (like: **Snowflake**).
-  * **Example**: Storing processed sales data in systems like **Amazon Redshift** and **Google BigQuery**.
+  * _Examples_: Storing processed sales data in systems like **Amazon Redshift** and **Google BigQuery**.
 * **Data Lake** — A storage repository that holds a vast amount of raw data in its native format.
-  * **Example**: Raw log files, image **JSON** data in systems like **Amazon S3**.
+  * _Examples_: Raw log files, image **JSON** data in systems like **Amazon S3**.
 
 * **ETL** — Extract, Transform, Load, a process that involves extracting data from a source, transforming it into a usable format, and loading it into a destination.
   * _Example_: Extract data from **MySQL**, transform it into a _denormalized_ [^1] format, and load it into a **Data Warehouse** like **Snowflake**.
