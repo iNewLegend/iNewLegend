@@ -1,4 +1,5 @@
-![img_1.png](img_1.png)
+# Composition vs Inheritance
+![img_1.png](../../images/composition-vs-inheritance.png)
 
 **Composition** and **inheritance** are two fundamental concepts in object-oriented programming (**OOP**) that define how classes can relate to each other. Each has its strengths and is used in different scenarios based on the design needs.
 
