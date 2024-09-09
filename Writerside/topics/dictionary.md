@@ -13,7 +13,7 @@ parts of a sentence and are used to indicate what the subject does or what happe
 <!-- ----------------------------------------------------------- -->
 
 ## Reconcile — `rec·on·cile`
-Reconcile is a verb associated with restoring harmony or making things compatible. It's used in various contexts, including interpersonal relationships, financial accounting, and programming.
+Reconcile is a [verb](#verb) associated with restoring harmony or making things compatible. It's used in various contexts, including interpersonal relationships, financial accounting, and programming.
 
 ##### Non-Technical Interpretation {id="non-technical-interpretation_1"}
 In daily life, reconciliation might occur between friends who, after a disagreement, discuss their issues, reach common understanding, and repair their relationship. In finance, it could refer to an individual or company cross-verifying their records with bank statements to ensure all transactions are accounted for.
@@ -52,7 +52,7 @@ Consider two copies of a document:
 <!-- ----------------------------------------------------------- -->
 
 ## Impair — `im·pair`
-Impair is a verb that means to weaken or damage something. This term is frequently used in contexts ranging from health
+Impair is a [verb](#verb) that means to weaken or damage something. This term is frequently used in contexts ranging from health
 and well-being to operational efficiency and system performance.
 
 ### Non-Technical Interpretation {id="non-technical-interpretation_2"}
@@ -243,7 +243,7 @@ Consider a web application with tightly coupled frontend and backend components:
 3. Changes in the backend can be made without affecting the frontend, as long as the API contract is maintained.
 
 ## Traversing — `truh-vurs-ing` {id="traversing"}
-Traversing is a verb that means to move through, over, or across something. In programming, it often refers to the process of visiting all the nodes or elements in a data structure, such as an array or a tree.
+Traversing is a [verb](#verb) that means to move through, over, or across something. In programming, it often refers to the process of visiting all the nodes or elements in a data structure, such as an array or a tree.
 
 ### Non-Technical Interpretation {id="non-technical-interpretation_7"}
 In everyday life, traversing can refer to the act of moving through a physical space. For example, hiking through a forest involves traversing various terrains and obstacles.
@@ -302,7 +302,7 @@ Consider a binary tree where each node has at most two children:
 ## Dispatch — `dis·patch` {id="dispatch"}
 ![dispatch.png](dispatch.png)
 
-**Dispatch** is a verb that means to send off to a destination or for a purpose.
+**Dispatch** is a [verb](#verb) that means to send off to a destination or for a purpose.
 
 In programming, it often refers to sending a message or event to a handler.
 
