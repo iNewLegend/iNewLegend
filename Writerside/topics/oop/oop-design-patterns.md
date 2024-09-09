@@ -1,6 +1,6 @@
 <show-structure for="chapter" depth="2">
 
-# Design Patterns 
+# OOP - Design Patterns 
 
 ## Introduction
 

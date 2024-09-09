@@ -11,8 +11,9 @@
         <toc-element topic="javascript-shallow-vs-deep-cmp.md"/>
     </toc-element>
     <toc-element toc-title="Object Oriented Programming">
-        <toc-element topic="composition-vs-inheritance.md"/>
-        <toc-element topic="design-patterns.md"  />
+        <toc-element topic="oop-composition-vs-inheritance.md"/>
+        <toc-element topic="oop-design-patterns.md"  />
+        <toc-element topic="oop-terms.md"  />
     </toc-element>
     <toc-element toc-title="Data Engineering">
         <toc-element topic="data-engineering-terms.md"/>

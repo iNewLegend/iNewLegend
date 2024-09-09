@@ -377,7 +377,7 @@ In everyday life, odds can refer to the chances of a specific event happening.
 ### Technical Interpretation {id="technical-interpretation_11"}
 In programming, odds can be calculated using probability functions and statistical methods.
 
-## Novel
+## Novel — `nov-uhl` {id="novel"}
 ![novel.png](novel.png)
 **Novel** is a [noun](#noun) that refers to a long narrative work of fiction.
 
@@ -389,6 +389,25 @@ In everyday life, a novel is a book that tells a fictional story, often with com
 ### Technical Interpretation {id="technical-interpretation_12"}
 In programming, novel can refer to innovative or unique solutions to problems.
 
-<!--
-for each word in dictionary or docs there should be a symbol which is key to unlock the memory
--->
+## Concerns — `kuhn-surndz` {id="concerns"}
+![concerns.png](concerns.png)
+
+
+**Concerns** is a [noun](#noun) that refers to worries, interests, or issues that are important to someone.
+
+In computer science, a concern is a specific part of a program that affects how it works. 
+It can be broad, like handling the database, or small, like doing a basic calculation,
+depending on what developers are focusing on.
+
+
+### Non-Technical Interpretation {id="non-technical-interpretation_12"}
+In daily life, concerns can be personal, work-related, or social issues that matter to a person.
+
+### Technical Interpretation {id="technical-interpretation_13"}
+In programming, concerns can refer to different aspects of software design, 
+such as separation of concerns or security concerns.
+
+In computer science, **separation of concerns** (sometimes abbreviated as SoC) is a design
+principle for separating a computer program into distinct sections. 
+Each section addresses a separate concern, a set of information that affects the code
+of a computer program.
