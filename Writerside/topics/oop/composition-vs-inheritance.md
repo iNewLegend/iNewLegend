@@ -1,5 +1,5 @@
 # Composition vs Inheritance
-![img_1.png](../../images/composition-vs-inheritance.png)
+![composition-vs-inheritance](composition-vs-inheritance.png)
 
 **Composition** and **inheritance** are two fundamental concepts in object-oriented programming (**OOP**) that define how classes can relate to each other. Each has its strengths and is used in different scenarios based on the design needs.
 
@@ -163,7 +163,7 @@ As you can see, we've modeled different animals with specific abilities using in
 
 ### Conclusion
 This inheritance approach works well for simple cases but becomes problematic as soon as you need to model animals with multiple abilities or when you need to add new abilities. The rigid structure of inheritance can lead to a less flexible and harder-to-maintain codebase. Next, we'll explore a composition-based approach that provides a more flexible and scalable solution.
-## **Composition Example:**
+## **Composition Example**
 ```mermaid
 classDiagram
     class Animal {
