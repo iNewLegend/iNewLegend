@@ -1,0 +1,14 @@
+/*[data-id="design-patterns"] section.chapter.h2-related {*/
+/*    border-bottom: 1px dotted var(--wh-color-border-default);*/
+/*    padding-bottom: 50px;*/
+/*    border-width: 80%;*/
+/*}*/
+
+img.article__img:not([title="composition-vs-inheritance"]) {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+figure.article__figure.h2-related {
+    text-align: center;
+}
