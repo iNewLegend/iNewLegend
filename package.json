@@ -6,7 +6,9 @@
   "scripts": {
     "inewlegend:eslint": "time bunx --bun eslint .",
     "inewlegend:eslint:fix": "time bunx --bun eslint . --fix",
-    "inewlegend:website:dev": "cd apps/website && bun run dev"
+    "inewlegend:website:dev": "cd apps/website && bun run dev",
+    "inewlegend:website:build": "cd apps/website && bun run build",
+    "inewlegend:website:deploy": "bun --bun scripts/website/deploy.js"
   },
   "workspaces": [
     "apps/*",
@@ -14,7 +16,9 @@
   ],
   "devDependencies": {
     "@types/bun": "latest",
-    "@zenflux/eslint": "^0.1.9"
+    "@zenflux/eslint": "^0.1.9",
+    "ssh2": "^1.15.0",
+    "dotenv": "^16.3.1"
   },
   "peerDependencies": {
     "typescript": "^5"
