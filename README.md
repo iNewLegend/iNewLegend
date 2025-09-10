@@ -39,19 +39,7 @@
         <img src="https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/webpack/webpack-original-wordmark.svg" alt="webpack" width="40" height="40" />
     </a>
 </p>
--->
----
 
-<a href="https://wakatime.com/@iNewLegend#gh-light-mode-only">
-<p align="center"><img src="https://wakatime.com/share/@iNewLegend/f0ddc87c-b7f7-46a6-9f24-248f0496538f.png" /></p>
-<!-- <p align="center"><img src="https://wakatime.com/share/@iNewLegend/9505884f-b08f-4952-8109-4309e65eecb6.png" height="320" width="600" /></p> -->
-<p align="center"><img src="https://wakatime.com/share/@iNewLegend/2272b7c7-f390-416b-8657-ec36a32dfed2.png" /></p>
-<a/>
-
-<a href="https://wakatime.com/@iNewLegend#gh-dark-mode-only">
-<p align="center"><img src="https://wakatime.com/share/@iNewLegend/a7948183-2db8-46a6-a851-bab4d13984df.png" height="400" width="600" /></p>
-<a/>
-    
 <!--
 **iNewLegend/iNewLegend** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
