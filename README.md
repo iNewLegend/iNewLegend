@@ -7,9 +7,10 @@
 
 - 📫 How to reach me **leonidvinikov@gmail.com**
 
-- 🎯 Practicing with different technologies at
-    - [ZenFlux](https://github.com/ZenFlux/) - Monorepo building tools
-    - [vertix.gg](https://github.com/VertixGG/vertix.gg), My personal using `typescript, react, nestjs, prisma, mongodb, jest, playwright, discord.js`
+- 🔭 I’m currently working on, [vertix.gg](https://vertix.gg/) my personal [project](https://github.com/VertixGG/vertix.gg), using `typescript, react, nestjs, prisma, mongodb, jest, playwright, discord.js`
+
+- 🎯 Practicing with different technologies at [ZenFlux](https://github.com/ZenFlux/)
+
 - ☰ I'm one of elementor top [contributors](https://github.com/elementor/elementor/graphs/contributors)
 <!--
 ---

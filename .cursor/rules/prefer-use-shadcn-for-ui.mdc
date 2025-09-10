@@ -1,0 +1,7 @@
+---
+description: use shadcn
+globs: *.tsx,*ts
+alwaysApply: true
+---
+# Use shadcn for ui components
+- use shadcn ui for ui components

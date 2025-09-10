@@ -1,0 +1,11 @@
+---
+description: For every change use small steps
+globs: *.tsx,*ts
+alwaysApply: true
+---
+
+# Use Small steps/chunks for editing
+
+- Each edit request should be in small chunks/steps as possible
+- Every request that require changes, should be parted to small chunks
+- For each step we tests before we procced to the next

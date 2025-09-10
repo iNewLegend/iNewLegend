@@ -1,0 +1,7 @@
+---
+description: use-kebab-case-for-filenames
+globs: *.tsx,*ts
+alwaysApply: true
+---
+use-kebab-case-for-filenames
+

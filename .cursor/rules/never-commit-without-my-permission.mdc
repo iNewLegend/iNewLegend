@@ -1,0 +1,8 @@
+---
+description: Never commit without my permision
+globs: *.tsx,*ts
+alwaysApply: true
+---
+
+# Never commit without my permision
+- Always ask first

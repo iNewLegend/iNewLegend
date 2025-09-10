@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Never use relative imports
+
+always use imports that are in workspace eg '@vertix.gg/flow/'.

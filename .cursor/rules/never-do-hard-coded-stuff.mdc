@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Never do hard coded things
+
+- If u dont know how to solve it without hard coding values ask me!

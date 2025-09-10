@@ -1,0 +1,46 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Use Fully Qualified String Literals for Flow States/Transitions
+
+To ensure flow definitions are decoupled and declarative, use explicit string literals instead of enums or constants when defining states and transitions within flow classes (`UIFlowBase`, `UIWizardFlowBase` descendants).
+
+## Convention:
+
+1.  **Custom States/Transitions:** Use the fully qualified path format with a PascalCase final segment:
+    *   States: `Namespace/Path/FlowName/States/StateNameInPascalCase`
+        *   Example: `VertixBot/UI-V3/SetupNewWizardFlow/States/Step1NameTemplate`
+    *   Transitions: `Namespace/Path/FlowName/Transitions/TransitionNameInPascalCase`
+        *   Example: `VertixBot/UI-V3/SetupNewWizardFlow/Transitions/StartSetup`
+
+2.  **Base Wizard States (for UIWizardFlowBase descendants):** Refer to standard wizard states using their fully qualified **uppercase** string literals:
+    *   `"VertixGUI/UIWizardFlowBase/States/Initial"`
+    *   `"VertixGUI/UIWizardFlowBase/States/Completed"`
+    *   `"VertixGUI/UIWizardFlowBase/States/Error"`
+
+3.  **Base Wizard Transitions (for UIWizardFlowBase descendants):** Refer to standard wizard transitions using their fully qualified **uppercase** string literals:
+    *   `"VertixGUI/UIWizardFlowBase/Transitions/Next"`
+    *   `"VertixGUI/UIWizardFlowBase/Transitions/Back"`
+    *   `"VertixGUI/UIWizardFlowBase/Transitions/Finish"`
+    *   `"VertixGUI/UIWizardFlowBase/Transitions/Error"`
+
+4.  **Integration Points (`getEntryPoints`, `getHandoffPoints`):** When referring to states/transitions in *other* flows, use the appropriate fully qualified string literal based on that flow's definition (custom or base).
+
+5.  **Applies To:** Primarily affects the definitions within static methods like `getFlowTransitions()`, `getNextStates()`, `getRequiredData()`, `getEntryPoints()`, `getHandoffPoints()`, and instance methods like `getInitialState()`, `getNextState()`.
+
+**Example (`setup-new-wizard-flow.ts`):**
+
+```typescript
+// Correct: Custom state key, Base transitions values
+"VertixBot/UI-V3/SetupNewWizardFlow/States/Step1NameTemplate": [
+    "VertixBot/UI-V3/SetupNewWizardFlow/Transitions/SubmitNameTemplate", // Custom
+    "VertixGUI/UIWizardFlowBase/Transitions/Next", // Base
+    "VertixGUI/UIWizardFlowBase/Transitions/Error", // Base
+    "VertixBot/UI-V3/SetupNewWizardFlow/Transitions/UpdateNameTemplateModal", // Custom
+],
+// Correct: Base transition key, Base state value
+[ "VertixGUI/UIWizardFlowBase/Transitions/Finish" ]: "VertixGUI/UIWizardFlowBase/States/Completed",
+```
+

@@ -1,0 +1,9 @@
+---
+description: # Perfer use tailwind
+globs: *.tsx,*ts
+alwaysApply: true
+---
+
+# Perfer use tailwind
+
+prefer use tailwind where possible

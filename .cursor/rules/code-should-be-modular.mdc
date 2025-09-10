@@ -1,0 +1,11 @@
+---
+description: Code should be modular
+globs: *.tsx,*.ts
+alwaysApply: true
+---
+
+# Code should be modulart
+
+- Prefer generic way of handling things
+- Take into account that most of the components should be reusble in other projects, this will help you to get a conclusion if the current code should be context aware or not
+- more agnostic approach to further improve reusability. change it to something that better represents its purpose without implementation-specific terminology

@@ -1,0 +1,6 @@
+---
+description: prefer-use-react-instead-of-direct-dom
+globs: *.tsx,*.ts
+alwaysApply: true
+---
+# Use React Instead of DIRECT DOM

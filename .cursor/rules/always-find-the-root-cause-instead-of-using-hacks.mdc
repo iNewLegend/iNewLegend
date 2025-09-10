@@ -1,0 +1,7 @@
+---
+description: Always find the root cause instead of using hacks or way around
+globs: *.tsx,*ts
+alwaysApply: true
+---
+
+# Always find the root cause instead of using hacks or way around

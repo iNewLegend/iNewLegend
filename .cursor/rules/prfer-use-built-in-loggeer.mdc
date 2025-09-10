@@ -1,0 +1,6 @@
+---
+description: use shadcn
+globs: *.tsx,*ts
+alwaysApply: true
+---
+prfer use built in loggeer
