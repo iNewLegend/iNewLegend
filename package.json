@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "inewlegend:eslint": "time bunx --bun eslint .",
-    "inewlegend:eslint:fix": "time bunx --bun eslint . --fix"
+    "inewlegend:eslint:fix": "time bunx --bun eslint . --fix",
+    "inewlegend:website:dev": "cd apps/website && bun run dev"
   },
   "workspaces": [
     "apps/*",

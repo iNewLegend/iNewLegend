@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@inewlegend/website/src/components/ui/button";
+import { config } from "@inewlegend/website/src/config";
 
 interface HeaderProps {
     activeSection: string
@@ -32,9 +33,9 @@ export function Header( { activeSection, setActiveSection }: HeaderProps ) {
         <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b">
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-16">
-                    <div className="text-xl font-bold">
-                        Leonid Vinikov
-                    </div>
+          <div className="text-xl font-bold">
+            {config.personal.name}
+          </div>
 
                     <nav className="hidden md:flex items-center space-x-6">
                         {navItems.map( ( item ) => (
