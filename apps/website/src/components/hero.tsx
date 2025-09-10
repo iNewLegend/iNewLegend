@@ -22,9 +22,11 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                        <Button size="lg" className="w-full sm:w-auto">
-                            <Download className="mr-2 h-4 w-4" />
-                            Download Resume
+                        <Button size="lg" className="w-full sm:w-auto" asChild>
+                            <a href={config.personal.resume} target="_blank" rel="noopener noreferrer">
+                                <Download className="mr-2 h-4 w-4" />
+                                Download Resume
+                            </a>
                         </Button>
 
                         <div className="flex gap-4">

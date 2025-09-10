@@ -7,7 +7,7 @@ export const config = {
         location: "Israel, Holon",
         github: "https://github.com/iNewLegend",
         linkedin: "https://www.linkedin.com/in/inewlegend/",
-        resume: "https://drive.google.com/file/d/1Dx2h_KsP1Q2RskG60--9RuD22V_ayU-Z/view"
+        resume: "https://docs.google.com/document/d/1Fvl9tajAf7YlyLfKBY-EHHbfsP8RD-bSD1JidNZ7ZJo/export?format=pdf"
     },
 
     hero: {
@@ -134,7 +134,7 @@ export const config = {
             description: "A PHP library for extracting dominant colors from images. Built with pure PHP 8.0+ without any frameworks or external libraries. Features a web interface for testing and includes comprehensive test suites.",
             technologies: ["PHP", "JavaScript", "CSS", "HTML", "Image Processing", "Color Analysis"],
             github: "https://github.com/iNewLegend/php-image-dominant-colors",
-            demo: "http://inewlegend.com/php-image-dominant-colors/public/"
+            demo: "https://inewlegend.com/projects/php-image-dominant-colors/public/index.html"
         },
         {
             title: "InfiniGrow",
@@ -142,6 +142,20 @@ export const config = {
             technologies: ["TypeScript", "React", "SCSS", "Bun", "Monorepo", "React Commands", "Fake Data Module"],
             github: "https://github.com/iNewLegend/infinigrow",
             demo: "https://inewlegend.com/projects/infinigrow/index.html"
+        },
+        {
+            title: "Web Crawler",
+            description: "A full-stack web crawler application with Laravel backend and Angular frontend. Features MongoDB integration, memory caching, and comprehensive crawling capabilities. Built with PHP 8.2+, Angular, and modern development workflows.",
+            technologies: ["PHP", "Laravel", "Angular", "MongoDB", "TypeScript", "Blade", "Web Crawling", "Memory Cache"],
+            github: "https://github.com/iNewLegend/web-crawler",
+            demo: "https://github.com/iNewLegend/web-crawler"
+        },
+        {
+            title: "Demo Shop Catalog",
+            description: "A demonstration project showcasing ZenFlux framework capabilities with a React-Redux frontend and PHP vanilla backend. Features a complete e-commerce catalog with cart functionality, pagination, and database integration. Demonstrates usage of @zenflux/core and @zenflux/redux packages.",
+            technologies: ["TypeScript", "React", "Redux", "PHP", "CSS", "Database Integration"],
+            github: "https://github.com/ZenFlux/demo-shop-catalog",
+            demo: "http://inewlegend.com/zenflux/demos/shop-catalog/frontends/react-redux/build/"
         }
     ],
 
