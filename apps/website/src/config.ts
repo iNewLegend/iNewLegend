@@ -12,25 +12,25 @@ export const config = {
 
     hero: {
         title: "Hi, I'm Leonid Vinikov",
-        subtitle: "Senior FullStack / Frontend Developer",
-        description: "With over 5 years of experience as a dedicated developer, I specialize in both backend and frontend infrastructure, with a particular focus on data and the logic underpinning user interfaces. I excel at solving complex challenges and persistently work through obstacles until each problem is resolved."
+        subtitle: "Senior Full‑Stack / Frontend Developer",
+        description: "I'm a developer with 5+ years building reliable, scalable systems across frontend and backend. I focus on data and the logic that powers user interfaces, designing clean APIs, refactoring core infrastructure, and shipping end‑to‑end features. I'm persistent with complex problems and committed to maintainable, well‑tested code."
     },
 
     about: {
         title: "About Me",
-        description: "My professional experience includes crafting APIs from the ground up, maintaining them to ensure backward compatibility, refactoring existing codebases, and implementing comprehensive test coverage. My code is modular, well-documented, and optimized for efficiency.",
+        description: "I build and evolve products end‑to‑end: designing and implementing APIs, maintaining backward compatibility, refactoring core modules, and adding comprehensive test coverage. I care about clarity, robustness, and long‑term maintainability.",
         journey: {
             title: "My Journey",
-            content: "With over 5 years of experience as a dedicated developer, I've worked on projects ranging from small business websites to large-scale enterprise applications like Elementor, which is used by 10% of the internet. I believe in writing clean, maintainable code and following best practices. As an advocate for open-source projects, I actively contribute to the community and take great satisfaction in helping others and making a positive impact. Positions related to platform engineering would be highly preferred."
+            content: "I've worked across startups and large‑scale products like Elementor (used by 10% of the internet), contributed to open source, and delivered platform and developer‑experience improvements. I enjoy translating ideas into production systems and prefer roles involving platform engineering and strong execution."
         },
         whatIDo: {
             title: "What I Do",
             items: [
-                "Building integrations and rewriting frontends",
-                "Creating tools for development teams",
-                "Refactoring core components and writing tests",
-                "Writing JS APIs from scratch for stability",
-                "Peer review and knowledge sharing"
+                "Design clean, stable APIs and ensure backward compatibility",
+                "Refactor core systems for reliability, performance, and clarity",
+                "Implement thorough testing (unit, integration, E2E) and CI/CD",
+                "Build developer tools and improve platform DX and monorepos",
+                "Deliver end‑to‑end features across frontend, backend"
             ]
         },
         skills: [
@@ -64,7 +64,7 @@ export const config = {
             location: "Onsite",
             period: "October 2024 — September 2025",
             description: "Matia unifies ETL, observability, catalog, and reverse ETL, so teams can focus on what they do best: driving actionable insights and accelerating innovation. As a Senior Full-Stack Engineer, I contributed across nearly all aspects of the development lifecycle. My work included building integrations, rewriting the frontend, doing peer reviews, translating Figma designs into functional features, adapting backend systems to support product requirements, and delivering end-to-end solutions that were actively used by customers.",
-            technologies: ["React", "TypeScript", "Node.js", "AWS", "ETL", "Observability"]
+            technologies: ["React", "TypeScript", "Node.js", "MongoDB", "AWS", "ETL", "Observability"]
         },
         {
             title: "Freelance + Open Source Developer",
@@ -111,9 +111,16 @@ export const config = {
         {
             title: "ZenFlux",
             description: "A framework that offers functionalities related to building, publishing, and watching monorepo workspaces. Designed to streamline monorepo development workflows and improve developer experience.",
-            technologies: ["TypeScript", "React", "NestJS", "Prisma", "Rollup", "SWC"],
+            technologies: ["TypeScript", "Node.js", "pnpm", "SWC", "Rollup", "Monorepo", "CLI"],
             github: "https://github.com/zenflux/zenflux",
             demo: "https://github.com/zenflux/zenflux"
+        },
+        {
+            title: "ElementsHighlight",
+            description: "A React + Vite + Tailwind + shadcn/ui powered Chrome extension that lets you highlight DOM elements on any visited page and lays the groundwork for adding contextual notes. Features Shadow DOM isolation, popup UI, and background service worker.",
+            technologies: ["TypeScript", "React", "Vite", "Tailwind CSS", "shadcn/ui", "Chrome Extension API", "Shadow DOM"],
+            github: "https://github.com/iNewLegend/chrome-extension-elements-highlight",
+            demo: "https://github.com/iNewLegend/chrome-extension-elements-highlight"
         },
         {
             title: "MuOnline.co.il",
@@ -121,6 +128,20 @@ export const config = {
             technologies: ["Assembly", "C", "C++", "PHP", "MS SQL", "MySQL", "JavaScript"],
             github: "https://github.com/iNewLegend/muonline.co.il",
             demo: "https://muonline.co.il/"
+        },
+        {
+            title: "PHP Image Dominant Colors",
+            description: "A PHP library for extracting dominant colors from images. Built with pure PHP 8.0+ without any frameworks or external libraries. Features a web interface for testing and includes comprehensive test suites.",
+            technologies: ["PHP", "JavaScript", "CSS", "HTML", "Image Processing", "Color Analysis"],
+            github: "https://github.com/iNewLegend/php-image-dominant-colors",
+            demo: "http://inewlegend.com/php-image-dominant-colors/public/"
+        },
+        {
+            title: "InfiniGrow",
+            description: "A React demo application for budget overview with custom React commands infrastructure and fake data module. Built as a monorepo using Bun workspace management, featuring TypeScript, SCSS, and modern development practices.",
+            technologies: ["TypeScript", "React", "SCSS", "Bun", "Monorepo", "React Commands", "Fake Data Module"],
+            github: "https://github.com/iNewLegend/infinigrow",
+            demo: "https://inewlegend.com/projects/infinigrow/index.html"
         }
     ],
 
@@ -135,7 +156,7 @@ export const config = {
             "Git", "GitHub", "GitKraken", "Jira", "ClickUp", "Peer Code Review", "Documentation"
         ],
         "Development Tools & Build Systems": [
-            "IntelliJ (IDE)", "Webpack", "Vite", "Grunt", "Composer", "Rollup", "SWC", "xDebug", "npm", "bun", "pnpm", "yarn", "Nx"
+            "IntelliJ (IDE)", "Webpack", "Vite", "Grunt", "Composer", "Rollup", "SWC", "ESBuild", "xDebug", "npm", "bun", "pnpm", "yarn", "Nx", "Cursor AI",
         ],
         "Frameworks & Libraries": [
             "React", "NestJS", "Prisma", "Discord.js", "Backbone", "Marionette", "jQuery", "WordPress", "Bootstrap", "Tailwind", "Material UI"
@@ -163,10 +184,14 @@ export const config = {
         message: {
             title: "Let's Connect",
             content: "Feel free to reach out if you'd like to discuss a project, have any questions, or just want to say hello!"
+        },
+        whatsapp: {
+            url: "https://wa.me/972539197333?text=Hi%20Leonid,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.",
+            text: "Prefer to chat? Send me a message on WhatsApp for quick communication."
         }
     },
 
     footer: {
-        copyright: "© 2024 Leonid Vinikov. Made with ❤️ using React & Tailwind CSS"
+        copyright: "© 2025 Leonid Vinikov. Made with ❤️ using React & Tailwind CSS"
     }
 };

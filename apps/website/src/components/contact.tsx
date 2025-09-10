@@ -1,9 +1,7 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@inewlegend/website/src/components/ui/card";
 import { Button } from "@inewlegend/website/src/components/ui/button";
-import { Input } from "@inewlegend/website/src/components/ui/input";
-import { Textarea } from "@inewlegend/website/src/components/ui/textarea";
 import { config } from "@inewlegend/website/src/config";
 
 export function Contact() {
@@ -54,26 +52,21 @@ export function Contact() {
                         <CardHeader>
                             <CardTitle>Send a Message</CardTitle>
                         </CardHeader>
-                        <CardContent>
-                            <form className="space-y-4">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <Input placeholder="First Name" />
-                                    <Input placeholder="Last Name" />
-                                </div>
-
-                                <Input placeholder="Email" type="email" />
-                                <Input placeholder="Subject" />
-
-                                <Textarea
-                                    placeholder="Your message..."
-                                    className="min-h-[120px]"
-                                />
-
-                                <Button className="w-full">
-                                    <Send className="h-4 w-4 mr-2" />
-                                    Send Message
-                                </Button>
-                            </form>
+                        <CardContent className="text-center flex flex-col items-center gap-5 pt-10">
+                                <p className="text-muted-foreground">
+                                    {config.contact.whatsapp.text}
+                                </p>
+                                
+                                <a 
+                                    href={config.contact.whatsapp.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                                        <MessageCircle className="h-6 w-5 mr-2" />
+                                        Send WhatsApp Message
+                                    </Button>
+                                </a>
                         </CardContent>
                     </Card>
                 </div>
