@@ -21,6 +21,9 @@ export const handler: Handler = async (event) => {
     }
 
     try {
+        chromium.setHeadlessMode = true;
+        chromium.setGraphicsMode = false;
+
         const { html, filename } = JSON.parse(event.body ?? '{}') as { html: string; filename?: string };
 
         if (!html || typeof html !== 'string') {
@@ -30,14 +33,21 @@ export const handler: Handler = async (event) => {
         const executablePath = await chromium.executablePath();
 
         const browser = await puppeteer.launch({
-            args: chromium.args,
+            args: [
+                ...chromium.args,
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--disable-gpu',
+            ],
             defaultViewport: chromium.defaultViewport,
             executablePath,
-            headless: true,
+            headless: chromium.headless,
         });
 
         const page = await browser.newPage();
         await page.setContent(html, { waitUntil: 'networkidle0' });
+        await page.emulateMediaType('screen');
 
         const pdf = await page.pdf({ format: 'A4', printBackground: true });
 
@@ -55,8 +65,9 @@ export const handler: Handler = async (event) => {
                 'Content-Length': String(pdf.length),
             },
             body: pdf.toString('base64'),
-        };
-    } catch {
+        }; 
+    } catch (err) {
+        console.error('PDF render error:', err);
         return { statusCode: 500, headers: { ...baseCors }, body: 'Render error' };
     }
 };
