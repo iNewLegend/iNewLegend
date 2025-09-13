@@ -49,7 +49,8 @@ export const handler: Handler = async (event) => {
         await page.setContent(html, { waitUntil: 'networkidle0' });
         await page.emulateMediaType('screen');
 
-        const pdf = await page.pdf({ format: 'A4', printBackground: true });
+        const pdfData = await page.pdf({ format: 'A4', printBackground: true });
+        const pdfBuffer = Buffer.isBuffer(pdfData) ? pdfData : Buffer.from(pdfData);
 
         await browser.close();
 
@@ -62,9 +63,9 @@ export const handler: Handler = async (event) => {
                 ...baseCors,
                 'Content-Transfer-Encoding': 'binary',
                 'Accept-Ranges': 'bytes',
-                'Content-Length': String(pdf.length),
+                'Content-Length': String(pdfBuffer.length),
             },
-            body: pdf.toString('base64'),
+            body: pdfBuffer.toString('base64'),
         }; 
     } catch (err) {
         console.error('PDF render error:', err);
