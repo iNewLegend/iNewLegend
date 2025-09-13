@@ -11,7 +11,7 @@ export const config = {
     },
 
     hero: {
-        title: "Hi, I'm Leonid Vinikov",
+        title: "Hi, I'm",
         subtitle: "Senior Full‑Stack / Frontend Developer",
         description: "I'm a developer with 5+ years building reliable, scalable systems across frontend and backend. I focus on data and the logic that powers user interfaces, designing clean APIs, refactoring core infrastructure, and shipping end‑to‑end features. I'm persistent with complex problems and committed to maintainable, well‑tested code."
     },
@@ -83,15 +83,15 @@ export const config = {
             technologies: ["JavaScript", "PHP", "React", "WordPress", "REST API", "Testing", "Documentation"]
         },
         {
-            title: "Software Developer",
+            title: "Developer & Linux, VoIP Servers Engineer",
             company: "VoiceSpin",
             location: "Hybrid",
             period: "Feb 2017 — Jan 2019",
             description: "VoiceSpin is a company that provides cloud-based VoIP communication and customer engagement solutions to businesses. Created/Maintained tools for support engineers, developed dedicated custom features for customers, and integration with products in our/their end.",
-            technologies: ["VoIP", "Cloud", "Customer Support", "Integration", "Custom Development"]
+            technologies: ["VoIP", "Cloud", "Customer Support", "Integration", "Custom Development", "Asterisk", "Linux"]
         },
         {
-            title: "Game Server Developer & Administrator",
+            title: "Game Server Developer",
             company: "MuOnline.co.il",
             location: "Remote",
             period: "2014 — 2019 (5+ years)",
@@ -104,7 +104,7 @@ export const config = {
         {
             title: "Vertix",
             description: "A Discord bot for managing voice channels. Built with TypeScript, Discord.js, and modern development practices. Provides advanced voice channel management features for Discord servers.",
-            technologies: ["TypeScript", "Discord.js", "Node.js", "MongoDB", "Jest"],
+            technologies: ["TypeScript", "React", "Prisma", "MongoDB", "Jest", "Discord.js", "CI/CD", "Monorepo"],
             github: "https://github.com/VertixGG/vertix.gg",
             demo: "https://vertix.gg/"
         },

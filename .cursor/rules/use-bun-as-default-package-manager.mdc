@@ -1,0 +1,6 @@
+---
+description: use bun as default package manger
+globs: *
+alwaysApply: true
+---
+use bun as default package manger

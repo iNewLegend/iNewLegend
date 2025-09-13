@@ -2,14 +2,32 @@ import { Download, Github, Linkedin, Mail } from "lucide-react";
 
 import { Button } from "@inewlegend/website/src/components/ui/button";
 import { config } from "@inewlegend/website/src/config";
+import { generateResumePDF, printResumeFromHTML, downloadResumePDFViaService } from "@inewlegend/website/src/lib/pdf-generator";
 
 export function Hero() {
+    const handleDownloadResume = async () => {
+        try {
+            await downloadResumePDFViaService();
+        } catch (error) {
+            try {
+                await printResumeFromHTML();
+            } catch (e) {
+                try {
+                    await generateResumePDF();
+                } catch (err) {
+                    console.error('Error generating resume:', err);
+                    window.open(config.personal.resume, '_blank');
+                }
+            }
+        }
+    };
+
     return (
         <section id="home" className="pt-20 pb-16 px-4">
             <div className="container mx-auto max-w-4xl">
                 <div className="text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                        {config.hero.title.split(' ').slice(0, -1).join(' ')}{" "}
+                        {config.hero.title}&nbsp;
                         <span className="text-primary">{config.personal.name}</span>
                     </h1>
 
@@ -22,11 +40,9 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                        <Button size="lg" className="w-full sm:w-auto" asChild>
-                            <a href={config.personal.resume} target="_blank" rel="noopener noreferrer">
-                                <Download className="mr-2 h-4 w-4" />
-                                Download Resume
-                            </a>
+                        <Button size="lg" className="w-full sm:w-auto" onClick={handleDownloadResume}>
+                            <Download className="mr-2 h-4 w-4" />
+                            Download Resume
                         </Button>
 
                         <div className="flex gap-4">
@@ -46,10 +62,6 @@ export function Hero() {
                                 </a>
                             </Button>
                         </div>
-                    </div>
-
-                    <div className="text-sm text-muted-foreground">
-                        Scroll down to explore my work
                     </div>
                 </div>
             </div>

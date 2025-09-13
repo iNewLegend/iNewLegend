@@ -7,6 +7,7 @@ import { Experience } from "@inewlegend/website/src/components/experience";
 import { Projects } from "@inewlegend/website/src/components/projects";
 import { Contact } from "@inewlegend/website/src/components/contact";
 import { Footer } from "@inewlegend/website/src/components/footer";
+import { Resume } from "@inewlegend/website/src/components/resume";
 
 function App() {
     const [ activeSection, setActiveSection ] = useState( "home" );
@@ -22,6 +23,11 @@ function App() {
                 <Contact />
             </main>
             <Footer />
+            
+            {/* Hidden resume component for PDF generation */}
+            <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+                <Resume />
+            </div>
         </div>
     );
 }
