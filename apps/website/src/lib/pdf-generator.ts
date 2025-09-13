@@ -103,8 +103,15 @@ async function renderResumeHTMLViaRoute(): Promise<string> {
                 if ( ready ) {
                     const raw = "<!DOCTYPE html>\n" + ( doc.documentElement?.outerHTML || "" );
                     const withoutScripts = raw.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "" );
+
+                    const viteEnv = ( import.meta as never as { env: Record<string, string | undefined> } ).env;
+                    const configuredBase = viteEnv[ "DEPLOY_WEBSITE_PUBLIC_URL" ] || viteEnv[ "VITE_DEPLOY_WEBSITE_PUBLIC_URL" ];
+                    const baseHref = ( configuredBase && configuredBase.length > 0 ? configuredBase : window.location.origin ).replace( /\/$/, "" ) + "/";
+
+                    const withBase = withoutScripts.replace( /<head(.*?)>/i, `<head$1><base href="${ baseHref }">` );
+
                     finish();
-                    resolve( withoutScripts );
+                    resolve( withBase );
                 }
             }, 50 );
 
