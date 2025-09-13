@@ -1,15 +1,26 @@
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Loader2 } from "lucide-react";
+import { useState } from "react";
 
 import { Button } from "@inewlegend/website/src/components/ui/button";
 import { config } from "@inewlegend/website/src/config";
-import { downloadResumePDFViaService } from "@inewlegend/website/src/lib/pdf-generator";
+import { downloadResumePDFViaService, PDF_PROGRESS_STEPS } from "@inewlegend/website/src/lib/pdf-generator";
 
 export function Hero() {
+    const [ loading, setLoading ] = useState( false );
+    const [ step, setStep ] = useState<string | null>( null );
+
     const handleDownloadResume = async() => {
+        if ( loading ) return;
+        setLoading( true );
+        setStep( "Preparing" );
         try {
-            await downloadResumePDFViaService();
+            await downloadResumePDFViaService( ( s ) => setStep( s ) );
         } catch ( error ) {
             console.error( "Error generating resume via service:", error );
+            setStep( "Error" );
+        } finally {
+            setLoading( false );
+            setTimeout( () => setStep( null ), 1200 );
         }
     };
 
@@ -31,9 +42,9 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                        <Button size="lg" className="w-full sm:w-auto" onClick={handleDownloadResume}>
-                            <Download className="mr-2 h-4 w-4" />
-                            Download Resume
+                        <Button size="lg" className="w-full sm:w-auto" onClick={handleDownloadResume} disabled={loading}>
+                            { loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Download className="mr-2 h-4 w-4" /> }
+                            { loading ? ( step || PDF_PROGRESS_STEPS[ 0 ] ) : "Generate Resume" }
                         </Button>
 
                         <div className="flex gap-4">
