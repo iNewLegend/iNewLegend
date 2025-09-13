@@ -1,9 +1,10 @@
-import jsPDF from 'jspdf';
-import { config } from '@inewlegend/website/src/config';
+import jsPDF from "jspdf";
 
-declare module 'jspdf' {
+import { config } from "@inewlegend/website/src/config";
+
+declare module "jspdf" {
     interface HtmlRenderOptions {
-        callback?: (doc: jsPDF) => void;
+        callback?: ( doc: jsPDF ) => void;
         x?: number;
         y?: number;
         width?: number;
@@ -11,166 +12,166 @@ declare module 'jspdf' {
     }
 
     interface jsPDF {
-        html(element: HTMLElement, options?: HtmlRenderOptions): Promise<void>;
+        html( element: HTMLElement, options?: HtmlRenderOptions ): Promise<void>;
     }
 }
 
 export function downloadResumeHTML(): void {
     const htmlContent = generateResumeHTML();
-    const filename = 'Leonid-Vinikov-Resume.html';
+    const filename = "Leonid-Vinikov-Resume.html";
 
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const isIOS = /iPad|iPhone|iPod/.test( navigator.userAgent );
+    const isSafari = /^((?!chrome|android).)*safari/i.test( navigator.userAgent );
 
-    if (isIOS || isSafari) {
-        const dataUrl = 'data:text/html;charset=utf-8,' + encodeURIComponent(htmlContent);
-        const link = document.createElement('a');
+    if ( isIOS || isSafari ) {
+        const dataUrl = "data:text/html;charset=utf-8," + encodeURIComponent( htmlContent );
+        const link = document.createElement( "a" );
         link.href = dataUrl;
         link.download = filename;
-        link.rel = 'noopener';
-        document.body.appendChild(link);
+        link.rel = "noopener";
+        document.body.appendChild( link );
         link.click();
-        document.body.removeChild(link);
+        document.body.removeChild( link );
         return;
     }
 
-    const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const blob = new Blob( [ htmlContent ], { type: "text/html;charset=utf-8" } );
+    const url = URL.createObjectURL( blob );
+    const link = document.createElement( "a" );
     link.href = url;
     link.download = filename;
-    link.rel = 'noopener';
-    link.style.display = 'none';
-    document.body.appendChild(link);
+    link.rel = "noopener";
+    link.style.display = "none";
+    document.body.appendChild( link );
     link.click();
-    document.body.removeChild(link);
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    document.body.removeChild( link );
+    setTimeout( () => URL.revokeObjectURL( url ), 1000 );
 }
 
 export async function generateResumePDF(): Promise<void> {
     const html = generateResumeHTML();
 
-    const iframe = document.createElement('iframe');
-    iframe.style.position = 'fixed';
-    iframe.style.right = '0';
-    iframe.style.bottom = '0';
-    iframe.style.width = '0';
-    iframe.style.height = '0';
-    iframe.style.border = '0';
-    document.body.appendChild(iframe);
+    const iframe = document.createElement( "iframe" );
+    iframe.style.position = "fixed";
+    iframe.style.right = "0";
+    iframe.style.bottom = "0";
+    iframe.style.width = "0";
+    iframe.style.height = "0";
+    iframe.style.border = "0";
+    document.body.appendChild( iframe );
 
     const iframeDoc = iframe.contentDocument as Document;
     iframeDoc.open();
-    iframeDoc.write(html);
+    iframeDoc.write( html );
     iframeDoc.close();
 
-    await new Promise<void>((resolve) => setTimeout(resolve, 150));
+    await new Promise<void>( ( resolve ) => setTimeout( resolve, 150 ) );
 
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    await pdf.html(iframeDoc.body as unknown as HTMLElement, {
-        callback: (doc) => {
-            doc.save('Leonid-Vinikov-Resume.pdf');
-            document.body.removeChild(iframe);
+    const pdf = new jsPDF( "p", "mm", "a4" );
+    await pdf.html( iframeDoc.body as unknown as HTMLElement, {
+        callback: ( doc ) => {
+            doc.save( "Leonid-Vinikov-Resume.pdf" );
+            document.body.removeChild( iframe );
         },
         x: 10,
         y: 10,
         width: 190,
         windowWidth: 800
-    });
+    } );
 }
 
 export async function printResumeFromHTML(): Promise<void> {
     const html = generateResumeHTML();
 
-    const printWindow = window.open('', '_blank');
-    if (!printWindow) {
-        throw new Error('Popup blocked');
+    const printWindow = window.open( "", "_blank" );
+    if ( !printWindow ) {
+        throw new Error( "Popup blocked" );
     }
 
     printWindow.document.open();
-    printWindow.document.write(html);
+    printWindow.document.write( html );
     printWindow.document.close();
 
-    await new Promise<void>((resolve) => setTimeout(resolve, 250));
+    await new Promise<void>( ( resolve ) => setTimeout( resolve, 250 ) );
 
     try {
         printWindow.focus();
         printWindow.print();
     } finally {
-        setTimeout(() => {
+        setTimeout( () => {
             try { printWindow.close(); } catch {}
-        }, 500);
+        }, 500 );
     }
 }
 
 export async function downloadResumePDFViaService(): Promise<void> {
-    const serviceUrl = (import.meta as unknown as { env: Record<string, string | undefined> }).env?.VITE_WEBSITE_PDF_SERVICE_URL;
-    if (!serviceUrl) {
-        throw new Error('WEBSITE_PDF_SERVICE_URL is not configured');
+    const serviceUrl = import.meta.env.VITE_WEBSITE_PDF_SERVICE_URL;
+    if ( !serviceUrl ) {
+        throw new Error( "WEBSITE_PDF_SERVICE_URL is not configured" );
     }
 
     const html = generateResumeHTML();
 
-    const response = await fetch(serviceUrl, {
-        method: 'POST',
+    const response = await fetch( serviceUrl, {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/pdf'
+            "Content-Type": "application/json",
+            "Accept": "application/pdf"
         },
-        body: JSON.stringify({ html })
-    });
+        body: JSON.stringify( { html } )
+    } );
 
-    if (!response.ok) {
-        throw new Error(`PDF service error: ${response.status}`);
+    if ( !response.ok ) {
+        throw new Error( `PDF service error: ${ response.status }` );
     }
 
-    const contentType = response.headers.get('content-type') || '';
-    if (!contentType.includes('application/pdf')) {
+    const contentType = response.headers.get( "content-type" ) || "";
+    if ( !contentType.includes( "application/pdf" ) ) {
         const text = await response.text();
-        console.error('PDF service returned non-PDF response (first 300 chars):', text.slice(0, 300));
-        throw new Error('PDF service did not return a PDF');
+        console.error( "PDF service returned non-PDF response (first 300 chars):", text.slice( 0, 300 ) );
+        throw new Error( "PDF service did not return a PDF" );
     }
 
     const cloneForDebug = response.clone();
     const blob = await response.blob();
-    if (blob.size === 0) {
-        const debugText = await cloneForDebug.text().catch(() => '');
-        console.error('PDF service returned empty body. Debug (first 300 chars):', debugText.slice(0, 300));
-        throw new Error('PDF service returned empty PDF body');
+    if ( blob.size === 0 ) {
+        const debugText = await cloneForDebug.text().catch( () => "" );
+        console.error( "PDF service returned empty body. Debug (first 300 chars):", debugText.slice( 0, 300 ) );
+        throw new Error( "PDF service returned empty PDF body" );
     }
-    const url = URL.createObjectURL(blob);
-    const filename = 'Leonid-Vinikov-Resume.pdf';
+    const url = URL.createObjectURL( blob );
+    const filename = "Leonid-Vinikov-Resume.pdf";
 
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const isIOS = /iPad|iPhone|iPod/.test( navigator.userAgent );
+    const isSafari = /^((?!chrome|android).)*safari/i.test( navigator.userAgent );
 
-    if (isIOS || isSafari) {
-        window.open(url, '_blank');
-        setTimeout(() => URL.revokeObjectURL(url), 2000);
+    if ( isIOS || isSafari ) {
+        window.open( url, "_blank" );
+        setTimeout( () => URL.revokeObjectURL( url ), 2000 );
         return;
     }
 
-    const link = document.createElement('a');
+    const link = document.createElement( "a" );
     link.href = url;
     link.download = filename;
-    link.rel = 'noopener';
-    link.style.display = 'none';
-    document.body.appendChild(link);
+    link.rel = "noopener";
+    link.style.display = "none";
+    document.body.appendChild( link );
     link.click();
-    document.body.removeChild(link);
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    document.body.removeChild( link );
+    setTimeout( () => URL.revokeObjectURL( url ), 1000 );
 }
 
 function generateResumeHTML(): string {
     const { personal, hero, about, experience, projects, skills } = config;
-    
+
     return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${personal.name} - Resume</title>
+    <title>${ personal.name } - Resume</title>
     <style>
         * {
             margin: 0;
@@ -362,74 +363,74 @@ function generateResumeHTML(): string {
 <body>
     <div class="container">
         <div class="header">
-            <h1>${personal.name}</h1>
-            <div class="title">${hero.subtitle}</div>
+            <h1>${ personal.name }</h1>
+            <div class="title">${ hero.subtitle }</div>
             <div class="contact-info">
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4e7.svg" alt="📧"/> <a href="mailto:${personal.email}">${personal.email}</a></span>
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4f1.svg" alt="📱"/> <a href="tel:${personal.phone}">${personal.phone}</a></span>
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4cd.svg" alt="📍"/> ${personal.location}</span>
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f517.svg" alt="🔗"/> <a href="${personal.github}" target="_blank">${personal.github}</a></span>
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bc.svg" alt="💼"/> <a href="${personal.linkedin}" target="_blank">${personal.linkedin}</a></span>
+                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4e7.svg" alt="📧"/> <a href="mailto:${ personal.email }">${ personal.email }</a></span>
+                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4f1.svg" alt="📱"/> <a href="tel:${ personal.phone }">${ personal.phone }</a></span>
+                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4cd.svg" alt="📍"/> ${ personal.location }</span>
+                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f517.svg" alt="🔗"/> <a href="${ personal.github }" target="_blank">${ personal.github }</a></span>
+                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bc.svg" alt="💼"/> <a href="${ personal.linkedin }" target="_blank">${ personal.linkedin }</a></span>
             </div>
         </div>
 
         <div class="section">
             <h2>About</h2>
-            <p>${hero.description}</p>
+            <p>${ hero.description }</p>
             
             <div class="what-i-do">
-                <h3>${about.whatIDo.title}</h3>
+                <h3>${ about.whatIDo.title }</h3>
                 <ul>
-                    ${about.whatIDo.items.map(item => `<li>${item}</li>`).join('')}
+                    ${ about.whatIDo.items.map( item => `<li>${ item }</li>` ).join( "" ) }
                 </ul>
             </div>
         </div>
 
         <div class="section">
             <h2>Experience</h2>
-            ${experience.map(exp => `
+            ${ experience.map( exp => `
                 <div class="experience-item">
                     <div class="job-header">
                         <div>
-                            <div class="job-title">${exp.title}</div>
-                            <div class="company">${exp.company} • ${exp.location}</div>
+                            <div class="job-title">${ exp.title }</div>
+                            <div class="company">${ exp.company } • ${ exp.location }</div>
                         </div>
-                        <div class="period">${exp.period}</div>
+                        <div class="period">${ exp.period }</div>
                     </div>
-                    <p>${exp.description}</p>
+                    <p>${ exp.description }</p>
                     <div class="technologies">
-                        ${exp.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                        ${ exp.technologies.map( tech => `<span class="tech-tag">${ tech }</span>` ).join( "" ) }
                     </div>
                 </div>
-            `).join('')}
+            ` ).join( "" ) }
         </div>
 
         <div class="section">
             <h2>Projects</h2>
-            ${projects.slice(0, 6).map(project => `
+            ${ projects.slice( 0, 6 ).map( project => `
                 <div class="project-item">
                     <div class="project-header">
-                        <div class="project-title">${project.title}</div>
+                        <div class="project-title">${ project.title }</div>
                     </div>
-                    <p>${project.description}</p>
+                    <p>${ project.description }</p>
                     <div class="technologies">
-                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                        ${ project.technologies.map( tech => `<span class="tech-tag">${ tech }</span>` ).join( "" ) }
                     </div>
                 </div>
-            `).join('')}
+            ` ).join( "" ) }
         </div>
 
         <div class="section">
             <h2>Skills & Technologies</h2>
             <div class="skills-grid">
-                ${Object.entries(skills).map(([category, skillList]) => `
+                ${ Object.entries( skills ).map( ( [ category, skillList ] ) => `
                     <div class="skill-category">
-                        <h3>${category}</h3>
+                        <h3>${ category }</h3>
                         <div class="skill-list">
-                            ${skillList.map(skill => `<span class="skill-item">${skill}</span>`).join('')}
+                            ${ skillList.map( skill => `<span class="skill-item">${ skill }</span>` ).join( "" ) }
                         </div>
                     </div>
-                `).join('')}
+                ` ).join( "" ) }
             </div>
         </div>
     </div>

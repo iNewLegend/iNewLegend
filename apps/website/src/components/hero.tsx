@@ -2,23 +2,14 @@ import { Download, Github, Linkedin, Mail } from "lucide-react";
 
 import { Button } from "@inewlegend/website/src/components/ui/button";
 import { config } from "@inewlegend/website/src/config";
-import { generateResumePDF, printResumeFromHTML, downloadResumePDFViaService } from "@inewlegend/website/src/lib/pdf-generator";
+import { downloadResumePDFViaService } from "@inewlegend/website/src/lib/pdf-generator";
 
 export function Hero() {
-    const handleDownloadResume = async () => {
+    const handleDownloadResume = async() => {
         try {
             await downloadResumePDFViaService();
-        } catch (error) {
-            try {
-                await printResumeFromHTML();
-            } catch (e) {
-                try {
-                    await generateResumePDF();
-                } catch (err) {
-                    console.error('Error generating resume:', err);
-                    window.open(config.personal.resume, '_blank');
-                }
-            }
+        } catch ( error ) {
+            console.error( "Error generating resume via service:", error );
         }
     };
 
@@ -57,7 +48,7 @@ export function Hero() {
                                 </a>
                             </Button>
                             <Button variant="outline" size="icon" asChild>
-                                <a href={`mailto:${config.personal.email}`}>
+                                <a href={`mailto:${ config.personal.email }`}>
                                     <Mail className="h-4 w-4" />
                                 </a>
                             </Button>

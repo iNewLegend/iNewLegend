@@ -1,0 +1,10 @@
+[build]
+  base = "apps/website"
+  publish = "public"
+  command = "echo skip"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+

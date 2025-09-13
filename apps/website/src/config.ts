@@ -13,7 +13,7 @@ export const config = {
     hero: {
         title: "Hi, I'm",
         subtitle: "Senior Full‑Stack / Frontend Developer",
-        description: "I'm a developer with 5+ years building reliable, scalable systems across frontend and backend. I focus on data and the logic that powers user interfaces, designing clean APIs, refactoring core infrastructure, and shipping end‑to‑end features. I'm persistent with complex problems and committed to maintainable, well‑tested code."
+        description: "I'm a developer with 5+ years building reliable, scalable systems across frontend and backend. I focus on data and the logic that powers user interfaces, designing clean APIs, refactoring core components, and shipping end‑to‑end features. I'm persistent with complex problems and committed to maintainable, well‑tested code."
     },
 
     about: {

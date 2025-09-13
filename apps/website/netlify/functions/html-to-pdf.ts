@@ -1,0 +1,64 @@
+import type { Handler } from '@netlify/functions';
+import chromium from '@sparticuz/chromium';
+import puppeteer from 'puppeteer-core';
+
+export const handler: Handler = async (event) => {
+    const baseCors = {
+        'Access-Control-Allow-Origin': process.env.CORS_ORIGIN || '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Accept',
+    } as const;
+
+    if (event.httpMethod === 'OPTIONS') {
+        return {
+            statusCode: 204,
+            headers: { ...baseCors },
+        };
+    }
+
+    if (event.httpMethod !== 'POST') {
+        return { statusCode: 405, headers: { ...baseCors }, body: 'Method Not Allowed' };
+    }
+
+    try {
+        const { html, filename } = JSON.parse(event.body ?? '{}') as { html: string; filename?: string };
+
+        if (!html || typeof html !== 'string') {
+            return { statusCode: 400, headers: { ...baseCors }, body: 'Missing html' };
+        }
+
+        const executablePath = await chromium.executablePath();
+
+        const browser = await puppeteer.launch({
+            args: chromium.args,
+            defaultViewport: chromium.defaultViewport,
+            executablePath,
+            headless: true,
+        });
+
+        const page = await browser.newPage();
+        await page.setContent(html, { waitUntil: 'networkidle0' });
+
+        const pdf = await page.pdf({ format: 'A4', printBackground: true });
+
+        await browser.close();
+
+        return {
+            statusCode: 200,
+            isBase64Encoded: true,
+            headers: {
+                'Content-Type': 'application/pdf',
+                'Content-Disposition': `attachment; filename="${(filename || process.env.DEFAULT_FILENAME || 'resume')}.pdf"`,
+                ...baseCors,
+                'Content-Transfer-Encoding': 'binary',
+                'Accept-Ranges': 'bytes',
+                'Content-Length': String(pdf.length),
+            },
+            body: pdf.toString('base64'),
+        };
+    } catch {
+        return { statusCode: 500, headers: { ...baseCors }, body: 'Render error' };
+    }
+};
+
+
