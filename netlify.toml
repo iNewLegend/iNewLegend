@@ -1,6 +1,6 @@
 [build]
   base = "apps/website"
-  publish = "public"
+  publish = "."
   command = "echo skip"
 
 [functions]
