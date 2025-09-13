@@ -13,6 +13,7 @@
     "@netlify/functions": "^2.8.1",
     "@sparticuz/chromium": "^138.0.2",
     "puppeteer-core": "^23.7.1",
+    "react-router-dom": "^6.26.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "lucide-react": "^0.263.1",
@@ -24,6 +25,7 @@
     "jspdf": "^2.5.1"
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",

@@ -1,11 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import App from "@inewlegend/website/src/app.tsx";
+import { Resume } from "@inewlegend/website/src/components/resume";
 import "@inewlegend/website/src/index.css";
+
+const router = createBrowserRouter( [
+    {
+        path: "/",
+        element: <App />,
+    },
+    {
+        path: "/print/resume",
+        element: (
+            <div className="min-h-screen bg-white text-black">
+                <div className="py-8">
+                    <Resume />
+                </div>
+            </div>
+        ),
+    },
+] );
 
 ReactDOM.createRoot( document.getElementById( "root" )! ).render(
     <React.StrictMode>
-        <App />
+        <RouterProvider router={router} />
     </React.StrictMode>,
 );

@@ -1,5 +1,3 @@
-import { config } from "@inewlegend/website/src/config";
-
 export const PDF_PROGRESS_STEPS = [
     "Generate HTML",
     "Converting HTML to PDF",
@@ -15,7 +13,7 @@ export async function downloadResumePDFViaService( onProgress?: ( step: string )
         throw new Error( "WEBSITE_PDF_SERVICE_URL is not configured" );
     }
 
-    const html = generateResumeHTML();
+    const html = await renderResumeHTMLViaRoute();
 
     onProgress?.( PDF_PROGRESS_STEPS[ 1 ] );
 
@@ -71,280 +69,66 @@ export async function downloadResumePDFViaService( onProgress?: ( step: string )
 
     onProgress?.( PDF_PROGRESS_STEPS[ 3 ] );
 }
+async function renderResumeHTMLViaRoute(): Promise<string> {
+    return new Promise<string>( ( resolve, reject ) => {
+        const iframe = document.createElement( "iframe" );
+        iframe.style.position = "fixed";
+        iframe.style.right = "0";
+        iframe.style.bottom = "0";
+        iframe.style.width = "0";
+        iframe.style.height = "0";
+        iframe.style.border = "0";
+        iframe.referrerPolicy = "no-referrer";
 
-function generateResumeHTML(): string {
-    const { personal, hero, about, experience, projects, skills } = config;
+        const cleanup = () => {
+            try { document.body.removeChild( iframe ); } catch {}
+        };
 
-    return `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${ personal.name } - Resume</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'DejaVu Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: white;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #2563eb;
-            padding-bottom: 20px;
-        }
-        
-        .header h1 {
-            font-size: 2.5rem;
-            color: #2563eb;
-            margin-bottom: 10px;
-        }
-        
-        .header .title {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .contact-info a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        .emoji {
-            width: 14px;
-            height: 14px;
-            vertical-align: -2px;
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-        .section h2 {
-            font-size: 1.5rem;
-            color: #2563eb;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 5px;
-        }
-        
-        .section p {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
-        
-        .experience-item, .project-item {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #f3f4f6;
-        }
-        
-        .experience-item:last-child, .project-item:last-child {
-            border-bottom: none;
-        }
-        
-        .job-header, .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
-        }
-        
-        .job-title, .project-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #1f2937;
-        }
-        
-        .company, .period {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .technologies {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        
-        .tech-tag {
-            background: #eff6ff;
-            color: #2563eb;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            border: 1px solid #dbeafe;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category h3 {
-            font-size: 1.1rem;
-            color: #374151;
-            margin-bottom: 8px;
-        }
-        
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        
-        .skill-item {
-            background: #f9fafb;
-            color: #374151;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-size: 0.8rem;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .what-i-do {
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .what-i-do h3 {
-            color: #2563eb;
-            margin-bottom: 10px;
-        }
-        
-        .what-i-do ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .what-i-do li {
-            margin-bottom: 5px;
-            padding-left: 15px;
-            position: relative;
-        }
-        
-        .what-i-do li:before {
-            content: "•";
-            color: #2563eb;
-            position: absolute;
-            left: 0;
-        }
-        
-        @media print {
-            .container {
-                padding: 0;
+        let timeoutId: number | undefined;
+        let intervalId: number | undefined;
+
+        const finish = () => {
+            if ( intervalId ) window.clearInterval( intervalId );
+            if ( timeoutId ) window.clearTimeout( timeoutId );
+            cleanup();
+        };
+
+        const startPollingForResume = () => {
+            const doc = iframe.contentDocument;
+            if ( !doc ) return;
+
+            intervalId = window.setInterval( () => {
+                const resumeEl = doc.getElementById( "resume-content" );
+                const ready = !!resumeEl && resumeEl.innerHTML.trim().length > 100;
+                if ( ready ) {
+                    const raw = "<!DOCTYPE html>\n" + ( doc.documentElement?.outerHTML || "" );
+                    const withoutScripts = raw.replace( /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "" );
+                    finish();
+                    resolve( withoutScripts );
+                }
+            }, 50 );
+
+            timeoutId = window.setTimeout( () => {
+                finish();
+                reject( new Error( "Timed out waiting for resume DOM" ) );
+            }, 8000 );
+        };
+
+        iframe.onload = () => {
+            try {
+                startPollingForResume();
+            } catch ( err ) {
+                finish();
+                reject( err );
             }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>${ personal.name }</h1>
-            <div class="title">${ hero.subtitle }</div>
-            <div class="contact-info">
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4e7.svg" alt="📧"/> <a href="mailto:${ personal.email }">${ personal.email }</a></span>
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4f1.svg" alt="📱"/> <a href="tel:${ personal.phone }">${ personal.phone }</a></span>
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4cd.svg" alt="📍"/> ${ personal.location }</span>
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f517.svg" alt="🔗"/> <a href="${ personal.github }" target="_blank">${ personal.github }</a></span>
-                <span><img class="emoji" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bc.svg" alt="💼"/> <a href="${ personal.linkedin }" target="_blank">${ personal.linkedin }</a></span>
-            </div>
-        </div>
+        };
 
-        <div class="section">
-            <h2>About</h2>
-            <p>${ hero.description }</p>
-            
-            <div class="what-i-do">
-                <h3>${ about.whatIDo.title }</h3>
-                <ul>
-                    ${ about.whatIDo.items.map( item => `<li>${ item }</li>` ).join( "" ) }
-                </ul>
-            </div>
-        </div>
+        iframe.onerror = () => {
+            finish();
+            reject( new Error( "Failed to load resume route" ) );
+        };
 
-        <div class="section">
-            <h2>Experience</h2>
-            ${ experience.map( exp => `
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">${ exp.title }</div>
-                            <div class="company">${ exp.company } • ${ exp.location }</div>
-                        </div>
-                        <div class="period">${ exp.period }</div>
-                    </div>
-                    <p>${ exp.description }</p>
-                    <div class="technologies">
-                        ${ exp.technologies.map( tech => `<span class="tech-tag">${ tech }</span>` ).join( "" ) }
-                    </div>
-                </div>
-            ` ).join( "" ) }
-        </div>
-
-        <div class="section">
-            <h2>Projects</h2>
-            ${ projects.slice( 0, 6 ).map( project => `
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-title">${ project.title }</div>
-                    </div>
-                    <p>${ project.description }</p>
-                    <div class="technologies">
-                        ${ project.technologies.map( tech => `<span class="tech-tag">${ tech }</span>` ).join( "" ) }
-                    </div>
-                </div>
-            ` ).join( "" ) }
-        </div>
-
-        <div class="section">
-            <h2>Skills & Technologies</h2>
-            <div class="skills-grid">
-                ${ Object.entries( skills ).map( ( [ category, skillList ] ) => `
-                    <div class="skill-category">
-                        <h3>${ category }</h3>
-                        <div class="skill-list">
-                            ${ skillList.map( skill => `<span class="skill-item">${ skill }</span>` ).join( "" ) }
-                        </div>
-                    </div>
-                ` ).join( "" ) }
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-    `;
+        iframe.src = `${ window.location.origin }/print/resume?ts=${ Date.now() }`;
+        document.body.appendChild( iframe );
+    } );
 }

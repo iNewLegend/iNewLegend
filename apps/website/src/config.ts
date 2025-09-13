@@ -30,7 +30,8 @@ export const config = {
                 "Refactor core systems for reliability, performance, and clarity",
                 "Implement thorough testing (unit, integration, E2E) and CI/CD",
                 "Build developer tools and improve platform DX and monorepos",
-                "Deliver end‑to‑end features across frontend, backend"
+                "Deliver end‑to‑end features across frontend, backend",
+                "Utilize tools like Cursor AI, and LLMs to improve productivity"
             ]
         },
         skills: [
