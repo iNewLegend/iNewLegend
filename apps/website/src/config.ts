@@ -13,7 +13,7 @@ export const config = {
     hero: {
         title: "Hi, I'm",
         subtitle: "Senior Full‑Stack / Frontend Developer",
-        description: "I'm a developer with 5+ years building reliable, scalable systems across frontend and backend. I focus on data and the logic that powers user interfaces, designing clean APIs, refactoring core components, and shipping end‑to‑end features. I'm persistent with complex problems and committed to maintainable, well‑tested code."
+        description: "I'm a developer with 5+ years building reliable, scalable systems across frontend and backend. I focus on data and the logic that powers user interfaces, designing clean APIs, refactoring core, and shipping end‑to‑end features. I'm persistent with complex problems and committed to maintainable, well‑tested code."
     },
 
     about: {
@@ -34,25 +34,25 @@ export const config = {
             ]
         },
         skills: [
-            { 
-                icon: "Code", 
-                title: "Frontend Development", 
-                description: "React, TypeScript, JavaScript, CSS/SASS, Tailwind, Material UI" 
+            {
+                icon: "Code",
+                title: "Frontend Development",
+                description: "React, TypeScript, JavaScript, CSS/SASS, Tailwind, Material UI"
             },
-            { 
-                icon: "Database", 
-                title: "Backend Development", 
-                description: "Node.js, NestJS, PHP, MongoDB, MySQL, MSSQL" 
+            {
+                icon: "Database",
+                title: "Backend Development",
+                description: "Node.js, NestJS, PHP, MongoDB, MySQL, MSSQL"
             },
-            { 
-                icon: "Cloud", 
-                title: "Platform Engineering", 
-                description: "EC2, Docker, CI/CD, Monorepo Setup, Nx, Build Tools" 
+            {
+                icon: "Cloud",
+                title: "Platform Engineering",
+                description: "EC2, Docker, CI/CD, Monorepo Setup, Nx, Build Tools"
             },
-            { 
-                icon: "Smartphone", 
-                title: "Testing & Quality", 
-                description: "Jest, Playwright, Unit/Integration/E2E Testing, TDD" 
+            {
+                icon: "Smartphone",
+                title: "Testing & Quality",
+                description: "Jest, Playwright, Unit/Integration/E2E Testing, TDD"
             }
         ]
     },
@@ -64,7 +64,7 @@ export const config = {
             location: "Onsite",
             period: "October 2024 — September 2025",
             description: "Matia unifies ETL, observability, catalog, and reverse ETL, so teams can focus on what they do best: driving actionable insights and accelerating innovation. As a Senior Full-Stack Engineer, I contributed across nearly all aspects of the development lifecycle. My work included building integrations, rewriting the frontend, doing peer reviews, translating Figma designs into functional features, adapting backend systems to support product requirements, and delivering end-to-end solutions that were actively used by customers.",
-            technologies: ["React", "TypeScript", "Node.js", "MongoDB", "AWS", "ETL", "Observability"]
+            technologies: [ "React", "TypeScript", "Node.js", "MongoDB", "AWS", "ETL", "Observability" ]
         },
         {
             title: "Freelance + Open Source Developer",
@@ -72,7 +72,7 @@ export const config = {
             location: "Remote",
             period: "July 2022 — June 2024",
             description: "I worked as a freelancer and started some open source projects to extend my knowledge. Created Vertix (Discord bot for managing voice channels) and ZenFlux (framework for building, publishing, and watching monorepo workspaces).",
-            technologies: ["TypeScript", "React", "NestJS", "Prisma", "MongoDB", "Jest", "Playwright", "Discord.js", "AWS EC2", "Rollup", "SWC"]
+            technologies: [ "TypeScript", "React", "NestJS", "Prisma", "MongoDB", "Jest", "Playwright", "Discord.js", "AWS EC2", "Rollup", "SWC" ]
         },
         {
             title: "Full Stack Developer",
@@ -80,7 +80,7 @@ export const config = {
             location: "Hybrid",
             period: "July 2019 — June 2022",
             description: "Elementor is one of the most popular website builders in the world, used by 10% of the internet to build over 16M websites. As a full Stack developer, I worked in the Editor Core Team. I participated and contributed to building the infrastructure/core refactoring, created tools that helped my team in the development process, refactored the product core components and wrote many tests to increase code quality. I'm the 4th contributor of Elementor.",
-            technologies: ["JavaScript", "PHP", "React", "WordPress", "REST API", "Testing", "Documentation"]
+            technologies: [ "JavaScript", "PHP", "React", "WordPress", "REST API", "Testing", "Documentation" ]
         },
         {
             title: "Developer & Linux, VoIP Servers Engineer",
@@ -88,7 +88,7 @@ export const config = {
             location: "Hybrid",
             period: "Feb 2017 — Jan 2019",
             description: "VoiceSpin is a company that provides cloud-based VoIP communication and customer engagement solutions to businesses. Created/Maintained tools for support engineers, developed dedicated custom features for customers, and integration with products in our/their end.",
-            technologies: ["VoIP", "Cloud", "Customer Support", "Integration", "Custom Development", "Asterisk", "Linux"]
+            technologies: [ "VoIP", "Cloud", "Customer Support", "Integration", "Custom Development", "Asterisk", "Linux" ]
         },
         {
             title: "Game Server Developer",
@@ -96,7 +96,7 @@ export const config = {
             location: "Remote",
             period: "2014 — 2019 (5+ years)",
             description: "RPG multiplayer game that was created by WebZen. Assembly was the first language I learned when I was in 10th grade. I learned reverse engineering using IDA PRO and OllyDBG while upgrading and maintaining the game servers. By changing the Entry Point of the game servers/client and hooking in my custom DLL, I was able to provide many add-ons and share the data between the game servers using a custom data server written in C++. Also, I created a game launcher in C# that updates the client and displays server updates.",
-            technologies: ["Assembly", "C", "C++", "PHP", "MS SQL", "MySQL", "JavaScript", "Reverse Engineering", "IDA PRO", "OllyDBG"]
+            technologies: [ "Assembly", "C", "C++", "PHP", "MS SQL", "MySQL", "JavaScript", "Reverse Engineering", "IDA PRO", "OllyDBG" ]
         }
     ],
 
@@ -104,56 +104,56 @@ export const config = {
         {
             title: "Vertix",
             description: "A Discord bot for managing voice channels. Built with TypeScript, Discord.js, and modern development practices. Provides advanced voice channel management features for Discord servers.",
-            technologies: ["TypeScript", "React", "Prisma", "MongoDB", "Jest", "Discord.js", "CI/CD", "Monorepo"],
+            technologies: [ "TypeScript", "React", "Prisma", "MongoDB", "Jest", "Discord.js", "CI/CD", "Monorepo" ],
             github: "https://github.com/VertixGG/vertix.gg",
             demo: "https://vertix.gg/"
         },
         {
             title: "ZenFlux",
             description: "A framework that offers functionalities related to building, publishing, and watching monorepo workspaces. Designed to streamline monorepo development workflows and improve developer experience.",
-            technologies: ["TypeScript", "Node.js", "pnpm", "SWC", "Rollup", "Monorepo", "CLI"],
+            technologies: [ "TypeScript", "Node.js", "pnpm", "SWC", "Rollup", "Monorepo", "CLI" ],
             github: "https://github.com/zenflux/zenflux",
             demo: "https://github.com/zenflux/zenflux"
         },
         {
             title: "ElementsHighlight",
             description: "A React + Vite + Tailwind + shadcn/ui powered Chrome extension that lets you highlight DOM elements on any visited page and lays the groundwork for adding contextual notes. Features Shadow DOM isolation, popup UI, and background service worker.",
-            technologies: ["TypeScript", "React", "Vite", "Tailwind CSS", "shadcn/ui", "Chrome Extension API", "Shadow DOM"],
+            technologies: [ "TypeScript", "React", "Vite", "Tailwind CSS", "shadcn/ui", "Chrome Extension API", "Shadow DOM" ],
             github: "https://github.com/iNewLegend/chrome-extension-elements-highlight",
             demo: "https://github.com/iNewLegend/chrome-extension-elements-highlight"
         },
         {
             title: "MuOnline.co.il",
             description: "RPG multiplayer game server maintenance and development. Learned reverse engineering using IDA PRO and OllyDBG while upgrading and maintaining game servers. Created custom DLL hooks and data server in C++.",
-            technologies: ["Assembly", "C", "C++", "PHP", "MS SQL", "MySQL", "JavaScript"],
+            technologies: [ "Assembly", "C", "C++", "PHP", "MS SQL", "MySQL", "JavaScript" ],
             github: "https://github.com/iNewLegend/muonline.co.il",
             demo: "https://muonline.co.il/"
         },
         {
             title: "PHP Image Dominant Colors",
             description: "A PHP library for extracting dominant colors from images. Built with pure PHP 8.0+ without any frameworks or external libraries. Features a web interface for testing and includes comprehensive test suites.",
-            technologies: ["PHP", "JavaScript", "CSS", "HTML", "Image Processing", "Color Analysis"],
+            technologies: [ "PHP", "JavaScript", "CSS", "HTML", "Image Processing", "Color Analysis" ],
             github: "https://github.com/iNewLegend/php-image-dominant-colors",
             demo: "https://inewlegend.com/projects/php-image-dominant-colors/public/index.html"
         },
         {
             title: "InfiniGrow",
             description: "A React demo application for budget overview with custom React commands infrastructure and fake data module. Built as a monorepo using Bun workspace management, featuring TypeScript, SCSS, and modern development practices.",
-            technologies: ["TypeScript", "React", "SCSS", "Bun", "Monorepo", "React Commands", "Fake Data Module"],
+            technologies: [ "TypeScript", "React", "SCSS", "Bun", "Monorepo", "React Commands", "Fake Data Module" ],
             github: "https://github.com/iNewLegend/infinigrow",
             demo: "https://inewlegend.com/projects/infinigrow/index.html"
         },
         {
             title: "Web Crawler",
             description: "A full-stack web crawler application with Laravel backend and Angular frontend. Features MongoDB integration, memory caching, and comprehensive crawling capabilities. Built with PHP 8.2+, Angular, and modern development workflows.",
-            technologies: ["PHP", "Laravel", "Angular", "MongoDB", "TypeScript", "Blade", "Web Crawling", "Memory Cache"],
+            technologies: [ "PHP", "Laravel", "Angular", "MongoDB", "TypeScript", "Blade", "Web Crawling", "Memory Cache" ],
             github: "https://github.com/iNewLegend/web-crawler",
             demo: "https://github.com/iNewLegend/web-crawler"
         },
         {
             title: "Demo Shop Catalog",
             description: "A demonstration project showcasing ZenFlux framework capabilities with a React-Redux frontend and PHP vanilla backend. Features a complete e-commerce catalog with cart functionality, pagination, and database integration. Demonstrates usage of @zenflux/core and @zenflux/redux packages.",
-            technologies: ["TypeScript", "React", "Redux", "PHP", "CSS", "Database Integration"],
+            technologies: [ "TypeScript", "React", "Redux", "PHP", "CSS", "Database Integration" ],
             github: "https://github.com/ZenFlux/demo-shop-catalog",
             demo: "http://inewlegend.com/zenflux/demos/shop-catalog/frontends/react-redux/build/"
         }
