@@ -8,13 +8,18 @@ import { downloadResumePDFViaService, PDF_PROGRESS_STEPS } from "@inewlegend/web
 export function Hero() {
     const [ loading, setLoading ] = useState( false );
     const [ step, setStep ] = useState<string | null>( null );
+    const [ menuOpen, setMenuOpen ] = useState( false );
 
-    const handleDownloadResume = async() => {
+    const handleDownloadResume = async( isCompact: boolean ) => {
         if ( loading ) return;
+        setMenuOpen( false );
         setLoading( true );
         setStep( "Preparing" );
         try {
-            await downloadResumePDFViaService( ( s ) => setStep( s ) );
+            await downloadResumePDFViaService({ 
+                onProgress: setStep,
+                filename: "leonid-vinikov.pdf",
+                compact: isCompact } );
         } catch ( error ) {
             console.error( "Error generating resume via service:", error );
             setStep( "Error" );
@@ -41,11 +46,39 @@ export function Hero() {
                         {config.hero.description}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                        <Button size="lg" className="w-full sm:w-auto" onClick={handleDownloadResume} disabled={loading}>
-                            { loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Download className="mr-2 h-4 w-4" /> }
-                            { loading ? ( step || PDF_PROGRESS_STEPS[ 0 ] ) : "Generate Resume" }
-                        </Button>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">         
+
+                        <div className="relative">
+                            <Button
+                                size="lg"
+                                className="w-full sm:w-auto"
+                                onClick={() => setMenuOpen( ( v ) => !v )}
+                                disabled={loading}
+                            >
+                                { loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Download className="mr-2 h-4 w-4" /> }
+                                { loading ? ( step || PDF_PROGRESS_STEPS[ 0 ] ) : "Generate Resume" }
+                            </Button>
+
+                            { menuOpen && !loading && (
+                                <div className="absolute left-0 mt-2 w-56 rounded-md border bg-background p-1 shadow-md z-50">
+                                    <button
+                                        type="button"
+                                        className="w-full text-left px-3 py-2 text-sm rounded hover:bg-muted"
+                                        onClick={() => handleDownloadResume( false )}
+                                    >
+                                        Full resume
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="w-full text-left px-3 py-2 text-sm rounded hover:bg-muted"
+                                        onClick={() => handleDownloadResume( true )}
+                                    >
+                                        Compact resume
+                                    </button>
+                                </div>
+                            ) }
+                        </div>
+
 
                         <div className="flex gap-4">
                             <Button variant="outline" size="icon" asChild>

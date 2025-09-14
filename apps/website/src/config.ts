@@ -38,7 +38,7 @@ export const config = {
             {
                 icon: "Code",
                 title: "Frontend Development",
-                description: "React, TypeScript, JavaScript, CSS/SASS, Tailwind, Material UI"
+                description: "React, TypeScript, JavaScript, CSS/SASS, Tailwind, Material UI, Zustand"
             },
             {
                 icon: "Database",
@@ -65,7 +65,7 @@ export const config = {
             location: "Onsite",
             period: "October 2024 — September 2025",
             description: "Matia unifies ETL, observability, catalog, and reverse ETL, so teams can focus on what they do best: driving actionable insights and accelerating innovation. As a Senior Full-Stack Engineer, I contributed across nearly all aspects of the development lifecycle. My work included building integrations, rewriting the frontend, doing peer reviews, translating Figma designs into functional features, adapting backend systems to support product requirements, and delivering end-to-end solutions that were actively used by customers.",
-            technologies: [ "React", "TypeScript", "Node.js", "MongoDB", "AWS", "ETL", "Observability" ]
+            technologies: [ "React", "TypeScript", "Node.js", "MongoDB", "Zustand", "AWS", "ETL", "Observability" ]
         },
         {
             title: "Freelance + Open Source Developer",

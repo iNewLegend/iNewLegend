@@ -5,7 +5,15 @@ export const PDF_PROGRESS_STEPS = [
     "Done"
 ] as const;
 
-export async function downloadResumePDFViaService( onProgress?: ( step: string ) => void ): Promise<void> {
+type DownloadResumeOptions = {
+    compact?: boolean;
+    filename?: string;
+    onProgress?: ( step: string ) => void
+};
+
+export async function downloadResumePDFViaService( options?: DownloadResumeOptions ): Promise<void> {
+    const { onProgress } = options || {};
+
     onProgress?.( PDF_PROGRESS_STEPS[ 0 ] );
 
     const serviceUrl = import.meta.env.VITE_WEBSITE_PDF_SERVICE_URL;
@@ -13,7 +21,7 @@ export async function downloadResumePDFViaService( onProgress?: ( step: string )
         throw new Error( "WEBSITE_PDF_SERVICE_URL is not configured" );
     }
 
-    const html = await renderResumeHTMLViaRoute();
+    const html = await renderResumeHTMLViaRoute( options );
 
     onProgress?.( PDF_PROGRESS_STEPS[ 1 ] );
 
@@ -45,7 +53,7 @@ export async function downloadResumePDFViaService( onProgress?: ( step: string )
         throw new Error( "PDF service returned empty PDF body" );
     }
     const url = URL.createObjectURL( blob );
-    const filename = "Leonid-Vinikov-Resume.pdf";
+    const filename = options?.filename ?? "resume.pdf";
 
     const isIOS = /iPad|iPhone|iPod/.test( navigator.userAgent );
     const isSafari = /^((?!chrome|android).)*safari/i.test( navigator.userAgent );
@@ -69,7 +77,7 @@ export async function downloadResumePDFViaService( onProgress?: ( step: string )
 
     onProgress?.( PDF_PROGRESS_STEPS[ 3 ] );
 }
-async function renderResumeHTMLViaRoute(): Promise<string> {
+async function renderResumeHTMLViaRoute( options?: DownloadResumeOptions ): Promise<string> {
     return new Promise<string>( ( resolve, reject ) => {
         const iframe = document.createElement( "iframe" );
         iframe.style.position = "fixed";
@@ -135,7 +143,11 @@ async function renderResumeHTMLViaRoute(): Promise<string> {
             reject( new Error( "Failed to load resume route" ) );
         };
 
-        iframe.src = `${ window.location.origin }/print/resume?ts=${ Date.now() }`;
+        const query = new URLSearchParams();
+        query.set( "ts", String( Date.now() ) );
+        if ( options?.compact ) query.set( "compact", "1" );
+
+        iframe.src = `${ window.location.origin }/print/resume?${ query.toString() }`;
         document.body.appendChild( iframe );
     } );
 }
