@@ -2,14 +2,13 @@
 <h3 align="center">Full stack developer from Isreal</h3>
 
 <!-- ⚡ Open to work -->
+-
 
 - 📄 Know about my experiences (CV) [Click here](https://docs.google.com/document/u/2/d/1Fvl9tajAf7YlyLfKBY-EHHbfsP8RD-bSD1JidNZ7ZJo/edit#heading=h.4wwmik6r5tke)
 
 - 📫 How to reach me **leonidvinikov@gmail.com**
 
-- 🔭 I’m currently working on, [vertix.gg](https://vertix.gg/) my personal [project](https://github.com/VertixGG/vertix.gg), using `typescript, react, nestjs, prisma, mongodb, jest, playwright, discord.js`
-
-- 🎯 Practicing with different technologies at [ZenFlux](https://github.com/ZenFlux/)
+- 🎯 Practicing with different technologies at [vertix.gg](https://github.com/VertixGG/vertix.gg), [ZenFlux](https://github.com/ZenFlux/)
 
 - ☰ I'm one of elementor top [contributors](https://github.com/elementor/elementor/graphs/contributors)
 <!--
