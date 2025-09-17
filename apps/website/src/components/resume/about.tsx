@@ -5,9 +5,7 @@ export type ResumeAboutProps = {
     showAbout: boolean;
 };
 
-import { ResumeSectionHeading } from "@inewlegend/website/src/components/resume/section-heading";
-
-export function ResumeAbout({ description, whatIDoTitle, whatIDoItems, showAbout }: ResumeAboutProps) {
+export function ResumeAbout( { description, whatIDoTitle, whatIDoItems, showAbout }: ResumeAboutProps ) {
     return (
         <div>
             {showAbout && (
@@ -18,12 +16,11 @@ export function ResumeAbout({ description, whatIDoTitle, whatIDoItems, showAbout
             )}
             <ResumeSectionHeading title={whatIDoTitle} />
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1 text-sm leading-snug text-gray-800 list-none m-0 p-0">
-                {whatIDoItems.map((item, index) => (
+                {whatIDoItems.map( ( item, index ) => (
                     <li key={index} className="break-inside-avoid text-[12px]">{item}.</li>
-                ))}
+                ) ) }
             </ul>
         </div>
     );
 }
-
 
