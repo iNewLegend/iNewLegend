@@ -1,4 +1,4 @@
-import { ResumeSectionHeading } from "@inewlegend/website/src/components/resume/section-heading";
+import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/section-heading.tsx";
 
 export type ResumeAboutProps = {
     description: string;

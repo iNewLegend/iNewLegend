@@ -1,24 +1,11 @@
 import DOMPurify from "dompurify";
 
-import { resumeTheme } from "@inewlegend/website/src/components/resume/theme";
-import { ResumeSectionHeading } from "@inewlegend/website/src/components/resume/section-heading";
+import { resumeTheme } from "@inewlegend/website/src/features/resume/theme.ts";
+import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/section-heading.tsx";
 
-export type ExperienceItem = {
-    title: string;
-    company: string;
-    location: string;
-    period: string;
-    description: string;
-    compactDescription?: string;
-    technologies: string[];
-};
+import type { TResumeExperienceProps } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
-export type ResumeExperienceProps = {
-    items: ExperienceItem[];
-    isCompact: boolean;
-};
-
-export function ResumeExperience( { items, isCompact }: ResumeExperienceProps ) {
+export function ResumeExperience( { items, isCompact }: TResumeExperienceProps ) {
     const decodeEntities = ( input: string ): string => {
         const el = document.createElement( "textarea" );
         el.innerHTML = input;

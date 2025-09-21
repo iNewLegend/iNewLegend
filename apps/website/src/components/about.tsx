@@ -7,7 +7,7 @@ import { SkillsPopup } from "@inewlegend/website/src/components/skills-popup";
 import { config } from "@inewlegend/website/src/config";
 
 export function About() {
-    const [isSkillsPopupOpen, setIsSkillsPopupOpen] = useState(false);
+    const [ isSkillsPopupOpen, setIsSkillsPopupOpen ] = useState( false );
 
     const iconMap = {
         Code,
@@ -24,9 +24,9 @@ export function About() {
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
                         {config.about.description}
                     </p>
-                    <Button 
-                        variant="outline" 
-                        onClick={() => setIsSkillsPopupOpen(true)}
+                    <Button
+                        variant="outline"
+                        onClick={() => setIsSkillsPopupOpen( true )}
                         className="inline-flex items-center gap-2"
                     >
                         <List className="h-4 w-4" />
@@ -45,19 +45,19 @@ export function About() {
                     <div>
                         <h3 className="text-2xl font-semibold mb-4">{config.about.whatIDo.title}</h3>
                         <ul className="space-y-3 text-muted-foreground">
-                            {config.about.whatIDo.items.map((item, index) => (
+                            {config.about.whatIDo.items.map( ( item, index ) => (
                                 <li key={index} className="flex items-start">
                                     <span className="text-primary mr-2">•</span>
                                     {item}
                                 </li>
-                            ))}
+                            ) )}
                         </ul>
                     </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {config.about.skills.map( ( skill, index ) => {
-                        const IconComponent = iconMap[skill.icon as keyof typeof iconMap];
+                    {config.compactSkills.map( ( skill, index ) => {
+                        const IconComponent = iconMap[ skill.icon as keyof typeof iconMap ];
                         return (
                             <Card key={index} className="text-center">
                                 <CardHeader>
@@ -72,10 +72,10 @@ export function About() {
                     } )}
                 </div>
             </div>
-            
-            <SkillsPopup 
-                isOpen={isSkillsPopupOpen} 
-                onClose={() => setIsSkillsPopupOpen(false)} 
+
+            <SkillsPopup
+                isOpen={isSkillsPopupOpen}
+                onClose={() => setIsSkillsPopupOpen( false )}
             />
         </section>
     );

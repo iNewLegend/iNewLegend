@@ -11,8 +11,8 @@ export const fullstackConfig = {
 
     hero: {
         title: "Hi, I'm",
-        subtitle: "Senior Frontend Developer / Full‑Stack",
-        description: "I'm a developer with 8 years building reliable, scalable systems across frontend and backend. I focus on data and the logic that powers user interfaces, designing clean APIs, refactoring core, and shipping end‑to‑end features. I'm persistent with complex problems and committed to maintainable, well‑tested code."
+        subtitle: "Senior Frontend / Full‑Stack Developer",
+        description: "I'm a developer with more then 5 years of experience building reliable, scalable systems across frontend and backend. I focus on data and the logic that powers user interfaces, designing clean APIs, refactoring core, and shipping end‑to‑end features. I'm persistent with complex problems and committed to maintainable, well‑tested code."
     },
 
     about: {
@@ -32,13 +32,7 @@ export const fullstackConfig = {
                 "Deliver end‑to‑end features across frontend, backend",
                 "Utilize tools like Cursor AI, and LLMs to improve productivity"
             ]
-        },
-        skills: [
-            { icon: "Code", title: "Frontend Development", description: "React, TypeScript, JavaScript, CSS/SASS, Tailwind, Material UI, Zustand" },
-            { icon: "Database", title: "Backend Development", description: "Node.js, PHP, MongoDB, MySQL" },
-            { icon: "Cloud", title: "Platform Engineering", description: "EC2, Docker, CI/CD, Monorepo Setup, Nx, Building Tools" },
-            { icon: "Smartphone", title: "Testing & Quality", description: "Jest, Playwright, Unit/Integration/E2E Testing, TDD" }
-        ]
+        }
     },
 
     experience: [
@@ -52,7 +46,7 @@ export const fullstackConfig = {
             technologies: [ "React", "TypeScript", "Node.js", "MongoDB", "Zustand", "AWS", "ETL", "Observability" ]
         },
         {
-            title: "Freelance + Open Source Developer",
+            title: "Freelance",
             company: "Self-Employed",
             location: "Remote",
             period: "2022 — 2024 (2+ years)",
@@ -110,6 +104,12 @@ export const fullstackConfig = {
         "Coding Style": [ "Code Standards & Code Smell Detection", "OOP & Design patterns", "Test-Driven Development (TDD)", "Composition over inheritance", "Type safety" ],
         "Database Experience": [ "MongoDB", "MySQL", "MSSQL", "DynamoDB", "Snowflake" ]
     },
+    compactSkills: [
+        { icon: "Code", title: "Frontend Development", description: "React, TypeScript, JavaScript, CSS/SASS, Tailwind, Material UI, Zustand" },
+        { icon: "Database", title: "Backend Development", description: "Node.js, PHP, MongoDB, MySQL" },
+        { icon: "Cloud", title: "Platform Engineering", description: "EC2, Docker, CI/CD, Monorepo Setup, Nx, Building Tools" },
+        { icon: "Smartphone", title: "Testing & Quality", description: "Jest, Playwright, Unit/Integration/E2E Testing, TDD" }
+    ],
 
     contact: {
         title: "Get In Touch",
