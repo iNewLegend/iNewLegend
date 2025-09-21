@@ -10,7 +10,7 @@ A storage repository that holds a vast amount of raw data in its native format.
 
 ## ETL
 Extract, Transform, Load, a process that involves extracting data from a source, transforming it into a usable format, and loading it into a destination.
-  * _Example_: Extract data from **MySQL**, transform it into a [denormalized](dictionary.md#denormalization) format, and load it into a **Data Warehouse** like **Snowflake**.
+  * _Example_: Extract data from **MySQL**, transform it into a [denormalized](/docs/dictionary/overview#denormalization) format, and load it into a **Data Warehouse** like **Snowflake**.
 
 ## ELT
 Extract, Load, Transform, same as **ETL**, but data is first loaded into the target system and then transformed within the target.
@@ -52,7 +52,8 @@ Is a **D**irected **A**cyclic **G**raph, a type of graph whose nodes are directi
   * Each node in a DAG typically represents a task or data transformation step.
   * The directed edges between nodes show the order of execution and data dependencies.
   * Tools like Apache Airflow use DAGs to schedule and orchestrate data workflows.
-![dag.png](../../images/dag.png)
+
+![dag.png](/images/dag.png)
 
 
 ## Embedded Data vs Referenced data

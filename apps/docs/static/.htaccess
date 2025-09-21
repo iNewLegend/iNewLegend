@@ -1,0 +1,14 @@
+DirectoryIndex index.html
+
+# Enable mod_rewrite
+RewriteEngine On
+
+# Handle client-side routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Set proper MIME types
+AddType text/html .html
+AddType application/javascript .js
+AddType text/css .css

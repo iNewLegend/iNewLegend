@@ -15,10 +15,10 @@ parts of a sentence and are used to indicate what the subject does or what happe
 ## Reconcile — `rec·on·cile`
 Reconcile is a [verb](#verb) associated with restoring harmony or making things compatible. It's used in various contexts, including interpersonal relationships, financial accounting, and programming.
 
-##### Non-Technical Interpretation {id="non-technical-interpretation_1"}
+##### Non-Technical Interpretation
 In daily life, reconciliation might occur between friends who, after a disagreement, discuss their issues, reach common understanding, and repair their relationship. In finance, it could refer to an individual or company cross-verifying their records with bank statements to ensure all transactions are accounted for.
 
-#### Example (Non-Programming Context) {id="example-non-programming-context_1"}
+#### Example (Non-Programming Context)
 
 Suppose two individuals, Alex and Taylor, were great friends but had a major disagreement that led to a bitter fallout. After some time, they both realize the value of their friendship and decide to reconcile.
 
@@ -31,12 +31,12 @@ Suppose two individuals, Alex and Taylor, were great friends but had a major dis
 
 The process concludes with both Alex and Taylor agreeing to forgive each other, forget the past differences, and focus on preserving their friendship in the future. They make compromises where necessary and promise to respect each other's viewpoints moving forward, thus successfully reconciling their relationship.
 
-### Technical Interpretation {id="technical-interpretation_1"}
+### Technical Interpretation
 In a programming context, particularly in languages like **JavaScript**, reconciliation refers to the harmonization of two data sets to ensure they match. It is crucial in tasks like database management.
 
 In JavaScript libraries like **React**, it describes how **React** updates the **DOM**. The process involves comparing the new **VirtualDOM** with the previously rendered one and only updating elements that have changed.
 
-### Example (Programming Context) {id="example-programming-context_1"}
+### Example (Programming Context)
 Consider two copies of a document:
 1. `Server copy` - located on a remote server.
 2. `Local copy` - stored on your device for offline editing.
@@ -55,12 +55,12 @@ Consider two copies of a document:
 Impair is a [verb](#verb) that means to weaken or damage something. This term is frequently used in contexts ranging from health
 and well-being to operational efficiency and system performance.
 
-### Non-Technical Interpretation {id="non-technical-interpretation_2"}
+### Non-Technical Interpretation
 
 Impairment could refer to the reduction in someone's ability due to various factors. For example, consuming too much
 alcohol can impair one's ability to drive, making it unsafe.
 
-### Technical Interpretation {id="technical-interpretation_2"}
+### Technical Interpretation
 
 In programming, impairment can refer to the degradation of system performance or functionality. For example, excessive
 memory use in an application can impair its speed and responsiveness.
@@ -77,13 +77,13 @@ condense larger topics into a brief, easily digestible form.
 Forecasting is the process of predicting future trends based on current and historical data. It is utilized across
 various fields such as finance, meteorology, and business planning.
 
-#### Non-Technical Interpretation {id="non-technical-interpretation_3"}
+#### Non-Technical Interpretation
 
 In daily life, forecasting could be exemplified by predicting the weather. Meteorologists analyze historical weather
 patterns and current climatic conditions to forecast upcoming weather, helping individuals plan their activities and
 ensure safety.
 
-#### Technical Interpretation {id="technical-interpretation_3"}
+#### Technical Interpretation
 
 In programming, forecasting involves using algorithms and models to predict future events based on input data. This is
 often achieved through statistical methods or machine learning models.
@@ -95,12 +95,12 @@ often achieved through statistical methods or machine learning models.
 Critique is both a [noun](#noun) and a [verb](#verb) commonly associated with the evaluation or detailed analysis of a work or
 performance. It can be applied in various disciplines, including literature, art, and programming.
 
-### Non-Technical Interpretation {id="non-technical-interpretation_5"}
+### Non-Technical Interpretation
 
 In everyday life, a critique might involve reviewing a book, movie, or piece of art. The goal is to provide an
 assessment that highlights both strengths and weaknesses based on set criteria or personal judgment.
 
-### Example (Non-Programming Context) {id="example-non-programming-context_4"}
+### Example (Non-Programming Context)
 
 Consider a movie critic who writes reviews for a popular website:
 **Review Process**: The critic watches a newly released film and then writes a critique that covers various aspects:
@@ -135,10 +135,10 @@ Imagine a software development team working on a new feature for a web applicati
 
 <!-- ----------------------------------------------------------- -->
 
-## Denormalization — `dee-nor-muh-luh-zay-shun` {id="denormalization"}
+## Denormalization — `dee-nor-muh-luh-zay-shun`
 Is the process of trying to improve the reading performance of a database at the cost of losing some writing performance.
 
-## Distributed — `dih-srib-yoo-tid` {id="distributed"}
+## Distributed — `dih-srib-yoo-tid`
 
 Distributed refers to a system that is spread across multiple servers. This topology can enhance performance,
 scalability, and fault tolerance.
@@ -161,12 +161,12 @@ Consider a global e-commerce company with multiple distribution centers:
 4. **Load Balancing**: Workload and inventory levels are balanced across the warehouses to ensure timely deliveries and
    reduce bottlenecks.
 
-### Technical Interpretation {id="technical-interpretation_5"}
+### Technical Interpretation
 
 In software development, a distributed system involves multiple servers working together to achieve a common goal, often
 to enhance reliability and scalability.
 
-### Example (Programming Context) {id="example-programming-context_3"}
+### Example (Programming Context)
 
 Imagine a web application with multiple microservices deployed on different servers:
 
@@ -184,9 +184,9 @@ This approach helps in achieving better scalability, fault tolerance, and mainta
 
 <!-- ----------------------------------------------------------- -->
 
-## Diversifying — `dih-vur-see-fay-ing` {id="diversifying"}
+## Diversifying — `dih-vur-see-fay-ing`
 
-### Example (Non-Programming Context) {id="example-non-programming-context_3"}
+### Example (Non-Programming Context)
 
 Consider a person planning a variety of investments to stabilize and grow their portfolio:
 **Diversifying Process**:
@@ -197,12 +197,12 @@ Consider a person planning a variety of investments to stabilize and grow their 
 4. **Monitor and Adjust**: Regularly review the performance of the portfolio and make adjustments as needed to maintain
    the desired level of diversification.
 
-### Technical Interpretation {id="technical-interpretation_6"}
+### Technical Interpretation
 
 In software development, diversifying might refer to distributing risk by using multiple technologies or approaches to
 achieve a goal.
 
-### Example (Programming Context) {id="example-programming-context_4"}
+### Example (Programming Context)
 
 Imagine a company deploying its applications using various cloud service providers:
 **Diversifying Process**:
@@ -220,10 +220,10 @@ Imagine a company deploying its applications using various cloud service provide
 Decouple is a [verb](#verb)
 that means to separate or disengage two or more things that were previously connected or dependent on each other.
 
-### Non-Technical Interpretation {id="non-technical-interpretation_4"}
+### Non-Technical Interpretation
 In everyday life, decoupling can refer to the process of separating two activities or systems that were previously linked. For example, in a business context, a company might decouple its marketing and sales departments to allow each to operate more independently and efficiently.
 
-### Example (Non-Programming Context) {id="example-non-programming-context_2"}
+### Example (Non-Programming Context)
 Consider a company that decides to decouple its customer service and technical support teams:
 **Issue**: The combined team is overwhelmed with both customer service and technical support tasks, leading to inefficiencies and delays.
 **Decoupling Process**:
@@ -231,10 +231,10 @@ Consider a company that decides to decouple its customer service and technical s
 2. Each team is given specific responsibilities and resources to handle their respective tasks.
 3. The teams operate independently but collaborate when necessary to resolve customer issues.
 
-### Technical Interpretation {id="technical-interpretation_4"}
+### Technical Interpretation
 In software development, decoupling refers to the practice of designing systems and components in a way that reduces dependencies between them. This makes the system more modular, easier to maintain, and more flexible to changes.
 
-### Example (Programming Context) {id="example-programming-context_2"}
+### Example (Programming Context)
 Consider a web application with tightly coupled frontend and backend components:
 **Issue**: Changes in the backend code often require corresponding changes in the frontend code, making the system difficult to maintain.
 **Decoupling Solution**:
@@ -242,23 +242,23 @@ Consider a web application with tightly coupled frontend and backend components:
 2. The frontend communicates with the backend through these APIs, allowing each module to be developed and maintained independently.
 3. Changes in the backend can be made without affecting the frontend, as long as the API contract is maintained.
 
-## Traversing — `truh-vurs-ing` {id="traversing"}
+## Traversing — `truh-vurs-ing`
 Traversing is a [verb](#verb) that means to move through, over, or across something. In programming, it often refers to the process of visiting all the nodes or elements in a data structure, such as an array or a tree.
 
-### Non-Technical Interpretation {id="non-technical-interpretation_7"}
+### Non-Technical Interpretation
 In everyday life, traversing can refer to the act of moving through a physical space. For example, hiking through a forest involves traversing various terrains and obstacles.
 
-### Example (Non-Programming Context) {id="example-non-programming-context_5"}
+### Example (Non-Programming Context)
 Consider a person hiking through a forest:
 **Traversing Process**:
 1. **Starting Point**: The hiker begins at the trailhead.
 2. **Path Navigation**: The hiker follows the marked trail, navigating through trees, rocks, and streams.
 3. **Destination**: The hiker reaches the end of the trail, having traversed the entire forest.
 
-### Technical Interpretation {id="technical-interpretation_7"}
+### Technical Interpretation
 In programming, traversing refers to the process of visiting each element in a data structure to perform some operation, such as searching or modifying data.
 
-### Example (Programming Context) {id="example-programming-context_5"}
+### Example (Programming Context)
 Consider an array of numbers that needs to be traversed to find the sum of all elements:
 **Traversing Process**:
 1. **Initialize Sum**: Set a variable to hold the sum, initially set to 0.
@@ -277,49 +277,49 @@ numbers.forEach(number => {
 console.log(`The sum of the array is: ${sum}`); 
 ```
 
-## Leaf — `leef` {id="leaf"}
+## Leaf — `leef`
 
 **Leaf** is a term often used in data structures, particularly trees, to refer to a node that does not have any children.
 
-### Non-Technical Interpretation {id="non-technical-interpretation_6"}
+### Non-Technical Interpretation
 In everyday life, a leaf is a part of a plant or tree that typically grows from a stem and is involved in photosynthesis.
 
-### Example (Non-Programming Context) {id="example-non-programming-context_6"}
+### Example (Non-Programming Context)
 Consider a tree in a garden:
 **Leaf Characteristics**:
 1. **Growth**: Leaves grow from the branches of the tree.
 2. **Function**: They help in photosynthesis, converting sunlight into energy for the tree.
 
-### Technical Interpretation {id="technical-interpretation_8"}
+### Technical Interpretation
 In programming, a leaf node is a node in a tree data structure that does not have any child nodes.
 
-### Example (Programming Context) {id="example-programming-context_6"}
+### Example (Programming Context)
 Consider a binary tree where each node has at most two children:
 **Leaf Node Identification**:
 1. **Node Definition**: A node with no children is considered a leaf node.
 2. **Traversal**: During tree [traversal](#traversing), leaf nodes are identified and processed accordingly.
 
-## Dispatch — `dis·patch` {id="dispatch"}
-![dispatch.png](dispatch.png)
+## Dispatch — `dis·patch`
+![dispatch.png](/images/dispatch.png)
 
 **Dispatch** is a [verb](#verb) that means to send off to a destination or for a purpose.
 
 In programming, it often refers to sending a message or event to a handler.
 
-### Non-Technical Interpretation {id="non-technical-interpretation_8"}
+### Non-Technical Interpretation
 In everyday life, dispatch can refer to sending off a package or a person to a specific location.
 
-### Example (Non-Programming Context) {id="example-non-programming-context_7"}
+### Example (Non-Programming Context)
 Consider a delivery service:
 **Dispatch Process**:
 1. **Order Received**: An order is placed by a customer.
 2. **Package Prepared**: The package is prepared for delivery.
 3. **Dispatch**: The package is dispatched to the customer's address.
 
-### Technical Interpretation {id="technical-interpretation_9"}
+### Technical Interpretation
 In programming, dispatching refers to sending an event or message to a specific handler or function.
 
-### Example (Programming Context) {id="example-programming-context_7"}
+### Example (Programming Context)
 Consider an event-driven system where events are dispatched to handlers:
 **Event Dispatching**:
 1. **Event Creation**: An event is created when a user performs an action.
@@ -331,27 +331,27 @@ document.addEventListener('click', (event) => {
 });
 ```
 
-## Constraints — `kuhn-streynz` {id="constrains"} 
-![constraints.png](constraints.png)
+## Constraints — `kuhn-streynz` 
+![constraints.png](/images/constraints.png)
 
 **Constrains** is a [verb](#verb) that means to restrict or limit. 
 
 In programming, constraints are rules or conditions that restrict the values or behavior of data.
 
-### Non-Technical Interpretation {id="non-technical-interpretation_9"}
+### Non-Technical Interpretation
 In everyday life, constraints can refer to limitations or restrictions placed on actions or processes.
 
-### Example (Non-Programming Context) {id="example-non-programming-context_8"}
+### Example (Non-Programming Context)
 Consider a budget constraint:
 **Budget Planning**:
 1. **Income Assessment**: Determine the total income.
 2. **Expense Allocation**: Allocate funds to various expenses within the income limit.
 3. **Constraint**: Ensure that total expenses do not exceed the income.
 
-### Technical Interpretation {id="technical-interpretation_10"}
+### Technical Interpretation
 In programming, constraints are conditions that data must satisfy, often used in databases and algorithms.
 
-### Example (Programming Context) {id="example-programming-context_8"}
+### Example (Programming Context)
 Consider a database table with a constraint on a column:
 **Database Constraint**:
 1. **Table Definition**: Define a table with columns.
@@ -364,33 +364,34 @@ CREATE TABLE Users (
     Age INT CHECK (Age >= 18)
 );
 ```
-## Odds — `awdz` {id="odds"}
-![odds.png](odds.png)
+## Odds — `awdz`
+![odds.png](/images/odds.png)
 
 **Odds** is a [noun](#noun) that refers to the likelihood or probability of a particular outcome. 
 
 In programming, it often relates to probability and statistics.
 
-### Non-Technical Interpretation {id="non-technical-interpretation_10"}
+### Non-Technical Interpretation
 In everyday life, odds can refer to the chances of a specific event happening.
 
-### Technical Interpretation {id="technical-interpretation_11"}
+### Technical Interpretation
 In programming, odds can be calculated using probability functions and statistical methods.
 
-## Novel — `nov-uhl` {id="novel"}
-![novel.png](novel.png)
+## Novel — `nov-uhl`
+
+![novel.png](/images/novel.png)
 **Novel** is a [noun](#noun) that refers to a long narrative work of fiction.
 
 In programming, it can refer to new or unique approaches and solutions.
 
-### Non-Technical Interpretation {id="non-technical-interpretation_11"}
+### Non-Technical Interpretation
 In everyday life, a novel is a book that tells a fictional story, often with complex characters and plots.
 
-### Technical Interpretation {id="technical-interpretation_12"}
+### Technical Interpretation
 In programming, novel can refer to innovative or unique solutions to problems.
 
-## Concerns — `kuhn-surndz` {id="concerns"}
-![concerns.png](concerns.png)
+## Concerns — `kuhn-surndz`
+![concerns.png](/images/concerns.png)
 
 
 **Concerns** is a [noun](#noun) that refers to worries, interests, or issues that are important to someone.
@@ -400,10 +401,10 @@ It can be broad, like handling the database, or small, like doing a basic calcul
 depending on what developers are focusing on.
 
 
-### Non-Technical Interpretation {id="non-technical-interpretation_12"}
+### Non-Technical Interpretation
 In daily life, concerns can be personal, work-related, or social issues that matter to a person.
 
-### Technical Interpretation {id="technical-interpretation_13"}
+### Technical Interpretation
 In programming, concerns can refer to different aspects of software design, 
 such as separation of concerns or security concerns.
 

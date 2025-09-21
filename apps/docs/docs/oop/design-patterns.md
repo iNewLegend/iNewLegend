@@ -1,5 +1,3 @@
-<show-structure for="chapter" depth="2">
-
 # OOP - Design Patterns 
 
 ## Introduction
@@ -403,7 +401,7 @@ clientCode( adapter );
 
 ### Bridge
 
-**Problem**: [Decouple](dictionary.md#decouple) an abstraction from its implementation so that the two can vary
+**Problem**: [Decouple](/docs/dictionary/overview#decouple) an abstraction from its implementation so that the two can vary
 independently.
 
 **Real-Life Example**: Device and remote control; the remote works with different devices.
