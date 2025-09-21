@@ -24,7 +24,7 @@ export function Resume() {
         const handler = ( e: MessageEvent ) => {
             if ( e.origin !== window.location.origin ) return;
             const data = e.data as { type?: string; payload?: TResumeParams };
-            if ( data?.type === "VertixGUI/Resume/UpdateParams" && data.payload ) {
+            if ( data?.type === "Website/Resume/UpdateParams" && data.payload ) {
                 setParams( data.payload );
                 const sp = toSearchParams( data.payload );
                 const newUrl = `${ window.location.pathname }${ sp.toString() ? `?${ sp.toString() }` : "" }`;

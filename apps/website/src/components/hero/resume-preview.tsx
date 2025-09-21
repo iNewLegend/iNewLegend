@@ -7,35 +7,35 @@ interface ResumePreviewProps {
     params: TResumeParams;
 }
 
-export const ResumePreview = memo( function ResumePreview( { src, params }: ResumePreviewProps ) {
-    const iframeRef = useRef<HTMLIFrameElement>( null );
+export const ResumePreview = memo(function ResumePreview({ src, params }: ResumePreviewProps) {
+    const iframeRef = useRef<HTMLIFrameElement>(null);
 
-    const baseSrc = useMemo( () => {
-        const idx = src.indexOf( "?" );
-        return idx >= 0 ? src.slice( 0, idx ) : src;
-    }, [ src ] );
+    const baseSrc = useMemo(() => {
+        const idx = src.indexOf("?");
+        return idx >= 0 ? src.slice(0, idx) : src;
+    }, [src]);
 
-    const [ currentBaseSrc, setCurrentBaseSrc ] = useState( baseSrc );
+    const [currentBaseSrc, setCurrentBaseSrc] = useState(baseSrc);
 
-    useEffect( () => {
-        if ( baseSrc !== currentBaseSrc ) {
-            if ( iframeRef.current ) {
+    useEffect(() => {
+        if (baseSrc !== currentBaseSrc) {
+            if (iframeRef.current) {
                 iframeRef.current.src = baseSrc;
             }
-            setCurrentBaseSrc( baseSrc );
+            setCurrentBaseSrc(baseSrc);
         }
-    }, [ baseSrc, currentBaseSrc ] );
+    }, [baseSrc, currentBaseSrc]);
 
-    useEffect( () => {
+    useEffect(() => {
         const win = iframeRef.current?.contentWindow;
-        if ( !win ) return;
+        if (!win) return;
         try {
-            win.postMessage( {
-                type: "VertixGUI/Resume/UpdateParams",
+            win.postMessage({
+                type: "Website/Resume/UpdateParams",
                 payload: params
-            }, window.location.origin );
-        } catch {}
-    }, [ params ] );
+            }, window.location.origin);
+        } catch { }
+    }, [params]);
 
     return (
         <div className="flex-1 bg-white text-black relative overflow-hidden">
@@ -51,4 +51,4 @@ export const ResumePreview = memo( function ResumePreview( { src, params }: Resu
             />
         </div>
     );
-} );
+});
