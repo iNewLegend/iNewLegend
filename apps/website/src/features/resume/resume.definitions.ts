@@ -19,7 +19,6 @@ export const RESUME_PARAM_KEYS = {
     ORDER: "order"
 } as const;
 
-
 export const RESUME_DEFAULT_PARAMS: TResumeParams = {
     compact: {
         summary: false,
@@ -36,8 +35,8 @@ export const RESUME_DEFAULT_PARAMS: TResumeParams = {
     ]
 };
 
-export type TResumeOrderKey = (typeof RESUME_SECTION_KEYS)[number];
-export type TResumeOrderKeyWithCompact = (typeof RESUME_SECTION_WITH_COMPACT_KEYS)[number];
+export type TResumeOrderKey = ( typeof RESUME_SECTION_KEYS )[number];
+export type TResumeOrderKeyWithCompact = ( typeof RESUME_SECTION_WITH_COMPACT_KEYS )[number];
 
 export type TResumeCompactParams = {
     [key in TResumeOrderKeyWithCompact]: boolean;
@@ -60,7 +59,6 @@ export type TResumeExperienceItem = {
     compactDescription?: string;
     technologies: string[];
 };
-
 export type TResumeExperienceProps = {
     items: TResumeExperienceItem[];
     isCompact: boolean;

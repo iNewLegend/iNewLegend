@@ -1,4 +1,4 @@
-import { resumeTheme } from "@inewlegend/website/src/features/resume/theme.ts";
+import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
 
 export type ResumeSectionHeadingProps = {
     title: string;

@@ -1,14 +1,14 @@
 
 import { config } from "@inewlegend/website/src/config";
-import { ResumeHeader } from "@inewlegend/website/src/features/resume/header";
-import { ResumeCompactSummary, ResumeCompactSummary as ResumeSummary } from "@inewlegend/website/src/features/resume/compact-summary";
-import { ResumeCompactSkills } from "@inewlegend/website/src/features/resume/compact-skills";
-import { ResumeAbout } from "@inewlegend/website/src/features/resume/about";
-import { ResumeExperience } from "@inewlegend/website/src/features/resume/experience";
-import { ResumeSkills } from "@inewlegend/website/src/features/resume/skills";
-import { ResumeProjects, ResumeCompactProjects } from "@inewlegend/website/src/features/resume/projects.tsx";
+import { ResumeHeader } from "@inewlegend/website/src/features/resume/resume-header";
+import { ResumeCompactSummary, ResumeCompactSummary as ResumeSummary } from "@inewlegend/website/src/features/resume/resume-compact-summary";
+import { ResumeCompactSkills } from "@inewlegend/website/src/features/resume/resume-compact-skills";
+import { ResumeAbout } from "@inewlegend/website/src/features/resume/resume-about";
+import { ResumeExperience } from "@inewlegend/website/src/features/resume/resume-experience";
+import { ResumeSkills } from "@inewlegend/website/src/features/resume/resume-skills";
+import { ResumeProjects, ResumeCompactProjects } from "@inewlegend/website/src/features/resume/resume-projects.tsx";
 
-import { resumeTheme } from "@inewlegend/website/src/features/resume/theme";
+import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme";
 
 import { parseResumeParams, getEffectiveOrder, toSearchParams } from "@inewlegend/website/src/features/resume/resume-params.ts";
 

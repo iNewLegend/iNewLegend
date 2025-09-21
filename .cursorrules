@@ -1,0 +1,66 @@
+# Cursor Rules for Commit Messages
+
+When generating commit messages, follow this exact format:
+
+## Format Template
+
+```
+Tag1: (`Tag2`) - Tag3
+```
+
+## Tag1 Categories (Required)
+
+Choose ONE from these options:
+
+- `feat` - New feature or functionality
+- `fix` - Bug fix or issue resolution
+- `chore` - Maintenance tasks, dependencies, or tooling
+- `infra` - Infrastructure changes, CI/CD, deployment
+- `tweak` - Minor improvements, refactoring, or adjustments
+
+## Tag2 - Package/Area (Required)
+
+Specify the current package or area in the monorepo:
+
+- `website` - Frontend website application
+- `docs` - Documentation site
+- `shared` - Shared utilities or components
+- `config` - Configuration files
+- `scripts` - Build or deployment scripts
+- `root` - Root-level changes affecting the entire workspace
+
+## Tag3 - Description (Required)
+
+Provide a clear, concise explanation of what was done:
+
+- Use present tense ("Add feature" not "Added feature")
+- Be specific about the changes
+- Focus on the "what" and "why"
+- Keep it under 50 characters when possible
+- Use lowercase (except for proper nouns)
+
+## Examples
+
+```
+feat: (`website`) - add resume section reordering functionality
+fix: (`docs`) - resolve broken internal links in api documentation
+chore: (`shared`) - update typescript dependencies to latest versions
+infra: (`root`) - configure automated deployment pipeline
+tweak: (`website`) - improve resume component naming consistency
+```
+
+## Instructions
+
+When generating commit messages:
+
+1. Analyze the changes - Review file modifications, additions, deletions
+2. Determine the primary change type - Choose the most appropriate Tag1
+3. Identify the affected area - Determine which package/area is primarily affected
+4. Summarize the change - Write a clear, concise description
+5. Follow the exact format - Ensure proper syntax and capitalization
+6. Be consistent - Use the same style and terminology across commits
+
+Always provide the commit message in this exact format:
+Tag1: (`Tag2`) - Tag3
+
+Do not include additional explanations, just the commit message itself.

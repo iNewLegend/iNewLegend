@@ -1,6 +1,6 @@
-import { resumeTheme } from "@inewlegend/website/src/features/resume/theme.ts";
+import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
 
-export type PersonalInfo = {
+export type ResumePersonalInfo = {
     name: string;
     email: string;
     phone: string;
@@ -10,7 +10,7 @@ export type PersonalInfo = {
 };
 
 export type ResumeHeaderProps = {
-    personal: PersonalInfo;
+    personal: ResumePersonalInfo;
     subtitle: string;
 };
 
