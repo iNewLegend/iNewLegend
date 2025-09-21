@@ -5,7 +5,7 @@ export const fullstackConfig = {
         email: "leonidvinikov@gmail.com",
         phone: "+972 053 919 7333",
         location: "Israel, Holon",
-        github: "https://github.com/inewlegend",
+        github: "https://inewlegend.com",
         linkedin: "https://www.linkedin.com/in/inewlegend/"
     },
 
@@ -69,8 +69,8 @@ export const fullstackConfig = {
             location: "Hybrid",
             period: "2017 — 2019 (2+ years)",
             description: "VoiceSpin is a company that provides cloud-based VoIP communication and customer engagement solutions to businesses. Created/Maintained tools for support engineers, developed dedicated custom features for customers, and integration with products in our/their end.",
-            compactDescription: "Built internal tools and custom VoIP features; integrated customer systems and supported production.",
-            technologies: [ "VoIP", "Cloud", "Customer Support", "Integration", "Custom Development", "Asterisk", "Linux" ]
+            compactDescription: "Built internal tools and custom VoIP features; create custom apps for customers. integrated customer systems and supported production.",
+            technologies: [ "PHP", "JavaScript", "bash", "VoIP", "Cloud", "Customer Support", "Integration", "Custom Development", "Asterisk", "Linux" ]
         },
         {
             title: "Game Server Developer",

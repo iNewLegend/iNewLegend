@@ -14,8 +14,30 @@ export const RESUME_SECTION_WITH_COMPACT_KEYS = [
     "projects"
 ] as const;
 
-export type TResumeOrderKey = ( typeof RESUME_SECTION_KEYS )[number];
-export type TResumeOrderKeyWithCompact = ( typeof RESUME_SECTION_WITH_COMPACT_KEYS )[number];
+export const RESUME_PARAM_KEYS = {
+    COMPACT: "compact",
+    ORDER: "order"
+} as const;
+
+
+export const RESUME_DEFAULT_PARAMS: TResumeParams = {
+    compact: {
+        summary: false,
+        skills: true,
+        experience: true,
+        projects: true
+    },
+    order: [
+        "summary",
+        "about",
+        "skills",
+        "experience",
+        "projects"
+    ]
+};
+
+export type TResumeOrderKey = (typeof RESUME_SECTION_KEYS)[number];
+export type TResumeOrderKeyWithCompact = (typeof RESUME_SECTION_WITH_COMPACT_KEYS)[number];
 
 export type TResumeCompactParams = {
     [key in TResumeOrderKeyWithCompact]: boolean;
@@ -27,17 +49,6 @@ export type TResumeParams = {
 
     // Order of sections in the resume body
     order: TResumeOrderKey[]
-};
-
-// Single source of truth for default values
-export const resumeDefaultParams: TResumeParams = {
-    compact: {
-        summary: false,
-        skills: false,
-        experience: false,
-        projects: false
-    },
-    order: [ ...RESUME_SECTION_KEYS ]
 };
 
 export type TResumeExperienceItem = {

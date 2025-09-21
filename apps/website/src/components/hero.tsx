@@ -1,7 +1,7 @@
 import { Download } from "lucide-react";
 import { useMemo, useState } from "react";
 
-import { resumeDefaultParams, RESUME_SECTION_KEYS } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
+import { RESUME_DEFAULT_PARAMS, RESUME_SECTION_KEYS } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
 import { Button } from "@inewlegend/website/src/components/ui/button";
 import { config } from "@inewlegend/website/src/config";
@@ -17,50 +17,50 @@ import { SocialLinks } from "@inewlegend/website/src/components/hero/social-link
 import type { TResumeOrderKey, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
 export function Hero() {
-    const [ resumeOpen, setResumeOpen ] = useState( false );
-    const [ params, setParams ] = useState<TResumeParams>( resumeDefaultParams );
-    const [ generating, setGenerating ] = useState( false );
-    const [ step, setStep ] = useState<string | null>( null );
+    const [resumeOpen, setResumeOpen] = useState(false);
+    const [params, setParams] = useState<TResumeParams>(RESUME_DEFAULT_PARAMS);
+    const [generating, setGenerating] = useState(false);
+    const [step, setStep] = useState<string | null>(null);
 
-    const resumeSrc = useMemo( () => {
-        const sp = toSearchParams( params );
+    const resumeSrc = useMemo(() => {
+        const sp = toSearchParams(params);
         const qs = sp.toString();
-        return `/print/resume${ qs ? `?${ qs }` : "" }`;
-    }, [ params ] );
+        return `/print/resume${qs ? `?${qs}` : ""}`;
+    }, [params]);
 
-    const move = ( key: TResumeOrderKey, dir: "up" | "down" ) => {
-        setParams( ( prev ) => {
-            const order = prev.order ? [ ...prev.order ] : [ ...RESUME_SECTION_KEYS ];
-            const idx = order.indexOf( key );
-            if ( idx < 0 ) return prev;
+    const move = (key: TResumeOrderKey, dir: "up" | "down") => {
+        setParams((prev) => {
+            const order = prev.order ? [...prev.order] : [...RESUME_SECTION_KEYS];
+            const idx = order.indexOf(key);
+            if (idx < 0) return prev;
             const target = dir === "up" ? idx - 1 : idx + 1;
-            if ( target < 0 || target >= order.length ) return prev;
-            const next = [ ...order ];
-            const [ item ] = next.splice( idx, 1 );
-            next.splice( target, 0, item );
+            if (target < 0 || target >= order.length) return prev;
+            const next = [...order];
+            const [item] = next.splice(idx, 1);
+            next.splice(target, 0, item);
             return { ...prev, order: next };
-        } );
+        });
     };
 
-    const toggleCompactFor = ( key: TResumeOrderKey ) => {
-        setParams( ( prev ) => {
-            if ( key in prev.compact ) {
+    const toggleCompactFor = (key: TResumeOrderKey) => {
+        setParams((prev) => {
+            if (key in prev.compact) {
                 return {
                     ...prev,
                     compact: {
                         ...prev.compact,
-                        [ key ]: !prev.compact[ key as keyof typeof prev.compact ]
+                        [key]: !prev.compact[key as keyof typeof prev.compact]
                     }
                 };
             }
             return prev;
-        } );
+        });
     };
 
-    const handleConvertToPdf = async() => {
-        if ( generating ) return;
-        setGenerating( true );
-        setStep( PdfProgress.Prepare );
+    const handleConvertToPdf = async () => {
+        if (generating) return;
+        setGenerating(true);
+        setStep(PdfProgress.Prepare);
         try {
             await downloadResumePDFViaService(
                 resumeSrc,
@@ -69,12 +69,12 @@ export function Hero() {
                     onProgress: setStep,
                 }
             );
-        } catch ( error ) {
-            console.error( "Error generating PDF:", error );
-            setStep( "Error" );
+        } catch (error) {
+            console.error("Error generating PDF:", error);
+            setStep("Error");
         } finally {
-            setGenerating( false );
-            setTimeout( () => setStep( null ), 1200 );
+            setGenerating(false);
+            setTimeout(() => setStep(null), 1200);
         }
     };
 
@@ -99,9 +99,9 @@ export function Hero() {
                         <Button
                             size="lg"
                             className="w-full sm:w-auto"
-                            onClick={() => setResumeOpen( true )}
+                            onClick={() => setResumeOpen(true)}
                         >
-                            <Download className="mr-2 h-4 w-4"/>
+                            <Download className="mr-2 h-4 w-4" />
                             Generate Resume
                         </Button>
 
