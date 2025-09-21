@@ -16,9 +16,7 @@ const router = createBrowserRouter( [
         path: "/print/resume",
         element: (
             <div className="min-h-screen bg-white text-black">
-                <div className="py-8">
-                    <Resume />
-                </div>
+                <Resume />
             </div>
         ),
     },

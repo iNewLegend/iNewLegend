@@ -1,29 +1,28 @@
-export const PDF_PROGRESS_STEPS = [
-    "Generate HTML",
-    "Converting HTML to PDF",
-    "Saving",
-    "Done"
-] as const;
+export enum PdfProgress {
+    Prepare = "Generate HTML",
+    Converting = "Converting HTML to PDF",
+    Saving = "Saving",
+    Done = "Done"
+}
 
 type DownloadResumeOptions = {
-    compact?: boolean;
     filename?: string;
-    onProgress?: ( step: string ) => void
+    onProgress?: ( step: PdfProgress ) => void
 };
 
-export async function downloadResumePDFViaService( options?: DownloadResumeOptions ): Promise<void> {
+export async function downloadResumePDFViaService( resumeUrl: string, options?: DownloadResumeOptions ): Promise<void> {
     const { onProgress } = options || {};
 
-    onProgress?.( PDF_PROGRESS_STEPS[ 0 ] );
+    onProgress?.( PdfProgress.Prepare );
 
     const serviceUrl = import.meta.env.VITE_WEBSITE_PDF_SERVICE_URL;
     if ( !serviceUrl ) {
         throw new Error( "WEBSITE_PDF_SERVICE_URL is not configured" );
     }
 
-    const html = await renderResumeHTMLViaRoute( options );
+    const html = await renderResumeHTMLViaRoute( resumeUrl, options );
 
-    onProgress?.( PDF_PROGRESS_STEPS[ 1 ] );
+    onProgress?.( PdfProgress.Converting );
 
     const response = await fetch( serviceUrl, {
         method: "POST",
@@ -64,7 +63,7 @@ export async function downloadResumePDFViaService( options?: DownloadResumeOptio
         return;
     }
 
-    onProgress?.( PDF_PROGRESS_STEPS[ 2 ] );
+    onProgress?.( PdfProgress.Saving );
     const link = document.createElement( "a" );
     link.href = url;
     link.download = filename;
@@ -75,9 +74,10 @@ export async function downloadResumePDFViaService( options?: DownloadResumeOptio
     document.body.removeChild( link );
     setTimeout( () => URL.revokeObjectURL( url ), 1000 );
 
-    onProgress?.( PDF_PROGRESS_STEPS[ 3 ] );
+    onProgress?.( PdfProgress.Done );
 }
-async function renderResumeHTMLViaRoute( options?: DownloadResumeOptions ): Promise<string> {
+
+async function renderResumeHTMLViaRoute( resumeUrl: string, _options?: DownloadResumeOptions ): Promise<string> {
     return new Promise<string>( ( resolve, reject ) => {
         const iframe = document.createElement( "iframe" );
         iframe.style.position = "fixed";
@@ -143,11 +143,11 @@ async function renderResumeHTMLViaRoute( options?: DownloadResumeOptions ): Prom
             reject( new Error( "Failed to load resume route" ) );
         };
 
-        const query = new URLSearchParams();
-        query.set( "ts", String( Date.now() ) );
-        if ( options?.compact ) query.set( "compact", "1" );
+        // Resolve provided URL (relative or absolute) and add cache-busting param
+        const url = new URL( resumeUrl, window.location.origin );
+        url.searchParams.set( "ts", String( Date.now() ) );
 
-        iframe.src = `${ window.location.origin }/print/resume?${ query.toString() }`;
+        iframe.src = url.toString();
         document.body.appendChild( iframe );
     } );
 }

@@ -24,6 +24,15 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
+
+    /* Resume theme variables */
+    --resume-accent-hsl: 217 91% 60%;
+    --resume-heading-hsl: 215 19% 35%;
+    --resume-name-hsl: 217 108% 69%;
+    --resume-subtitle-hsl: 215.4 16.3% 46.9%;
+    --resume-chip-bg-hsl: 210 100% 97%;
+    --resume-chip-text-hsl: 214 86% 40%;
+    --resume-chip-border-hsl: 210 100% 90%;
   }
 
   .dark {
@@ -53,6 +62,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

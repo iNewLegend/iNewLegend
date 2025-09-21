@@ -1,31 +1,80 @@
-import { Download, Github, Linkedin, Mail, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { Download } from "lucide-react";
+import { useMemo, useState } from "react";
+
+import { RESUME_DEFAULT_PARAMS, RESUME_SECTION_KEYS } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
 import { Button } from "@inewlegend/website/src/components/ui/button";
 import { config } from "@inewlegend/website/src/config";
-import { downloadResumePDFViaService, PDF_PROGRESS_STEPS } from "@inewlegend/website/src/lib/pdf-generator";
+import { downloadResumePDFViaService, PdfProgress } from "@inewlegend/website/src/lib/pdf-generator";
+import { toSearchParams } from "@inewlegend/website/src/features/resume/resume-params.ts";
+
+import { ResumeDialog } from "@inewlegend/website/src/components/hero/resume-dialog";
+import { ResumeControls } from "@inewlegend/website/src/components/hero/resume-controls";
+import { SectionEditor } from "@inewlegend/website/src/components/hero/section-editor";
+import { ResumePreview } from "@inewlegend/website/src/components/hero/resume-preview";
+import { SocialLinks } from "@inewlegend/website/src/components/hero/social-links";
+
+import type { TResumeOrderKey, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
 export function Hero() {
-    const [ loading, setLoading ] = useState( false );
-    const [ step, setStep ] = useState<string | null>( null );
-    const [ menuOpen, setMenuOpen ] = useState( false );
+    const [resumeOpen, setResumeOpen] = useState(false);
+    const [params, setParams] = useState<TResumeParams>(RESUME_DEFAULT_PARAMS);
+    const [generating, setGenerating] = useState(false);
+    const [step, setStep] = useState<string | null>(null);
 
-    const handleDownloadResume = async( isCompact: boolean ) => {
-        if ( loading ) return;
-        setMenuOpen( false );
-        setLoading( true );
-        setStep( "Preparing" );
+    const resumeSrc = useMemo(() => {
+        const sp = toSearchParams(params);
+        const qs = sp.toString();
+        return `/print/resume${qs ? `?${qs}` : ""}`;
+    }, [params]);
+
+    const move = (key: TResumeOrderKey, dir: "up" | "down") => {
+        setParams((prev) => {
+            const order = prev.order ? [...prev.order] : [...RESUME_SECTION_KEYS];
+            const idx = order.indexOf(key);
+            if (idx < 0) return prev;
+            const target = dir === "up" ? idx - 1 : idx + 1;
+            if (target < 0 || target >= order.length) return prev;
+            const next = [...order];
+            const [item] = next.splice(idx, 1);
+            next.splice(target, 0, item);
+            return { ...prev, order: next };
+        });
+    };
+
+    const toggleCompactFor = (key: TResumeOrderKey) => {
+        setParams((prev) => {
+            if (key in prev.compact) {
+                return {
+                    ...prev,
+                    compact: {
+                        ...prev.compact,
+                        [key]: !prev.compact[key as keyof typeof prev.compact]
+                    }
+                };
+            }
+            return prev;
+        });
+    };
+
+    const handleConvertToPdf = async () => {
+        if (generating) return;
+        setGenerating(true);
+        setStep(PdfProgress.Prepare);
         try {
-            await downloadResumePDFViaService({ 
-                onProgress: setStep,
-                filename: "leonid-vinikov.pdf",
-                compact: isCompact } );
-        } catch ( error ) {
-            console.error( "Error generating resume via service:", error );
-            setStep( "Error" );
+            await downloadResumePDFViaService(
+                resumeSrc,
+                {
+                    filename: "leonid-resume.pdf",
+                    onProgress: setStep,
+                }
+            );
+        } catch (error) {
+            console.error("Error generating PDF:", error);
+            setStep("Error");
         } finally {
-            setLoading( false );
-            setTimeout( () => setStep( null ), 1200 );
+            setGenerating(false);
+            setTimeout(() => setStep(null), 1200);
         }
     };
 
@@ -46,60 +95,39 @@ export function Hero() {
                         {config.hero.description}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">         
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                        <Button
+                            size="lg"
+                            className="w-full sm:w-auto"
+                            onClick={() => setResumeOpen(true)}
+                        >
+                            <Download className="mr-2 h-4 w-4" />
+                            Generate Resume
+                        </Button>
 
-                        <div className="relative">
-                            <Button
-                                size="lg"
-                                className="w-full sm:w-auto"
-                                onClick={() => setMenuOpen( ( v ) => !v )}
-                                disabled={loading}
-                            >
-                                { loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Download className="mr-2 h-4 w-4" /> }
-                                { loading ? ( step || PDF_PROGRESS_STEPS[ 0 ] ) : "Generate Resume" }
-                            </Button>
-
-                            { menuOpen && !loading && (
-                                <div className="absolute left-0 mt-2 w-56 rounded-md border bg-background p-1 shadow-md z-50">
-                                    <button
-                                        type="button"
-                                        className="w-full text-left px-3 py-2 text-sm rounded hover:bg-muted"
-                                        onClick={() => handleDownloadResume( false )}
-                                    >
-                                        Full resume
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="w-full text-left px-3 py-2 text-sm rounded hover:bg-muted"
-                                        onClick={() => handleDownloadResume( true )}
-                                    >
-                                        Compact resume
-                                    </button>
-                                </div>
-                            ) }
-                        </div>
-
-
-                        <div className="flex gap-4">
-                            <Button variant="outline" size="icon" asChild>
-                                <a href={config.personal.github} target="_blank" rel="noopener noreferrer">
-                                    <Github className="h-4 w-4" />
-                                </a>
-                            </Button>
-                            <Button variant="outline" size="icon" asChild>
-                                <a href={config.personal.linkedin} target="_blank" rel="noopener noreferrer">
-                                    <Linkedin className="h-4 w-4" />
-                                </a>
-                            </Button>
-                            <Button variant="outline" size="icon" asChild>
-                                <a href={`mailto:${ config.personal.email }`}>
-                                    <Mail className="h-4 w-4" />
-                                </a>
-                            </Button>
-                        </div>
+                        <SocialLinks />
                     </div>
+
+                    <ResumeDialog
+                        open={resumeOpen}
+                        onOpenChange={setResumeOpen}
+                    >
+                        <ResumeControls
+                            generating={generating}
+                            step={step}
+                            onConvertToPdf={handleConvertToPdf}
+                        >
+                            <SectionEditor
+                                params={params}
+                                onMove={move}
+                                onToggleCompact={toggleCompactFor}
+                            />
+                        </ResumeControls>
+                        <ResumePreview src={resumeSrc} params={params} />
+                    </ResumeDialog>
                 </div>
             </div>
         </section>
     );
+
 }
