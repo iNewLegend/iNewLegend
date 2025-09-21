@@ -109,6 +109,10 @@ const config: Config = {
               label: 'JavaScript',
               to: '/docs/docs/javascript/shallow-vs-deep-comparison',
             },
+            {
+              label: 'TypeScript',
+              to: '/docs/docs/typescript/satisfies-operator',
+            },
           ],
         },
         {

@@ -47,6 +47,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'TypeScript',
+      items: [
+        'typescript/satisfies-operator',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Dictionary',
       items: ['dictionary/overview'],
     },

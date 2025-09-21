@@ -28,6 +28,10 @@ Essential concepts for working with data at scale:
 JavaScript-specific concepts and comparisons:
 - **Shallow vs Deep Comparison**: Understanding object comparison in JavaScript
 
+### 🔷 **TypeScript**
+Advanced TypeScript concepts and operators:
+- **Satisfies Operator**: Understanding the `satisfies` operator for type safety without type loss
+
 ### 📚 **Dictionary**
 A comprehensive glossary of programming and technical terms with:
 - **Pronunciations**: Phonetic guides for technical terms
