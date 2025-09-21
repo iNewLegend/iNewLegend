@@ -3,23 +3,22 @@ import { ArrowUp, ArrowDown, Sparkles } from "lucide-react";
 import { Button } from "@inewlegend/website/src/components/ui/button";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent } from "@inewlegend/website/src/components/ui/dropdown-menu";
 
-import { RESUME_SECTION_WITH_COMPACT_KEYS   } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
+import { RESUME_SECTION_WITH_COMPACT_KEYS } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
 import type { TResumeOrderKey, TResumeOrderKeyWithCompact, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
 interface SectionEditorProps {
     params: TResumeParams;
-    onMove: ( key: TResumeOrderKey, dir: "up" | "down" ) => void;
-    onToggleCompact: ( key: TResumeOrderKey ) => void;
+    onMove: (key: TResumeOrderKey, dir: "up" | "down") => void;
+    onToggleCompact: (key: TResumeOrderKey) => void;
 }
 
-export function SectionEditor( { params, onMove, onToggleCompact }: SectionEditorProps ) {
+export function SectionEditor({ params, onMove, onToggleCompact }: SectionEditorProps) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button
-                    variant="default"
-                    className="bg-gradient-to-r from-blue-600 to-blue-700 text-white border-blue-500 hover:from-blue-700 hover:to-blue-800 hover:border-blue-600 hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
+                    variant="gradient"
                     size="sm"
                 >
                     <Sparkles className="mr-2 h-4 w-4" />
@@ -28,10 +27,10 @@ export function SectionEditor( { params, onMove, onToggleCompact }: SectionEdito
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-[32rem] p-4 bg-white/95 backdrop-blur-sm border border-slate-200 shadow-xl">
                 <div className="space-y-3">
-                    {params.order?.map( ( key, index ) => {
-                        const label = key[ 0 ].toUpperCase() + key.slice( 1 );
-                        const isCompact = key in params.compact ? params.compact[ key as keyof typeof params.compact ] : false;
-                        const canCompact = RESUME_SECTION_WITH_COMPACT_KEYS.includes( key as TResumeOrderKeyWithCompact );
+                    {params.order?.map((key, index) => {
+                        const label = key[0].toUpperCase() + key.slice(1);
+                        const isCompact = key in params.compact ? params.compact[key as keyof typeof params.compact] : false;
+                        const canCompact = RESUME_SECTION_WITH_COMPACT_KEYS.includes(key as TResumeOrderKeyWithCompact);
 
                         return (
                             <div
@@ -44,11 +43,10 @@ export function SectionEditor( { params, onMove, onToggleCompact }: SectionEdito
                                     </div>
                                     <span className="text-sm font-medium text-slate-900">{label}</span>
                                     {canCompact && (
-                                        <span className={`px-2 py-1 text-xs rounded-full ${
-                                            isCompact
-                                                ? "bg-blue-100 text-blue-700 border border-blue-200"
-                                                : "bg-slate-100 text-slate-600 border border-slate-200"
-                                        }`}>
+                                        <span className={`px-2 py-1 text-xs rounded-full ${isCompact
+                                            ? "bg-blue-100 text-blue-700 border border-blue-200"
+                                            : "bg-slate-100 text-slate-600 border border-slate-200"
+                                            }`}>
                                             {isCompact ? "Compact" : "Full"}
                                         </span>
                                     )}
@@ -58,13 +56,12 @@ export function SectionEditor( { params, onMove, onToggleCompact }: SectionEdito
                                         <Button
                                             variant={isCompact ? "default" : "outline"}
                                             size="sm"
-                                            onClick={() => onToggleCompact( key )}
-                                            aria-label={`Toggle compact for ${ label }`}
-                                            className={`h-8 px-3 ${
-                                                isCompact
-                                                    ? "bg-blue-600 hover:bg-blue-700 text-white"
-                                                    : "border-slate-300 hover:bg-slate-100"
-                                            }`}
+                                            onClick={() => onToggleCompact(key)}
+                                            aria-label={`Toggle compact for ${label}`}
+                                            className={`h-8 px-3 ${isCompact
+                                                ? "bg-blue-600 hover:bg-blue-700 text-white"
+                                                : "border-slate-300 hover:bg-slate-100"
+                                                }`}
                                         >
                                             <Sparkles className="h-3 w-3 mr-1" />
                                             {isCompact ? "Full" : "Compact"}
@@ -74,8 +71,8 @@ export function SectionEditor( { params, onMove, onToggleCompact }: SectionEdito
                                         <Button
                                             variant="outline"
                                             size="icon"
-                                            onClick={() => onMove( key, "up" )}
-                                            aria-label={`Move ${ label } up`}
+                                            onClick={() => onMove(key, "up")}
+                                            aria-label={`Move ${label} up`}
                                             className="h-6 w-6 border-slate-300 hover:bg-slate-100"
                                             disabled={index === 0}
                                         >
@@ -84,8 +81,8 @@ export function SectionEditor( { params, onMove, onToggleCompact }: SectionEdito
                                         <Button
                                             variant="outline"
                                             size="icon"
-                                            onClick={() => onMove( key, "down" )}
-                                            aria-label={`Move ${ label } down`}
+                                            onClick={() => onMove(key, "down")}
+                                            aria-label={`Move ${label} down`}
                                             className="h-6 w-6 border-slate-300 hover:bg-slate-100"
                                             disabled={index === params.order.length - 1}
                                         >
@@ -95,7 +92,7 @@ export function SectionEditor( { params, onMove, onToggleCompact }: SectionEdito
                                 </div>
                             </div>
                         );
-                    } )}
+                    })}
                 </div>
             </DropdownMenuContent>
         </DropdownMenu>

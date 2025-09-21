@@ -27,7 +27,7 @@ export function ResumeControls({ generating, step, onConvertToPdf, children }: R
                     size="sm"
                     onClick={onConvertToPdf}
                     disabled={generating}
-                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    variant="gradient"
                 >
                     {generating ? (
                         <>
