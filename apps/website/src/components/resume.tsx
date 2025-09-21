@@ -1,19 +1,25 @@
 
-import { config } from "@inewlegend/website/src/config";
-import { ResumeHeader } from "@inewlegend/website/src/features/resume/resume-header";
-import { ResumeCompactSummary, ResumeCompactSummary as ResumeSummary } from "@inewlegend/website/src/features/resume/resume-compact-summary";
-import { ResumeCompactSkills } from "@inewlegend/website/src/features/resume/resume-compact-skills";
-import { ResumeAbout } from "@inewlegend/website/src/features/resume/resume-about";
-import { ResumeExperience } from "@inewlegend/website/src/features/resume/resume-experience";
-import { ResumeSkills } from "@inewlegend/website/src/features/resume/resume-skills";
-import { ResumeProjects, ResumeCompactProjects } from "@inewlegend/website/src/features/resume/resume-projects.tsx";
+import { useEffect, useMemo, useState } from "react";
+
+import { ResumeExperience } from "@inewlegend/website/src/features/resume/sections/resume-experience.tsx";
+
+import { ResumeAbout } from "@inewlegend/website/src/features/resume/sections/resume-about.tsx";
+
+import { ResumeCompactSkills } from "@inewlegend/website/src/features/resume/sections/resume-compact-skills.tsx";
 
 import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme";
 
 import { parseResumeParams, getEffectiveOrder, toSearchParams } from "@inewlegend/website/src/features/resume/resume-params.ts";
 
+import { config } from "@inewlegend/website/src/config";
+
+import { ResumeSkills } from "@inewlegend/website/src/features/resume/sections/resume-skills.tsx";
+
+import { ResumeHeader } from "@inewlegend/website/src/features/resume/resume-header.tsx";
+
+import { ResumeCompactProjects, ResumeProjects } from "@inewlegend/website/src/features/resume/sections/resume-projects.tsx";
+
 import type { TResumeExperienceItem, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
-import { useEffect, useMemo, useState } from "react";
 
 export function Resume() {
     const { personal, hero, about, experience, projects  } = config;
@@ -38,12 +44,10 @@ export function Resume() {
     const orderedKeys = useMemo( () => getEffectiveOrder( params ), [ params ] );
 
     const renderSection: Record<string, () => React.ReactNode> = {
-        summary: () =>  params.compact.summary ? <ResumeCompactSummary description={hero.description} /> :
-            <ResumeSummary description={hero.description} />,
         skills: () => params.compact.skills ?
             <ResumeCompactSkills skills={config.compactSkills} /> : <ResumeSkills categories={config.skills} />,
         about: () => (
-            <   ResumeAbout
+            <ResumeAbout
                 description={hero.description}
                 whatIDoTitle={about.whatIDo.title}
                 whatIDoItems={about.whatIDo.items}

@@ -1,6 +1,6 @@
 import DOMPurify from "dompurify";
 
-import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
+import  { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
 import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/resume-section-heading.tsx";
 
 import type { TResumeExperienceProps } from "@inewlegend/website/src/features/resume/resume.definitions.ts";

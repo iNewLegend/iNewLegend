@@ -13,7 +13,7 @@ interface SectionEditorProps {
     onToggleCompact: ( key: TResumeOrderKey ) => void;
 }
 
-export function SectionEditor( { params, onMove, onToggleCompact }: SectionEditorProps ) {
+export function ResumeSectionEditor( { params, onMove, onToggleCompact }: SectionEditorProps ) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>

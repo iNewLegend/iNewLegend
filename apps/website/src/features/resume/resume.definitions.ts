@@ -1,6 +1,5 @@
 
 export const RESUME_SECTION_KEYS = [
-    "summary",
     "skills",
     "about",
     "experience",
@@ -8,7 +7,6 @@ export const RESUME_SECTION_KEYS = [
 ] as const;
 
 export const RESUME_SECTION_WITH_COMPACT_KEYS = [
-    "summary",
     "skills",
     "experience",
     "projects"
@@ -21,13 +19,11 @@ export const RESUME_PARAM_KEYS = {
 
 export const RESUME_DEFAULT_PARAMS: TResumeParams = {
     compact: {
-        summary: false,
         skills: true,
         experience: true,
         projects: true
     },
     order: [
-        "summary",
         "about",
         "skills",
         "experience",
@@ -59,6 +55,7 @@ export type TResumeExperienceItem = {
     compactDescription?: string;
     technologies: string[];
 };
+
 export type TResumeExperienceProps = {
     items: TResumeExperienceItem[];
     isCompact: boolean;
