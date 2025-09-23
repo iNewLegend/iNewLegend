@@ -23,7 +23,7 @@ function App() {
                 <Contact />
             </main>
             <Footer />
-            
+
             {/* Hidden resume component for PDF generation */}
             <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
                 <Resume />
