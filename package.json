@@ -20,9 +20,10 @@
   ],
   "devDependencies": {
     "@types/bun": "latest",
-    "@zenflux/eslint": "^0.1.9",
-    "ssh2": "^1.15.0",
-    "dotenv": "^16.3.1"
+    "@zenflux/eslint": "latest",
+    "dotenv": "^16.3.1",
+    "shadcn": "^3.3.1",
+    "ssh2": "^1.15.0"
   },
   "peerDependencies": {
     "typescript": "^5"

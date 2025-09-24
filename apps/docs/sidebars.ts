@@ -50,6 +50,18 @@ const sidebars: SidebarsConfig = {
       label: 'TypeScript',
       items: [
         'typescript/satisfies-operator',
+        'typescript/discriminated-unions',
+        'typescript/type-narrowing-strategies',
+        'typescript/class-hierarchies-instanceof',
+        'typescript/user-defined-type-guards',
+        'typescript/in-operator-narrowing',
+        'typescript/function-overloading',
+        'typescript/generics-with-constrained-shapes',
+        'typescript/enums-plus-lookup-maps',
+        'typescript/sum-types-via-classes-visit',
+        'typescript/pattern-matching-libraries',
+        'typescript/schema-driven-refinement',
+        'typescript/union-of-primitives-structural-unions',
       ],
     },
     {
