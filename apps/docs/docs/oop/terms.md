@@ -2,7 +2,7 @@
 
 ## Interface — `in-ter-feys`
 
-**Interface** is a [noun](/docs/dictionary/overview#noun) in the board field of computer science, an interface often refers to the
+**Interface** is a [noun](../dictionary/overview#noun) in the board field of computer science, an interface often refers to the
 medium through which two systems communicate or interact.
 
 ### Non-Technical Interpretation
@@ -53,7 +53,7 @@ class Rectangle implements Shape {
 
 ## Abstraction — `ab-strak-shun`
 
-**Abstraction** is a [noun](/docs/dictionary/overview#noun) that refers to the process of hiding complex implementation details while exposing only the necessary functionality.
+**Abstraction** is a [noun](../dictionary/overview#noun) that refers to the process of hiding complex implementation details while exposing only the necessary functionality.
 
 ### Non-Technical Interpretation
 In everyday life, abstraction can refer to simplifying complex concepts or ideas to make them easier to understand.
@@ -98,10 +98,10 @@ class Sedan implements Car {
 
 ## Encapsulation — `en-kap-suh-ley-shun`
 
-**Encapsulation** is a [noun](/docs/dictionary/overview#noun)
+**Encapsulation** is a [noun](../dictionary/overview#noun)
 that refers to the bundling of data and methods that operate on that data into a single unit.
 
-It promotes the separation of [concerns](/docs/dictionary/overview#concerns) and data hiding, making it easier to reason about and maintain
+It promotes the separation of [concerns](../dictionary/overview#concerns--kuhn-surndz) and data hiding, making it easier to reason about and maintain
 , and reuse code.
 
 ### Non-Technical Interpretation
@@ -149,7 +149,7 @@ class BankAccount {
 
 ## Polymorphism — `pol-ee-mawr-fiz-uhm`
 
-**Polymorphism** is a [noun](/docs/dictionary/overview#noun) that refers to the ability of objects to take on multiple forms or types.
+**Polymorphism** is a [noun](../dictionary/overview#noun) that refers to the ability of objects to take on multiple forms or types.
 It is a fundamental concept in object-oriented programming that allows objects of different classes to be treated as objects of a common superclass.
 
 ### Technical Interpretation

@@ -297,7 +297,7 @@ In programming, a leaf node is a node in a tree data structure that does not hav
 Consider a binary tree where each node has at most two children:
 **Leaf Node Identification**:
 1. **Node Definition**: A node with no children is considered a leaf node.
-2. **Traversal**: During tree [traversal](#traversing), leaf nodes are identified and processed accordingly.
+2. **Traversal**: During tree [traversal](#traversing--truh-vurs-ing), leaf nodes are identified and processed accordingly.
 
 ## Dispatch — `dis·patch`
 ![dispatch.png](/images/dispatch.png)
@@ -334,7 +334,7 @@ document.addEventListener('click', (event) => {
 ## Constraints — `kuhn-streynz` 
 ![constraints.png](/images/constraints.png)
 
-**Constrains** is a [verb](#verb) that means to restrict or limit. 
+**Constraints** is a [noun](#noun) that means restrictions or limitations. 
 
 In programming, constraints are rules or conditions that restrict the values or behavior of data.
 

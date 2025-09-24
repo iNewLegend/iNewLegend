@@ -7,7 +7,7 @@
   <br /><br />
 * **Apache Airflow** — Is an open-source platform used to programmatically author, schedule, and monitor workflows. It is commonly used for orchestrating complex data pipelines and automating tasks in data engineering.
   <br /><br />
-* **Kafka** — Is a [distributed](/docs/dictionary/overview#distributed) event streaming platform used in data engineering for:
+* **Kafka** — Is a [distributed](../dictionary/overview#distributed--dih-srib-yoo-tid) event streaming platform used in data engineering for:
     * Real-time data pipelines and streaming analytics
     * High-throughput, fault-tolerant data ingestion
     * Decoupling data streams between systems or applications

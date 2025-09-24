@@ -401,7 +401,7 @@ clientCode( adapter );
 
 ### Bridge
 
-**Problem**: [Decouple](/docs/dictionary/overview#decouple) an abstraction from its implementation so that the two can vary
+**Problem**: [Decouple](../dictionary/overview#decouple--dee-kuh-puhl) an abstraction from its implementation so that the two can vary
 independently.
 
 **Real-Life Example**: Device and remote control; the remote works with different devices.

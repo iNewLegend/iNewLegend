@@ -10,7 +10,7 @@ A storage repository that holds a vast amount of raw data in its native format.
 
 ## ETL
 Extract, Transform, Load, a process that involves extracting data from a source, transforming it into a usable format, and loading it into a destination.
-  * _Example_: Extract data from **MySQL**, transform it into a [denormalized](/docs/dictionary/overview#denormalization) format, and load it into a **Data Warehouse** like **Snowflake**.
+  * _Example_: Extract data from **MySQL**, transform it into a [denormalized](../dictionary/overview#denormalization--dee-nor-muh-luh-zay-shun) format, and load it into a **Data Warehouse** like **Snowflake**.
 
 ## ELT
 Extract, Load, Transform, same as **ETL**, but data is first loaded into the target system and then transformed within the target.

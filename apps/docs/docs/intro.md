@@ -48,6 +48,6 @@ Use the sidebar to explore different sections. Each topic includes:
 
 ## Getting Started
 
-Start with the [Concepts](/docs/concepts/overview) section for foundational knowledge, or jump directly to any topic that interests you using the sidebar navigation.
+Start with the [Concepts](concepts/overview) section for foundational knowledge, or jump directly to any topic that interests you using the sidebar navigation.
 
 Happy learning! 🚀
