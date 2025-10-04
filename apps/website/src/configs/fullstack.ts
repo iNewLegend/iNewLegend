@@ -5,7 +5,7 @@ export const fullstackConfig = {
         email: "leonidvinikov@gmail.com",
         phone: "+972 053 919 7333",
         location: "Israel, Holon",
-        github: "https://inewlegend.com",
+        github: "https://github.com/inewlegend",
         linkedin: "https://www.linkedin.com/in/inewlegend/"
     },
 
@@ -84,7 +84,7 @@ export const fullstackConfig = {
     ],
 
     projects: [
-        { title: "Interactive Resume", description: "A modern, interactive resume website built with React, TypeScript, and Tailwind CSS. Features dynamic resume sections, PDF generation, and responsive design. Includes advanced state management for resume customization and real-time preview capabilities.", technologies: ["TypeScript", "React", "Tailwind CSS", "Vite", "shadcn/ui", "PDF Generation", "State Management", "Responsive Design"], github: "https://github.com/iNewLegend/iNewLegend", demo: "https://inewlegend.com/" },
+        { title: "Interactive Resume", description: "A modern, interactive resume website built with React, TypeScript, and Tailwind CSS. Features dynamic resume sections, PDF generation, and responsive design. Includes advanced state management for resume customization and real-time preview capabilities.", technologies: ["TypeScript", "React", "Tailwind CSS", "Vite", "shadcn/ui", "PDF Generation", "State Management", "Responsive Design"], github: "https://github.com/iNewLegend/iNewLegend/tree/main/apps/website", demo: "https://inewlegend.com/" },
         { title: "Vertix", description: "A sophisticated Discord bot with complex UI generation for dynamic voice channel management. Features real-time interactive buttons interface, dynamic channel creation/deletion, advanced permission systems, and monorepo architecture with separate GUI, bot, and base packages. Built with TypeScript, React components, and modern development practices.", technologies: ["TypeScript", "React", "Prisma", "MongoDB", "Jest", "Discord.js", "CI/CD", "Monorepo"], github: "https://github.com/VertixGG/vertix.gg", demo: "https://vertix.gg/" },
         { title: "ZenFlux", description: "A framework that offers functionalities related to building, publishing, and watching monorepo workspaces. Designed to streamline monorepo development workflows and improve developer experience.", technologies: ["TypeScript", "Node.js", "pnpm", "SWC", "Rollup", "Monorepo", "CLI"], github: "https://github.com/zenflux/zenflux", demo: "https://github.com/zenflux/zenflux" },
         { title: "ElementsHighlight", description: "A React + Vite + Tailwind + shadcn/ui powered Chrome extension that lets you highlight DOM elements on any visited page and lays the groundwork for adding contextual notes. Features Shadow DOM isolation, popup UI, and background service worker.", technologies: ["TypeScript", "React", "Vite", "Tailwind CSS", "shadcn/ui", "Chrome Extension API", "Shadow DOM"], github: "https://github.com/iNewLegend/chrome-extension-elements-highlight", demo: "https://github.com/iNewLegend/chrome-extension-elements-highlight" },
