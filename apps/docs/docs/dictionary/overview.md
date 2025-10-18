@@ -415,6 +415,73 @@ of a computer program.
 
 <!-- ----------------------------------------------------------- -->
 
+## Mutation — `myoo-tey-shuhn`
+
+**Mutation** is a [noun](#noun) that refers to the process of changing or altering something from its original state. In programming, it specifically refers to modifying data structures or objects after they have been created.
+
+### Non-Technical Interpretation
+
+In everyday life, mutation can refer to biological changes in organisms or any process where something is transformed from its original form. For example, genetic mutations in DNA can lead to changes in an organism's characteristics.
+
+### Example (Non-Programming Context)
+
+Consider a document that undergoes multiple revisions:
+**Mutation Process**:
+1. **Original Document**: A document is created with initial content.
+2. **First Revision**: The document is modified to add new information.
+3. **Second Revision**: Further changes are made to correct errors and improve clarity.
+4. **Final Version**: The document has been mutated from its original state to a more refined version.
+
+### Technical Interpretation
+
+In programming, mutation refers to the direct modification of data structures, objects, or variables after they have been created. This is a fundamental concept in understanding how data changes in applications.
+
+### Example (Programming Context)
+
+Consider an array that needs to be modified:
+**Array Mutation**:
+1. **Initial Array**: An array is created with initial values.
+2. **Mutation Operations**: Various methods are used to modify the array.
+3. **Result**: The array has been mutated from its original state.
+
+```javascript
+// Initial array
+const numbers = [1, 2, 3, 4, 5];
+
+// Mutating the array
+numbers.push(6);        // Add element to end
+numbers.pop();          // Remove last element
+numbers[0] = 10;        // Modify first element
+numbers.splice(1, 1);   // Remove element at index 1
+
+// Result: [10, 3, 4, 5]
+console.log(numbers);
+```
+
+### Immutability vs Mutation
+
+**Immutable**: Data that cannot be changed after creation
+**Mutable**: Data that can be modified after creation
+
+```javascript
+// Mutable approach (direct mutation)
+const mutableArray = [1, 2, 3];
+mutableArray.push(4); // Mutates original array
+
+// Immutable approach (no mutation)
+const immutableArray = [1, 2, 3];
+const newArray = [...immutableArray, 4]; // Creates new array
+```
+
+### Best Practices
+
+1. **Avoid Unnecessary Mutations**: Prefer creating new data structures over modifying existing ones
+2. **Use Immutable Patterns**: When possible, use immutable approaches to prevent unintended side effects
+3. **Document Mutations**: Clearly document when and why mutations occur in your code
+4. **Consider Performance**: Balance between immutability benefits and performance requirements
+
+<!-- ----------------------------------------------------------- -->
+
 ## Compression — `com·pres·sion`
 
 Compression is a [noun](#noun) that refers to reducing the size of data by encoding it more efficiently, saving bandwidth and storage, and improving transfer speed.
