@@ -412,3 +412,49 @@ In computer science, **separation of concerns** (sometimes abbreviated as SoC) i
 principle for separating a computer program into distinct sections. 
 Each section addresses a separate concern, a set of information that affects the code
 of a computer program.
+
+<!-- ----------------------------------------------------------- -->
+
+## Compression — `com·pres·sion`
+
+Compression is a [noun](#noun) that refers to reducing the size of data by encoding it more efficiently, saving bandwidth and storage, and improving transfer speed.
+
+### Non-Technical Interpretation
+
+Packing clothes into a vacuum bag reduces their volume so more fits in the same suitcase.
+
+### Technical Interpretation
+
+In computing, compression reduces the number of bytes needed to represent data.
+
+- Lossless: Original data is perfectly reconstructable (e.g., gzip, Brotli, zstd).
+- Lossy: Some information is discarded for higher ratios (e.g., JPEG, MP3).
+
+### Example (Programming Context)
+
+Enable HTTP response compression in a Node server:
+
+```ts
+import express from "express";
+import compression from "compression";
+
+const app = express();
+
+app.use(compression({ threshold: 0 }));
+
+app.get("/data", (_req, res) => {
+  res.json({ ok: true });
+});
+
+app.listen(3000);
+```
+
+Compress and decompress buffers with Brotli:
+
+```ts
+import { brotliCompressSync, brotliDecompressSync } from "zlib";
+
+const input = Buffer.from("hello world");
+const compressed = brotliCompressSync(input);
+const decompressed = brotliDecompressSync(compressed).toString();
+```
