@@ -1,4 +1,5 @@
-import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
+import { TechChip } from "@inewlegend/website/src/features/resume/ui/tech-chip.tsx";
+
 import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/resume-section-heading.tsx";
 
 export type ResumeProjectItem = {
@@ -17,10 +18,10 @@ export function ResumeProjects({ items, limit }: ResumeProjectsProps) {
     const visible = typeof limit === "number" ? items.slice(0, limit) : items;
 
     return (
-        <div className="">
+        <>
             <ResumeSectionHeading title="Projects" />
             {visible.map((project, index) => (
-                <div key={index} className="mb-5 pb-4 border-b border-gray-100 last:border-b-0">
+                <div key={index} className="mb-5 pb-4">
                     <div className="flex justify-between items-start mb-1">
                         <a
                             className="font-semibold text-gray-900 hover:underline"
@@ -43,13 +44,13 @@ export function ResumeProjects({ items, limit }: ResumeProjectsProps) {
                         </div>
                     </div>
                     <div className="flex flex-wrap gap-1.5 mt-2">
-                        {project.technologies.map((tech, techIndex) => (
-                            <span key={techIndex} className={`px-2 py-0.5 rounded-full border text-[11px] ${resumeTheme.techChip}`}>{tech}</span>
+                        {project.technologies.map((tech, index) => (
+                            <TechChip key={index} tech={tech} />
                         ))}
                     </div>
                 </div>
             ))}
-        </div>
+        </>
     );
 }
 
@@ -67,11 +68,11 @@ export function ResumeCompactProjects({ items, limit }: ResumeProjectsProps) {
                 {visible.map((project, index) => (
                     <div
                         key={index}
-                        className="mb-4 break-inside-avoid rounded-md border border-gray-200 bg-white p-3"
+                        className="mb-4 break-inside-avoid border-l-1 border-b-1 p-1 border-dashed rounded-[10px]"
                     >
                         <div className="flex justify-between items-start mb-1">
                             <a
-                                className="font-semibold text-gray-900 hover:underline"
+                                className="font-semibold text-xs text-gray-900 hover:underline"
                                 href={project.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -80,7 +81,7 @@ export function ResumeCompactProjects({ items, limit }: ResumeProjectsProps) {
                             </a>
                         </div>
 
-                        <p className="text-justify text-[13px] text-gray-800 mb-2">
+                        <p className="text-justify text-[11px] text-gray-800 mb-2">
                             {project.description}
                         </p>
 
@@ -95,14 +96,9 @@ export function ResumeCompactProjects({ items, limit }: ResumeProjectsProps) {
                                 github
                             </a>
                         )}
-                        <div className="flex flex-wrap gap-1 mt-2">
-                            {project.technologies.map((tech, techIndex) => (
-                                <span
-                                    key={techIndex}
-                                    className={`px-1.5 py-0.5 rounded-full border text-[10px] ${resumeTheme.techChip}`}
-                                >
-                                    {tech}
-                                </span>
+                        <div className="flex flex-wrap gap-0.5 pl-0.2 pb-0.2">
+                            {project.technologies.map((tech, index) => (
+                                <TechChip key={index} tech={tech} />
                             ))}
                         </div>
                     </div>
