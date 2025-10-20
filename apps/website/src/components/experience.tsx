@@ -16,42 +16,42 @@ export function Experience() {
                 </div>
 
                 <div className="space-y-8">
-                    {config.experience.map( ( exp, index ) => (
-                        <Card key={index} className="relative">
+                    { config.experience.map( ( exp, index ) => (
+                        <Card key={ index } className="relative">
                             <CardHeader>
                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                                     <div>
-                                        <CardTitle className="text-xl mb-2">{exp.title}</CardTitle>
+                                        <CardTitle className="text-xl mb-2">{ exp.title }</CardTitle>
                                         <div className="flex items-center text-muted-foreground mb-2">
                                             <Building className="h-4 w-4 mr-2" />
-                                            {exp.company}
+                                            { exp.company }
                                         </div>
                                         <div className="flex items-center text-muted-foreground mb-2">
                                             <MapPin className="h-4 w-4 mr-2" />
-                                            {exp.location}
+                                            { exp.location }
                                         </div>
                                         <div className="flex items-center text-muted-foreground">
                                             <Calendar className="h-4 w-4 mr-2" />
-                                            {exp.period}
+                                            { exp.period }
                                         </div>
                                     </div>
                                 </div>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-muted-foreground mb-4">{exp.description}</p>
+                                <p className="text-muted-foreground mb-4">{ exp.description }</p>
                                 <div className="flex flex-wrap gap-2">
-                                    {exp.technologies.map( ( tech, techIndex ) => (
+                                    { exp.technologies.map( ( tech, techIndex ) => (
                                         <span
-                                            key={techIndex}
+                                            key={ techIndex }
                                             className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
                                         >
-                                            {tech}
+                                            { tech }
                                         </span>
-                                    ) )}
+                                    ) ) }
                                 </div>
                             </CardContent>
                         </Card>
-                    ) )}
+                    ) ) }
                 </div>
             </div>
         </section>

@@ -26,4 +26,3 @@ export const resumeTheme: ResumeTheme = {
     techChip: "bg-[hsl(var(--resume-chip-bg-hsl))] text-[hsl(var(--resume-chip-text-hsl))] border-[hsl(var(--resume-chip-border-hsl))]",
 };
 
-

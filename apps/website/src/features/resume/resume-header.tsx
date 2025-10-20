@@ -14,35 +14,35 @@ export type ResumeHeaderProps = {
     subtitle: string;
 };
 
-export function ResumeHeader({ personal, subtitle }: ResumeHeaderProps) {
+export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
     return (
-        <div className={`text-center ${resumeTheme.header.border} pb-2`}>
-            <h1 className={`text-2xl font-bold tracking-tight ${resumeTheme.header.nameColor}`}>{personal.name}</h1>
+        <div className={ `text-center ${ resumeTheme.header.border } pb-2` }>
+            <h1 className={ `text-2xl font-bold tracking-tight ${ resumeTheme.header.nameColor }` }>{ personal.name }</h1>
 
-            <div className={`text-base ${resumeTheme.header.subtitleColor}`}>{subtitle}</div>
+            <div className={ `text-base ${ resumeTheme.header.subtitleColor }` }>{ subtitle }</div>
 
             <div className="flex justify-center items-center gap-2 flex-wrap text-[10px] text-gray-700 pt-1">
-                <a href={`mailto:${personal.email}`} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
-                    {personal.email}
+                <a href={ `mailto:${ personal.email }` } className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
+                    { personal.email }
                 </a>
                 <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200">
-                    {personal.phone}
+                    { personal.phone }
                 </span>
 
                 <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personal.location)}`}
+                    href={ `https://www.google.com/maps/search/?api=1&query=${ encodeURIComponent( personal.location ) }` }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50"
                 >
-                    {personal.location}
+                    { personal.location }
                 </a>
 
-                <a href={personal.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
-                    {personal.github}
+                <a href={ personal.github } target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
+                    { personal.github }
                 </a>
-                <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
-                    {personal.linkedin}
+                <a href={ personal.linkedin } target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
+                    { personal.linkedin }
                 </a>
             </div>
         </div>

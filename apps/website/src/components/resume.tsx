@@ -45,29 +45,29 @@ export function Resume() {
 
     const renderSection: Record<string, () => React.ReactNode> = {
         skills: () => params.compact.skills ?
-            <ResumeCompactSkills skills={config.compactSkills} /> : <ResumeSkills categories={config.skills} />,
+            <ResumeCompactSkills skills={ config.compactSkills } /> : <ResumeSkills categories={ config.skills } />,
         about: () => (
             <ResumeAbout
-                description={hero.description}
-                whatIDoTitle={about.whatIDo.title}
-                whatIDoItems={about.whatIDo.items}
-                showAbout={true}
+                description={ hero.description }
+                whatIDoTitle={ about.whatIDo.title }
+                whatIDoItems={ about.whatIDo.items }
+                showAbout={ true }
             />
         ),
-        experience: () => <ResumeExperience items={experience as TResumeExperienceItem[]} isCompact={params.compact.experience}/>,
-        projects: () =>  params.compact.projects ? <ResumeCompactProjects items={projects} /> :
-            <ResumeProjects items={projects} />
+        experience: () => <ResumeExperience items={ experience as TResumeExperienceItem[] } isCompact={ params.compact.experience }/>,
+        projects: () =>  params.compact.projects ? <ResumeCompactProjects items={ projects } /> :
+            <ResumeProjects items={ projects } />
     };
 
     return (
-        <div id="resume-content" className={`${ resumeTheme.container } leading-relaxed p-6 pt-2 mx-auto`}>
-            <ResumeHeader personal={personal} subtitle={hero.subtitle} />
+        <div id="resume-content" className={ `${ resumeTheme.container } leading-relaxed p-6 pt-2 mx-auto` }>
+            <ResumeHeader personal={ personal } subtitle={ hero.subtitle } />
 
             <div className="flex flex-col gap-4">
-                {orderedKeys.map( ( key ) => {
+                { orderedKeys.map( ( key ) => {
                     const node = renderSection[ key ]?.();
-                    return node ? <div key={key}>{node}</div> : null;
-                } )}
+                    return node ? <div key={ key }>{ node }</div> : null;
+                } ) }
             </div>
         </div>
     );

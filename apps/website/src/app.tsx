@@ -14,7 +14,7 @@ function App() {
 
     return (
         <div className="min-h-screen bg-background">
-            <Header activeSection={activeSection} setActiveSection={setActiveSection} />
+            <Header activeSection={ activeSection } setActiveSection={ setActiveSection } />
             <main>
                 <Hero />
                 <About />
@@ -24,8 +24,8 @@ function App() {
             </main>
             <Footer />
 
-            {/* Hidden resume component for PDF generation */}
-            <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+            { /* Hidden resume component for PDF generation */ }
+            <div style={ { position: "absolute", left: "-9999px", top: "-9999px" } }>
                 <Resume />
             </div>
         </div>

@@ -17,38 +17,38 @@ export function Projects() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {config.projects.map( ( project, index ) => (
-                        <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
+                    { config.projects.map( ( project, index ) => (
+                        <Card key={ index } className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
                             <CardHeader>
-                                <CardTitle className="text-xl">{project.title}</CardTitle>
+                                <CardTitle className="text-xl">{ project.title }</CardTitle>
                             </CardHeader>
                             <CardContent className="flex flex-col flex-grow">
                                 <div className="flex-grow">
-                                    <p className="text-muted-foreground mb-4">{project.description}</p>
+                                    <p className="text-muted-foreground mb-4">{ project.description }</p>
                                 </div>
 
                                 <div className="mb-4">
                                     <div className="flex flex-wrap gap-2">
-                                        {project.technologies.map( ( tech, techIndex ) => (
+                                        { project.technologies.map( ( tech, techIndex ) => (
                                             <span
-                                                key={techIndex}
+                                                key={ techIndex }
                                                 className="px-2 py-1 bg-primary/10 text-primary text-xs rounded"
                                             >
-                                                {tech}
+                                                { tech }
                                             </span>
-                                        ) )}
+                                        ) ) }
                                     </div>
                                 </div>
 
                                 <div className="flex gap-2">
                                     <Button variant="outline" size="sm" className="flex-1" asChild>
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                        <a href={ project.github } target="_blank" rel="noopener noreferrer">
                                             <Github className="h-4 w-4 mr-2" />
                                             Code
                                         </a>
                                     </Button>
                                     <Button variant="outline" size="sm" className="flex-1" asChild>
-                                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                                        <a href={ project.demo } target="_blank" rel="noopener noreferrer">
                                             <ExternalLink className="h-4 w-4 mr-2" />
                                             Demo
                                         </a>
@@ -56,7 +56,7 @@ export function Projects() {
                                 </div>
                             </CardContent>
                         </Card>
-                    ) )}
+                    ) ) }
                 </div>
             </div>
         </section>

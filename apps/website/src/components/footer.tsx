@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+
 import { config } from "@inewlegend/website/src/config";
 
 export function Footer() {
@@ -8,13 +9,13 @@ export function Footer() {
                 <div className="flex flex-col md:flex-row items-center justify-between">
                     <div className="text-center md:text-left mb-4 md:mb-0">
                         <p className="text-muted-foreground">
-                            {config.footer.copyright}
+                            { config.footer.copyright }
                         </p>
                     </div>
 
                     <div className="flex items-center space-x-4">
                         <a
-                            href={config.personal.github}
+                            href={ config.personal.github }
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-primary transition-colors"
@@ -23,7 +24,7 @@ export function Footer() {
                             <Github className="h-5 w-5" />
                         </a>
                         <a
-                            href={config.personal.linkedin}
+                            href={ config.personal.linkedin }
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-primary transition-colors"
@@ -32,7 +33,7 @@ export function Footer() {
                             <Linkedin className="h-5 w-5" />
                         </a>
                         <a
-                            href={`mailto:${config.personal.email}`}
+                            href={ `mailto:${ config.personal.email }` }
                             className="text-muted-foreground hover:text-primary transition-colors"
                             aria-label="Email"
                         >
