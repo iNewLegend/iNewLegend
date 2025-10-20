@@ -1,7 +1,8 @@
 {
-    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit"
+        "source.fixAll.eslint": "always"
     },
+    "eslint.useFlatConfig": true,
+    "editor.formatOnSave": false,
     "npm.packageManager": "bun"
 }
