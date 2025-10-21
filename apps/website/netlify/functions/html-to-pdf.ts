@@ -1,7 +1,10 @@
 import chromium from "@sparticuz/chromium";
-import puppeteer from "puppeteer-core";
+import puppeteerCore from "puppeteer-core";
+import puppeteer from "puppeteer";
 
 import type { Handler } from "@netlify/functions";
+
+const isLocalDevelopment = true;
 
 export const handler: Handler = async ( event ) => {
     const baseCors = {
@@ -22,35 +25,53 @@ export const handler: Handler = async ( event ) => {
     }
 
     try {
-        chromium.setHeadlessMode = true;
-        chromium.setGraphicsMode = false;
-
         const { html, filename } = JSON.parse( event.body ?? "{}" ) as { html: string; filename?: string };
 
         if ( !html || typeof html !== "string" ) {
             return { statusCode: 400, headers: { ...baseCors }, body: "Missing html" };
         }
 
-        const executablePath = await chromium.executablePath();
+        let browser;
 
-        const browser = await puppeteer.launch( {
-            args: [
-                ...chromium.args,
-                "--no-sandbox",
-                "--disable-setuid-sandbox",
-                "--disable-dev-shm-usage",
-                "--disable-gpu",
-            ],
-            defaultViewport: chromium.defaultViewport,
-            executablePath,
-            headless: chromium.headless,
-        } );
+        if ( process.env.NETLIFY_DEV ) {
+            console.log( "Using local puppeteer..." );
+
+            browser = await puppeteer.launch( {
+                headless: true,
+                args: [
+                    "--no-sandbox",
+                    "--disable-setuid-sandbox",
+                    "--disable-dev-shm-usage",
+                    "--disable-gpu",
+                ],
+            } );
+        } else {
+            console.log( "Using production puppeteer-core with chromium..." );
+
+            const executablePath = await chromium.executablePath();
+
+            browser = await puppeteerCore.launch( {
+                args: [
+                    ...chromium.args,
+                    "--no-sandbox",
+                    "--disable-setuid-sandbox",
+                    "--disable-dev-shm-usage",
+                    "--disable-gpu",
+                ],
+                defaultViewport: { width: 1920, height: 1080 },
+                executablePath,
+                headless: true,
+            } );
+        }
 
         const page = await browser.newPage();
         await page.setContent( html, { waitUntil: "networkidle0" } );
         await page.emulateMediaType( "screen" );
 
-        const pdfData = await page.pdf( { format: "A4", printBackground: true } );
+        const pdfData = await page.pdf( {
+            format: "A3",
+            printBackground: true
+        } );
         const pdfBuffer = Buffer.isBuffer( pdfData ) ? pdfData : Buffer.from( pdfData );
 
         await browser.close();

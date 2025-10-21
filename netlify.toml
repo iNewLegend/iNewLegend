@@ -8,4 +8,9 @@
   node_bundler = "esbuild"
   external_node_modules = ["@sparticuz/chromium", "puppeteer-core"]
 
+[dev]
+  framework = "#static"
+  targetPort = 5001
+  port = 8888
+
 
