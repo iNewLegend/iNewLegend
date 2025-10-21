@@ -55,6 +55,8 @@ export const handler: Handler = async ( event ) => {
                     "--disable-setuid-sandbox",
                     "--disable-dev-shm-usage",
                     "--disable-gpu",
+                    "--disable-web-security",
+                    "--disable-features=VizDisplayCompositor"
                 ],
                 defaultViewport: { width: 1920, height: 1080 },
                 executablePath,
