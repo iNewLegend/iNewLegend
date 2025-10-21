@@ -42,7 +42,7 @@ const CustomDialogContent = React.forwardRef<
 ) );
 CustomDialogContent.displayName = "CustomDialogContent";
 
-export function ResumeDialog( { open, onOpenChange, children }: ResumeDialogProps ) {
+export function ResumeControlsDialog( { open, onOpenChange, children }: ResumeDialogProps ) {
     return (
         <Dialog open={ open } onOpenChange={ onOpenChange }>
             <CustomDialogContent className="max-w-[1200px] w-[95vw] h-[90vh] p-0 overflow-hidden border-0 shadow-2xl bg-white">

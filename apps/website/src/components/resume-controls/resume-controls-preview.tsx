@@ -7,7 +7,7 @@ interface ResumePreviewProps {
     params: TResumeParams;
 }
 
-export const ResumePreview = memo( function ResumePreview( { src, params }: ResumePreviewProps ) {
+export const ResumeControlsPreview = memo( function ResumePreview( { src, params }: ResumePreviewProps ) {
     const iframeRef = useRef<HTMLIFrameElement>( null );
 
     const baseSrc = useMemo( () => {

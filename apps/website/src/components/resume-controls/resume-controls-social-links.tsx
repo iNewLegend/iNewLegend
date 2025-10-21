@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@inewlegend/website/src/components/ui/button";
 import { config } from "@inewlegend/website/src/config";
 
-export function ResumeSocialLinks() {
+export function ResumeControlsSocialLinks() {
     return (
         <div className="flex gap-3">
             <Button

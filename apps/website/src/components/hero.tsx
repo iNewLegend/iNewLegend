@@ -3,19 +3,17 @@ import { useEffect, useMemo, useState } from "react";
 
 import { Button } from "@inewlegend/website/src/components/ui/button";
 
-import { ResumeSectionEditor } from "@inewlegend/website/src/components/hero/resume-section-editor.tsx";
-
-import { ResumeSocialLinks } from "@inewlegend/website/src/components/hero/resume-social-links.tsx";
-
 import { RESUME_DEFAULT_PARAMS, RESUME_SECTION_KEYS } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
 import { config } from "@inewlegend/website/src/config";
 import { downloadResumePDFViaService, PdfProgress } from "@inewlegend/website/src/lib/pdf-generator";
 import { toSearchParams } from "@inewlegend/website/src/features/resume/resume-params.ts";
 
-import { ResumeDialog } from "@inewlegend/website/src/components/hero/resume-dialog";
-import { ResumeControls } from "@inewlegend/website/src/components/hero/resume-controls";
-import { ResumePreview } from "@inewlegend/website/src/components/hero/resume-preview";
+import { ResumeControls } from "@inewlegend/website/src/components/resume-controls";
+import { ResumeControlsDialog } from "@inewlegend/website/src/components/resume-controls/resume-controls-dialog";
+import { ResumeControlsPreview } from "@inewlegend/website/src/components/resume-controls/resume-controls-preview";
+import { ResumeControlsSectionEditor } from "@inewlegend/website/src/components/resume-controls/resume-controls-section-editor.tsx";
+import { ResumeControlsSocialLinks } from "@inewlegend/website/src/components/resume-controls/resume-controls-social-links.tsx";
 
 import type { TResumeOrderKey, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
@@ -137,10 +135,10 @@ export function Hero() {
                             Generate Resume
                         </Button>
 
-                        <ResumeSocialLinks />
+                        <ResumeControlsSocialLinks />
                     </div>
 
-                    <ResumeDialog
+                    <ResumeControlsDialog
                         open={ resumeOpen }
                         onOpenChange={ handleOpenChange }
                     >
@@ -149,14 +147,14 @@ export function Hero() {
                             step={ step }
                             onConvertToPdf={ handleConvertToPdf }
                         >
-                            <ResumeSectionEditor
+                            <ResumeControlsSectionEditor
                                 params={ params }
                                 onMove={ move }
                                 onToggleCompact={ toggleCompactFor }
                             />
                         </ResumeControls>
-                        <ResumePreview src={ resumeSrc } params={ params } />
-                    </ResumeDialog>
+                        <ResumeControlsPreview src={ resumeSrc } params={ params } />
+                    </ResumeControlsDialog>
                 </div>
             </div>
         </section>
