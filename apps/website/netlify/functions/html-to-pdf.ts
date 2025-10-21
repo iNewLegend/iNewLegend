@@ -8,7 +8,7 @@ const isLocalDevelopment = process.env.NETLIFY_DEV === "true";
 
 export const handler: Handler = async ( event ) => {
     const baseCors = {
-        "Access-Control-Allow-Origin": process.env.CORS_ORIGIN || "*",
+        "Access-Control-Allow-Origin": "https://inewlegend.com",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Accept",
     } as const;
