@@ -54,25 +54,35 @@ export const handler: Handler = async ( event ) => {
             } );
         } else {
             console.log( "Using production puppeteer-core with chromium..." );
-            const executablePath = await chromium.executablePath();
-            console.log( "Chromium executable path:", executablePath );
+            
+            try {
+                const executablePath = await chromium.executablePath();
+                console.log( "Chromium executable path:", executablePath );
 
-            if ( !executablePath ) {
-                throw new Error( "Chromium executable path is undefined" );
+                browser = await puppeteerCore.launch( {
+                    args: [
+                        ...chromium.args,
+                        "--no-sandbox",
+                        "--disable-setuid-sandbox",
+                        "--disable-dev-shm-usage",
+                        "--disable-gpu",
+                    ],
+                    defaultViewport: { width: 1920, height: 1080 },
+                    executablePath,
+                    headless: true,
+                } );
+            } catch ( chromiumError ) {
+                console.log( "Chromium failed, falling back to puppeteer..." );
+                browser = await puppeteer.launch( {
+                    headless: true,
+                    args: [
+                        "--no-sandbox",
+                        "--disable-setuid-sandbox",
+                        "--disable-dev-shm-usage",
+                        "--disable-gpu",
+                    ],
+                } );
             }
-
-            browser = await puppeteerCore.launch( {
-                args: [
-                    ...chromium.args,
-                    "--no-sandbox",
-                    "--disable-setuid-sandbox",
-                    "--disable-dev-shm-usage",
-                    "--disable-gpu",
-                ],
-                defaultViewport: { width: 1920, height: 1080 },
-                executablePath,
-                headless: true,
-            } );
         }
 
         const page = await browser.newPage();
