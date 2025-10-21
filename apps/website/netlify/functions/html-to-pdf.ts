@@ -92,5 +92,3 @@ export const handler: Handler = async ( event ) => {
         return { statusCode: 500, headers: { ...baseCors }, body: "Render error" };
     }
 };
-
-# Force rebuild
