@@ -5,7 +5,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent } from "@inewleg
 
 import { RESUME_SECTION_WITH_COMPACT_KEYS } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
-import type { TResumeOrderKey, TResumeOrderKeyWithCompact, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
+import type { TResumeOrderKey, TResumeOrderKeyWithCompact, TResumeParams } from "src/features/resume/resume.definitions.ts";
 
 interface SectionEditorProps {
     params: TResumeParams;

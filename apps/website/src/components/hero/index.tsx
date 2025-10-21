@@ -1,22 +1,21 @@
 import { Download } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
-import { ResumeControlsSectionEditor } from "@inewlegend/website/src/features/resume/resume-controls/resume-controls-section-editor.tsx";
-import { ResumeControlsDialog } from "@inewlegend/website/src/features/resume/resume-controls/resume-controls-dialog";
-import { ResumeControlsPreview } from "@inewlegend/website/src/features/resume/resume-controls/resume-controls-preview";
-import { ResumeControls } from "@inewlegend/website/src/features/resume/resume-controls";
-
-import { HeroSocialLinks } from "@inewlegend/website/src/components/hero/hero-social-links";
-
 import { Button } from "@inewlegend/website/src/components/ui/button";
 
-import { RESUME_DEFAULT_PARAMS, RESUME_SECTION_KEYS } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
+import { RESUME_DEFAULT_PARAMS, RESUME_SECTION_KEYS } from "src/features/resume/resume.definitions.ts";
 
-import { config } from "@inewlegend/website/src/config";
-import { downloadResumePDFViaService, PdfProgress } from "@inewlegend/website/src/lib/pdf-generator";
-import { toSearchParams } from "@inewlegend/website/src/features/resume/resume-params.ts";
+import { config } from "src/config";
+import { downloadResumePDFViaService, PdfProgress } from "src/lib/pdf-generator";
+import { toSearchParams } from "src/features/resume/resume-params.ts";
 
-import type { TResumeOrderKey, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
+import { ResumeControls } from "src/features/resume/resume-controls";
+import { ResumeControlsDialog } from "src/features/resume/resume-controls/resume-controls-dialog";
+import { ResumeControlsPreview } from "src/features/resume/resume-controls/resume-controls-preview";
+import { ResumeControlsSectionEditor } from "src/features/resume/resume-controls/resume-controls-section-editor.tsx";
+import { HeroSocialLinks } from "@inewlegend/website/src/components/hero/hero-social-links.tsx";
+
+import type { TResumeOrderKey, TResumeParams } from "src/features/resume/resume.definitions.ts";
 
 export function Hero() {
     const [ resumeOpen, setResumeOpen ] = useState( false );

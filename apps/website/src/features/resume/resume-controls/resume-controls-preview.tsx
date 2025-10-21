@@ -1,6 +1,6 @@
 import { memo, useRef, useEffect, useState, useMemo } from "react";
 
-import type { TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
+import type { TResumeParams } from "src/features/resume/resume.definitions.ts";
 
 interface ResumePreviewProps {
     src: string;
