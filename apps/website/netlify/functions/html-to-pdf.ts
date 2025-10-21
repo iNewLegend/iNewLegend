@@ -4,9 +4,11 @@ import puppeteer from "puppeteer";
 
 import type { Handler } from "@netlify/functions";
 
+const isLocalDevelopment = process.env.NETLIFY_DEV === "true";
+
 export const handler: Handler = async ( event ) => {
     const baseCors = {
-        "Access-Control-Allow-Origin": "https://inewlegend.com",
+        "Access-Control-Allow-Origin": process.env.CORS_ORIGIN || "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Accept",
     } as const;
@@ -31,9 +33,15 @@ export const handler: Handler = async ( event ) => {
 
         let browser;
 
+        console.log( "Environment check:", {
+            NODE_ENV: process.env.NODE_ENV,
+            NETLIFY_DEV: process.env.NETLIFY_DEV,
+            CORS_ORIGIN: process.env.CORS_ORIGIN,
+            isLocalDevelopment
+        } );
+
         if ( process.env.NETLIFY_DEV ) {
             console.log( "Using local puppeteer..." );
-
             browser = await puppeteer.launch( {
                 headless: true,
                 args: [
@@ -45,7 +53,6 @@ export const handler: Handler = async ( event ) => {
             } );
         } else {
             console.log( "Using production puppeteer-core with chromium..." );
-
             const executablePath = await chromium.executablePath();
 
             browser = await puppeteerCore.launch( {
@@ -55,8 +62,6 @@ export const handler: Handler = async ( event ) => {
                     "--disable-setuid-sandbox",
                     "--disable-dev-shm-usage",
                     "--disable-gpu",
-                    "--disable-web-security",
-                    "--disable-features=VizDisplayCompositor"
                 ],
                 defaultViewport: { width: 1920, height: 1080 },
                 executablePath,
@@ -94,3 +99,4 @@ export const handler: Handler = async ( event ) => {
         return { statusCode: 500, headers: { ...baseCors }, body: "Render error" };
     }
 };
+
