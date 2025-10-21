@@ -1,31 +1,31 @@
 {
-  "name": "@inewlegend/pdf-service",
+  "name": "@inewlegend/website-backend",
   "version": "1.0.0",
   "description": "PDF generation service for resume website",
-  "type": "module",
   "main": "src/index.ts",
   "scripts": {
     "dev": "bun --watch src/index.ts",
-    "build": "bun build src/index.ts --outdir dist --target node",
+    "build": "bun build src/index.ts --outdir dist --target node --format cjs",
     "start": "bun dist/index.js",
     "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0",
-    "type-check": "bun --no-install tsc --noEmit"
+    "type-check": "bun --no-install tsc --noEmit",
+    "deploy": "cd ../../../scripts/website/ && bash deploy-backend.sh"
   },
   "dependencies": {
     "@sparticuz/chromium": "^141.0.0",
     "express": "^4.18.2",
     "puppeteer-core": "^24.22.0",
     "puppeteer": "^24.25.0",
-    "cors": "^2.8.5"
-  },
-  "devDependencies": {
+    "cors": "^2.8.5",
+    "typescript": "^5.9.2",
     "@types/express": "^4.17.21",
     "@types/cors": "^2.8.17",
-    "@types/node": "^20.10.0",
+    "@types/node": "^20.10.0"
+  },
+  "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.44.1",
     "@typescript-eslint/parser": "^8.44.1",
-    "eslint": "^9.36.0",
-    "typescript": "^5.9.2"
+    "eslint": "^9.36.0"
   },
   "engines": {
     "bun": ">=1.0.0"

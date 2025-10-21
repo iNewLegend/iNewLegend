@@ -9,6 +9,7 @@
     "inewlegend:website:dev": "cd apps/website && bun run dev",
     "inewlegend:website:build": "cd apps/website && bun run build",
     "inewlegend:website:deploy": "bun --bun scripts/website/deploy.js",
+    "inewlegend:website:backend:deploy": "cd apps/website/backend && bun run deploy",
     "inewlegend:docs:dev": "cd apps/docs && bun run start",
     "inewlegend:docs:build": "cd apps/docs && bun run build",
     "inewlegend:docs:serve": "cd apps/docs && bun run serve",
