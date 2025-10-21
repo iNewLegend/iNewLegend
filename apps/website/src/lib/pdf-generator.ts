@@ -14,8 +14,9 @@ export async function downloadResumePDFViaService( resumeUrl: string, options?: 
     const { onProgress } = options || {};
 
     onProgress?.( PdfProgress.Prepare );
-    const serviceUrl = import.meta.env.DEV ? import.meta.env.VITE_WEBSITE_PDF_SERVICE_DEV_URL :
-        import.meta.env.VITE_WEBSITE_PDF_SERVICE_URL;
+    const serviceUrl = import.meta.env.DEV ? 
+        import.meta.env.VITE_WEBSITE_PDF_SERVICE_DEV_URL || 'http://localhost:3000/html-to-pdf' :
+        import.meta.env.VITE_WEBSITE_PDF_SERVICE_URL || 'https://pdf-service.inewlegend.com/html-to-pdf';
 
     if ( !serviceUrl ) {
         throw new Error( "WEBSITE_PDF_SERVICE_URL is not configured" );
