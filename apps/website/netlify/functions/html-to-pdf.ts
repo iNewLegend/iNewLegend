@@ -7,8 +7,9 @@ import type { Handler } from "@netlify/functions";
 const isLocalDevelopment = process.env.NETLIFY_DEV === "true";
 
 export const handler: Handler = async ( event ) => {
+    const corsOrigin = process.env.CORS_ORIGIN || "https://inewlegend.com";
     const baseCors = {
-        "Access-Control-Allow-Origin": "https://inewlegend.com",
+        "Access-Control-Allow-Origin": corsOrigin.startsWith('http') ? corsOrigin : `https://${corsOrigin}`,
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Accept",
     } as const;
@@ -54,6 +55,11 @@ export const handler: Handler = async ( event ) => {
         } else {
             console.log( "Using production puppeteer-core with chromium..." );
             const executablePath = await chromium.executablePath();
+            console.log( "Chromium executable path:", executablePath );
+
+            if ( !executablePath ) {
+                throw new Error( "Chromium executable path is undefined" );
+            }
 
             browser = await puppeteerCore.launch( {
                 args: [
