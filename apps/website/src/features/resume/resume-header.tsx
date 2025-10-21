@@ -22,7 +22,7 @@ export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
 
             <div className={ `text-base ${ resumeTheme.header.subtitleColor }` }>{ subtitle }</div>
 
-            <div className="flex justify-center items-center gap-2 flex-wrap text-[10px] text-gray-700 pt-1">
+            <div className="flex justify-center items-center gap-2 flex-wrap text-[10.5px] text-gray-700 pt-1">
                 <a href={ `mailto:${ personal.email }` } className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
                     { personal.email }
                 </a>
@@ -39,15 +39,21 @@ export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
                     { personal.location }
                 </a>
 
-                <a href={ personal.github } target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
-                    { personal.github }
-                </a>
-                <a href={ personal.linkedin } target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
-                    { personal.linkedin }
-                </a>
-                <a href={ personal.portfolio } target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
-                    { personal.portfolio }
-                </a>
+                { [
+                    { url: personal.github, text: personal.github },
+                    { url: personal.linkedin, text: personal.linkedin },
+                    { url: personal.portfolio, text: personal.portfolio }
+                ].map( ( link, index ) => (
+                    <a
+                        key={ index }
+                        href={ link.url }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50"
+                    >
+                        { link.text }
+                    </a>
+                ) ) }
             </div>
         </div>
     );

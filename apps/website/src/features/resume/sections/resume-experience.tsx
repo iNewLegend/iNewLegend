@@ -32,7 +32,7 @@ export function ResumeExperience( { items, isCompact }: TResumeExperienceProps )
                     ) }
                     { isCompact && exp.compactDescription && (
                         <p
-                            className="text-[13px] text-gray-700 mb-2"
+                            className="text-[14px] text-gray-700 mb-2"
                             dangerouslySetInnerHTML={ { __html: DOMPurify.sanitize( decodeEntities( exp.compactDescription ) ) } }
                         />
                     ) }
