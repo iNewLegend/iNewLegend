@@ -62,7 +62,7 @@ export function ResumeCompactProjects( { items, limit }: ResumeProjectsProps ) {
     const visible = typeof limit === "number" ? items.slice( 0, limit ) : items;
 
     return (
-        <div>
+        <>
             <ResumeSectionHeading title="Projects" />
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
                 { visible.map( ( project, index ) => (
@@ -72,7 +72,7 @@ export function ResumeCompactProjects( { items, limit }: ResumeProjectsProps ) {
                     >
                         <div className="flex justify-between items-start mb-1">
                             <a
-                                className="font-semibold text-xs text-gray-900 hover:underline"
+                                className="font-semibold text-xs text-blue-700 hover:underline"
                                 href={ project.github }
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -85,17 +85,6 @@ export function ResumeCompactProjects( { items, limit }: ResumeProjectsProps ) {
                             { project.description }
                         </p>
 
-                        <span className="text-xs text-gray-500">Links: </span>
-                        { project.github && (
-                            <a
-                                className="text-xs text-blue-700 hover:underline mb-2 inline-block"
-                                href={ project.github }
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                github
-                            </a>
-                        ) }
                         <div className="flex flex-wrap gap-0.5 pl-0.2 pb-0.2">
                             { project.technologies.map( ( tech, index ) => (
                                 <TechChip key={ index } tech={ tech } />
@@ -104,7 +93,7 @@ export function ResumeCompactProjects( { items, limit }: ResumeProjectsProps ) {
                     </div>
                 ) ) }
             </div>
-        </div>
+        </>
     );
 }
 

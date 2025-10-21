@@ -4,8 +4,6 @@ import puppeteer from "puppeteer";
 
 import type { Handler } from "@netlify/functions";
 
-const isLocalDevelopment = true;
-
 export const handler: Handler = async ( event ) => {
     const baseCors = {
         "Access-Control-Allow-Origin": process.env.CORS_ORIGIN || "*",

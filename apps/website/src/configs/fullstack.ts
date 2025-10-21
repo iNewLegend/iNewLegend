@@ -6,7 +6,8 @@ export const fullstackConfig = {
         "phone": "+972 053 919 7333",
         "location": "Israel, Holon",
         "github": "https://github.com/inewlegend",
-        "linkedin": "https://www.linkedin.com/in/inewlegend/"
+        "linkedin": "https://www.linkedin.com/in/inewlegend/",
+        "portfolio": "http://leonidvinikov.com"
     },
     "hero": {
         "title": "Hi, I'm",
@@ -20,17 +21,29 @@ export const fullstackConfig = {
             "title": "My Journey",
             "content": "I've worked across startups and large‑scale products like Elementor (used by 10% of the internet), contributed to open source, and delivered platform and developer‑experience improvements. I enjoy translating ideas into production systems and prefer roles involving platform engineering and strong execution."
         },
-        "whatIDo": {
-            "title": "What I Do",
-            "items": [
-                "Design clean, stable APIs and ensure backward compatibility",
-                "Refactor core systems for reliability, performance, and clarity",
-                "Implement thorough testing (unit, integration, E2E) and CI/CD",
-                "Build developer tools and improve platform DX and monorepos",
-                "Deliver end‑to‑end features across frontend, backend",
-                "Utilize tools like Cursor AI, and LLMs to improve productivity"
-            ]
-        }
+
+    },
+    "whatIDo": {
+        "title": "What I Do",
+        "items": [
+            "Design clean, stable APIs and ensure backward compatibility",
+            "Refactor core systems for reliability, performance, and clarity",
+            "Implement thorough testing (unit, integration, E2E) and CI/CD",
+            "Build developer tools and improve platform DX and monorepos",
+            "Deliver end‑to‑end features across frontend, backend",
+            "Utilize tools like Cursor AI, and LLMs to improve productivity"
+        ]
+    },
+    "whatILookingFor": {
+        "title": "What I'm Looking For",
+        "items": [
+            "Frontend-focused roles where I can leverage my backend experience in Node.js/PHP",
+            "Opportunities to work on complex systems and platform engineering",
+            "Roles involving end‑to‑end ownership and technical decision‑making",
+            "Teams that value code quality, testing, and maintainability",
+            "Projects that challenge me with interesting technical problems",
+            "Environments that encourage innovation and continuous learning"
+        ]
     },
     "experience": [
         {
@@ -57,7 +70,7 @@ export const fullstackConfig = {
             "location": "Remote",
             "period": "2022 — 2024 (2+ years)",
             "description": "I worked as a freelancer and started some projects to extend my knowledge. Created Vertix (Discord bot for managing voice channels) and ZenFlux (framework for building, publishing, and watching monorepo workspaces).",
-            "compactDescription": "Worked as freelancer, and on private projects eg: <a href='https://github.com/VertixGG/vertix.gg'>https://github.com/VertixGG/vertix.gg</a>",
+            "compactDescription": "Mostly a freelancer, worked on private projects in my free time eg: <a href='https://github.com/VertixGG/vertix.gg'>https://github.com/VertixGG/vertix.gg</a>",
             "technologies": [
                 "TypeScript",
                 "React",
@@ -189,21 +202,6 @@ export const fullstackConfig = {
             "github": "https://github.com/iNewLegend/php-image-dominant-colors",
         },
         {
-            "title": "Web Crawler",
-            "description": "A full-stack web crawler application with Laravel backend and Angular frontend. Features MongoDB integration, memory caching, and comprehensive crawling capabilities. Built with PHP 8.2+, Angular, and modern development workflows.",
-            "technologies": [
-                "PHP",
-                "Laravel",
-                "Angular",
-                "MongoDB",
-                "TypeScript",
-                "Blade",
-                "Web Crawling",
-                "Memory Cache"
-            ],
-            "github": "https://github.com/iNewLegend/web-crawler"
-        },
-        {
             "title": "ZenFlux",
             "description": "A framework that offers functionalities related to building, publishing, and watching monorepo workspaces. Designed to streamline monorepo development workflows and improve developer experience.",
             "technologies": [
@@ -218,18 +216,20 @@ export const fullstackConfig = {
             "github": "https://github.com/zenflux/zenflux"
         },
         {
-            "title": "MuOnline.co.il",
-            "description": "RPG multiplayer game server maintenance and development. Learned reverse engineering using IDA PRO and OllyDBG while upgrading and maintaining game servers. Created custom DLL hooks and data server in C++.",
+            "title": "Web Crawler",
+            "url": "https://github.com/iNewLegend/web-crawler",
+            "description": "A full-stack web crawler with a Laravel backend and Angular frontend, featuring MongoDB integration, memory caching, and extensive crawling capabilities.",
             "technologies": [
-                "Assembly",
-                "C",
-                "C++",
                 "PHP",
-                "MS SQL",
-                "MySQL",
-                "JavaScript"
+                "Laravel",
+                "Angular",
+                "MongoDB",
+                "TypeScript",
+                "Blade",
+                "Web Crawling",
+                "Memory Cache"
             ],
-            "github": "https://github.com/iNewLegend/muonline.co.il",
+            "github": "https://github.com/iNewLegend/web-crawler"
         }
     ],
     "skills": {
@@ -330,7 +330,7 @@ export const fullstackConfig = {
         {
             "icon": "Cloud",
             "title": "Platform Engineering",
-            "description": "EC2, Docker, CI/CD, Monorepo Setup, Nx, Building Tools"
+            "description": "EC2, Docker, CI/CD, Monorepo Setup, Nx, Building Tools, TSconfig"
         },
         {
             "icon": "Smartphone",

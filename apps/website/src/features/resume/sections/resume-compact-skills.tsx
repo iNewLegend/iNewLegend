@@ -11,9 +11,9 @@ export type ResumeCompactSkillsProps = {
 
 export function ResumeCompactSkills( { skills }: ResumeCompactSkillsProps ) {
     return (
-        <div className="">
+        <>
             <ResumeSectionHeading title="Skills" />
-            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 pb-2">
                 { skills.map( ( s, idx ) => (
                     <div key={ idx } className="">
                         <div className="text-xs font-medium text-gray-500 mb-1">{ s.title }</div>
@@ -21,7 +21,7 @@ export function ResumeCompactSkills( { skills }: ResumeCompactSkillsProps ) {
                     </div>
                 ) ) }
             </div>
-        </div>
+        </>
     );
 }
 

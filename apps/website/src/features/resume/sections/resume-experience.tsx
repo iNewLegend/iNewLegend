@@ -13,7 +13,7 @@ export function ResumeExperience( { items, isCompact }: TResumeExperienceProps )
     };
 
     return (
-        <div>
+        <>
             <ResumeSectionHeading title="Experience" />
             { items.map( ( exp, index ) => (
                 <div key={ index } className="pb-3 border-b-1 border-dashed mt-0.5">
@@ -43,7 +43,7 @@ export function ResumeExperience( { items, isCompact }: TResumeExperienceProps )
                     </div>
                 </div>
             ) ) }
-        </div>
+        </>
     );
 }
 

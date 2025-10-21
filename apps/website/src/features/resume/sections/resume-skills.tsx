@@ -7,7 +7,7 @@ export type ResumeSkillsProps = {
 
 export function ResumeSkills( { categories }: ResumeSkillsProps ) {
     return (
-        <div className="">
+        <>
             <ResumeSectionHeading title="Skills & Technologies" />
             <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 { Object.entries( categories ).map( ( [ category, skillList ] ) => (
@@ -21,7 +21,7 @@ export function ResumeSkills( { categories }: ResumeSkillsProps ) {
                     </div>
                 ) ) }
             </div>
-        </div>
+        </>
     );
 }
 

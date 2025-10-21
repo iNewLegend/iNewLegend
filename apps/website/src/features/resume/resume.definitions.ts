@@ -2,6 +2,8 @@
 export const RESUME_SECTION_KEYS = [
     "skills",
     "about",
+    "whatIDo",
+    "whatILookingFor",
     "experience",
     "projects"
 ] as const;
@@ -25,6 +27,8 @@ export const RESUME_DEFAULT_PARAMS: TResumeParams = {
     },
     order: [
         "about",
+        "whatIDo",
+        "whatILookingFor",
         "skills",
         "experience",
         "projects"

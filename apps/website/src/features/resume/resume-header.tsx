@@ -7,6 +7,7 @@ export type ResumePersonalInfo = {
     location: string;
     github: string;
     linkedin: string;
+    portfolio: string;
 };
 
 export type ResumeHeaderProps = {
@@ -43,6 +44,9 @@ export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
                 </a>
                 <a href={ personal.linkedin } target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
                     { personal.linkedin }
+                </a>
+                <a href={ personal.portfolio } target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
+                    { personal.portfolio }
                 </a>
             </div>
         </div>

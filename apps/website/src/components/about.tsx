@@ -43,9 +43,9 @@ export function About() {
                     </div>
 
                     <div>
-                        <h3 className="text-2xl font-semibold mb-4">{ config.about.whatIDo.title }</h3>
+                        <h3 className="text-2xl font-semibold mb-4">{ config.about.title }</h3>
                         <ul className="space-y-3 text-muted-foreground">
-                            { config.about.whatIDo.items.map( ( item, index ) => (
+                            { config.whatIDo.items.map( ( item, index ) => (
                                 <li key={ index } className="flex items-start">
                                     <span className="text-primary mr-2">•</span>
                                     { item }
@@ -53,6 +53,18 @@ export function About() {
                             ) ) }
                         </ul>
                     </div>
+                </div>
+
+                <div className="mb-12">
+                    <h3 className="text-2xl font-semibold mb-4">{ config.whatILookingFor.title }</h3>
+                    <ul className="grid md:grid-cols-2 gap-3 text-muted-foreground">
+                        { config.whatILookingFor.items.map( ( item, index ) => (
+                            <li key={ index } className="flex items-start">
+                                <span className="text-primary mr-2">•</span>
+                                { item }
+                            </li>
+                        ) ) }
+                    </ul>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

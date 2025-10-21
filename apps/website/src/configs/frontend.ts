@@ -6,7 +6,8 @@ export const frontendConfig = {
         phone: "+972 053 919 7333",
         location: "Israel, Holon",
         github: "https://github.com/inewlegend",
-        linkedin: "https://www.linkedin.com/in/inewlegend/"
+        linkedin: "https://www.linkedin.com/in/inewlegend/",
+        portfolio: "http://leonidvinikov.com"
     },
 
     hero: {
@@ -21,17 +22,27 @@ export const frontendConfig = {
         journey: {
             title: "My Journey",
             content: "From platform and core work to product features, I’ve delivered frontends at scale (Elementor) and built tooling that accelerates teams. I enjoy refactoring cores, improving rendering pipelines, and creating delightful UI experiences."
-        },
-        whatIDo: {
-            title: "What I Do",
-            items: [
-                "Architect React apps with clear boundaries and testability",
-                "Optimize rendering, bundle size, and perceived performance",
-                "Build reusable component systems (Tailwind, shadcn/ui)",
-                "Establish strong typing, linting, and CI pipelines",
-                "Improve DX with tooling, scripts, and actionable docs"
-            ]
         }
+    },
+
+    whatIDo: {
+        title: "What I Do",
+        items: [
+            "Architect React apps with clear boundaries and testability",
+            "Optimize rendering, bundle size, and perceived performance",
+            "Build reusable component systems (Tailwind, shadcn/ui)",
+            "Establish strong typing, linting, and CI pipelines",
+            "Improve DX with tooling, scripts, and actionable docs"
+        ]
+    },
+    whatILookingFor: {
+        title: "What I'm Looking For",
+        items: [
+            "Crafting complex systems and improving DX",
+            "Opportunities to build and scale advanced systems",
+            "Projects with challenging technical problems",
+            "Environments that prioritize DX and engineering best practices"
+        ]
     },
 
     experience: [
