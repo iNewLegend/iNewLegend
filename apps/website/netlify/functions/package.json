@@ -1,0 +1,10 @@
+{
+  "name": "netlify-functions",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@sparticuz/chromium": "^141.0.0",
+    "puppeteer-core": "^24.22.0",
+    "puppeteer": "^24.25.0"
+  }
+}
