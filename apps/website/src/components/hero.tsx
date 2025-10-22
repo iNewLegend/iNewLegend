@@ -2,6 +2,7 @@ import { Download } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 import { ResumeControlsSectionEditor } from "@inewlegend/website/src/features/resume/resume-controls/resume-controls-section-editor.tsx";
+import { ResumeControlsThemeEditor } from "@inewlegend/website/src/features/resume/resume-controls/resume-controls-theme-editor.tsx";
 import { ResumeControlsDialog } from "@inewlegend/website/src/features/resume/resume-controls/resume-controls-dialog";
 import { ResumeControlsPreview } from "@inewlegend/website/src/features/resume/resume-controls/resume-controls-preview";
 import { ResumeControls } from "@inewlegend/website/src/features/resume/resume-controls";
@@ -153,6 +154,7 @@ export function Hero() {
                                 onMove={ move }
                                 onToggleCompact={ toggleCompactFor }
                             />
+                            <ResumeControlsThemeEditor />
                         </ResumeControls>
                         <ResumeControlsPreview src={ resumeSrc } params={ params } />
                     </ResumeControlsDialog>
