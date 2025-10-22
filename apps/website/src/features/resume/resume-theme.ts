@@ -21,6 +21,12 @@ export type ResumeTheme = {
             md: string;
             lg: string;
         };
+        weights: {
+            normal: string;
+            medium: string;
+            semibold: string;
+            bold: string;
+        };
     };
     layout: {
         grid: {
@@ -77,10 +83,16 @@ export const resumeTheme: ResumeTheme = {
     },
     text: {
         sizes: {
-            xs: "text-[11px]",
-            sm: "text-[12px]",
-            md: "text-[14px]",
-            lg: "text-[15px]",
+            xs: "text-[var(--resume-text-xs)]",
+            sm: "text-[var(--resume-text-sm)]",
+            md: "text-[var(--resume-text-md)]",
+            lg: "text-[var(--resume-text-lg)]",
+        },
+        weights: {
+            normal: "font-[var(--resume-font-normal)]",
+            medium: "font-[var(--resume-font-medium)]",
+            semibold: "font-[var(--resume-font-semibold)]",
+            bold: "font-[var(--resume-font-bold)]",
         },
     },
     layout: {

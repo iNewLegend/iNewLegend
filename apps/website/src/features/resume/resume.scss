@@ -9,14 +9,75 @@ $resume-colors: (
   chip-border: 210 100% 90%
 );
 
-// SCSS Mixin for resume variables
+// Text sizes
+$resume-text-sizes: (
+  xs: 11px,
+  sm: 12px,
+  md: 14px,
+  lg: 15px
+);
+
+// Font weights
+$resume-font-weights: (
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700
+);
+
+// Spacing values
+$resume-spacing: (
+  xs: 0.25rem,
+  sm: 0.5rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 2rem
+);
+
+// Border radius values
+$resume-border-radius: (
+  sm: 0.25rem,
+  md: 0.5rem,
+  lg: 0.75rem,
+  full: 9999px
+);
+
+// SCSS Mixins for generating variables
 @mixin generate-resume-vars($color-map) {
   @each $name, $value in $color-map {
     --resume-#{$name}-hsl: #{$value};
   }
 }
 
-// Generate resume CSS variables
+@mixin generate-text-sizes($size-map) {
+  @each $name, $value in $size-map {
+    --resume-text-#{$name}: #{$value};
+  }
+}
+
+@mixin generate-font-weights($weight-map) {
+  @each $name, $value in $weight-map {
+    --resume-font-#{$name}: #{$value};
+  }
+}
+
+@mixin generate-spacing($spacing-map) {
+  @each $name, $value in $spacing-map {
+    --resume-spacing-#{$name}: #{$value};
+  }
+}
+
+@mixin generate-border-radius($radius-map) {
+  @each $name, $value in $radius-map {
+    --resume-radius-#{$name}: #{$value};
+  }
+}
+
+// Generate all resume CSS variables
 :root {
   @include generate-resume-vars($resume-colors);
+  @include generate-text-sizes($resume-text-sizes);
+  @include generate-font-weights($resume-font-weights);
+  @include generate-spacing($resume-spacing);
+  @include generate-border-radius($resume-border-radius);
 }

@@ -27,7 +27,7 @@ export function ResumeProjects( { items, limit }: TResumeProjectsProps ) {
                         <div>
                             { project.github && (
                                 <div>
-                                    <span className={ `${ resumeTheme.text.sizes.xs } ${ resumeTheme.colors.muted }` }>github: </span>
+                                    <span className={ `text-xs ${ resumeTheme.colors.muted }` }>github: </span>
                                     <a className={ resumeTheme.components.links.github } href={ project.github } target="_blank" rel="noopener noreferrer">{ project.github }</a>
                                 </div>
                             ) }

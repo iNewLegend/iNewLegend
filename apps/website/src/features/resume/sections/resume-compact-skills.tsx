@@ -17,7 +17,7 @@ export function ResumeCompactSkills({ skills }: ResumeCompactSkillsProps) {
             <div className={ resumeTheme.layout.grid.compactSkills }>
                 {skills.map((s, idx) => (
                     <div key={idx} className="">
-                        <div className={ `${ resumeTheme.text.sizes.xs } font-medium ${ resumeTheme.colors.muted } mb-1` }>{s.title}</div>
+                        <div className={ `text-xs font-medium ${ resumeTheme.colors.muted } mb-1` }>{s.title}</div>
                         <ResumeTextBlock size="sm" justify={false}>{s.description}</ResumeTextBlock>
                     </div>
                 ))}

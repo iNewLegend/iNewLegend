@@ -9,7 +9,7 @@ export function ResumeListGrid( { items, className = "" }: ResumeListGridProps )
     return (
         <ul className={ `${ resumeTheme.layout.grid.list } ${ resumeTheme.colors.secondary } ${ className }` }>
             { items.map( ( item, index ) => (
-                <li key={ index } className={ `break-inside-avoid ${ resumeTheme.text.sizes.sm }` }>
+                <li key={ index } className={ `break-inside-avoid text-sm` }>
                     { item }.
                 </li>
             ) ) }

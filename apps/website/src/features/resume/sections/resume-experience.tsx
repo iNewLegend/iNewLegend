@@ -39,7 +39,7 @@ export function ResumeExperience({ items, isCompact }: TResumeExperienceProps) {
                     )}
                     <ResumeTechStack 
                         technologies={exp.technologies} 
-                        chipClassName="text-[10px]"
+                        chipClassName="text-xs"
                     />
                 </div>
             ))}
