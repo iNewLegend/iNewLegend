@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website with advanced resume generation capabilities, built with React, TypeScript, and Tailwind CSS. Features a sophisticated resume builder with customizable themes, section ordering, and PDF export functionality.
 
+**Live Demo**: [https://inewlegend.com](https://inewlegend.com)
+
 ## Features
 
 - **Responsive Design**: Optimized for all device sizes
