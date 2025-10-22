@@ -16,7 +16,7 @@ export function ResumeExperience( { items, isCompact }: TResumeExperienceProps )
     return (
         <ResumeSection title="Experience">
             { items.map( ( exp, index ) => (
-                <div key={ index } className={ resumeTheme.layout.spacing.item }>
+                <div key={ index } className={ `${ resumeTheme.layout.spacing.item } last:!border-b-0` }>
                     <div className="flex justify-between items-start gap-4">
                         <div>
                             <div className={ `${ resumeTheme.text.sizes.sm } ${ resumeTheme.colors.primary }` }>{ exp.title }</div>
