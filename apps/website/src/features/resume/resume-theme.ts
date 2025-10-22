@@ -53,6 +53,7 @@ export type ResumeTheme = {
             contactChipHover: string;
         };
         section: {
+            container: string;
             headingText: string;
             accentBar: string;
         };
@@ -71,14 +72,14 @@ export const resumeTheme: ResumeTheme = {
         primary: "text-gray-900",
         secondary: "text-gray-800",
         muted: "text-gray-500",
-        accent: "text-[hsl(var(--resume-accent-hsl))]",
-        name: "text-[hsl(var(--resume-name-hsl))]",
-        subtitle: "text-[hsl(var(--resume-subtitle-hsl))]",
-        heading: "text-[hsl(var(--resume-heading-hsl))]",
+        accent: "text-[#3b82f6]",
+        name: "text-[#60a5fa]",
+        subtitle: "text-[#6b7280]",
+        heading: "text-[#4b5563]",
         chip: {
-            bg: "bg-[hsl(var(--resume-chip-bg-hsl))]",
-            text: "text-[hsl(var(--resume-chip-text-hsl))]",
-            border: "border-[hsl(var(--resume-chip-border-hsl))]",
+            bg: "bg-[#f0f9ff]",
+            text: "text-[#1d4ed8]",
+            border: "border-[#dbeafe]",
         },
     },
     text: {
@@ -107,23 +108,24 @@ export const resumeTheme: ResumeTheme = {
             compact: "mb-4 break-inside-avoid border-l-1 border-b-1 p-1 border-dashed rounded-[10px]",
         },
         borders: {
-            accent: "border-b border-[hsl(var(--resume-accent-hsl)/0.7)]",
+            accent: "border-b border-[#3b82f6]/70",
             dashed: "border-b-1 border-dashed",
         },
     },
     components: {
         header: {
-            border: "border-b border-[hsl(var(--resume-accent-hsl)/0.7)]",
-            nameColor: "text-[hsl(var(--resume-name-hsl))]",
-            subtitleColor: "text-[hsl(var(--resume-subtitle-hsl))]",
-            contactChip: "inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200",
+            border: "border-b border-[#3b82f6]/70",
+            nameColor: "text-[#60a5fa]",
+            subtitleColor: "text-[#6b7280]",
+            contactChip: "inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-[#e5e7eb]",
             contactChipHover: "hover:bg-gray-50",
         },
         section: {
-            headingText: "text-[hsl(var(--resume-heading-hsl))]",
-            accentBar: "bg-[hsl(var(--resume-accent-hsl))]",
+            container: "border-b-1 border-solid border-[#3b82f6]",
+            headingText: "text-[#4b5563]",
+            accentBar: "bg-[#3b82f6]",
         },
-        techChip: "bg-[hsl(var(--resume-chip-bg-hsl))] text-[hsl(var(--resume-chip-text-hsl))] border-[hsl(var(--resume-chip-border-hsl))]",
+        techChip: "bg-[#f0f9ff] text-[#1d4ed8] border-[#dbeafe]",
         links: {
             project: "font-semibold text-gray-900 hover:underline",
             github: "text-xs text-blue-700 hover:underline",

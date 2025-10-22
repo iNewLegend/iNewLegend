@@ -1,12 +1,19 @@
 // Resume theme colors
 $resume-colors: (
-  accent: 217 91% 60%,
-  heading: 215 19% 35%,
-  name: 217 108% 69%,
-  subtitle: 215.4 16.3% 46.9%,
-  chip-bg: 210 100% 97%,
-  chip-text: 214 86% 40%,
-  chip-border: 210 100% 90%
+  accent: #3b82f6,
+  heading: #4b5563,
+  name: #60a5fa,
+  subtitle: #6b7280,
+  chip-bg: #f0f9ff,
+  chip-text: #1d4ed8,
+  chip-border: #dbeafe
+);
+
+// Border colors
+$resume-border-colors: (
+  primary: #d1d5db,
+  secondary: #e5e7eb,
+  accent: #3b82f6
 );
 
 // Text sizes
@@ -73,6 +80,12 @@ $resume-border-radius: (
   }
 }
 
+@mixin generate-border-colors($color-map) {
+  @each $name, $value in $color-map {
+    --resume-border-#{$name}-hsl: #{$value};
+  }
+}
+
 // Generate all resume CSS variables
 :root {
   @include generate-resume-vars($resume-colors);
@@ -80,4 +93,5 @@ $resume-border-radius: (
   @include generate-font-weights($resume-font-weights);
   @include generate-spacing($resume-spacing);
   @include generate-border-radius($resume-border-radius);
+  @include generate-border-colors($resume-border-colors);
 }
