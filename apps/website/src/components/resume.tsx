@@ -18,7 +18,8 @@ import { ResumeSkills } from "@inewlegend/website/src/features/resume/sections/r
 
 import { ResumeHeader } from "@inewlegend/website/src/features/resume/resume-header.tsx";
 
-import { ResumeCompactProjects, ResumeProjects } from "@inewlegend/website/src/features/resume/sections/resume-projects.tsx";
+import { ResumeProjects } from "@inewlegend/website/src/features/resume/sections/resume-projects.tsx";
+import { ResumeCompactProjects } from "@inewlegend/website/src/features/resume/sections/resume-compact-projects.tsx";
 
 import type { RESUME_SECTION_KEYS, TResumeExperienceItem, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 

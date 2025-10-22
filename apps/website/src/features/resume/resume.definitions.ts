@@ -64,3 +64,15 @@ export type TResumeExperienceProps = {
     items: TResumeExperienceItem[];
     isCompact: boolean;
 };
+
+export type TResumeProjectItem = {
+    title: string;
+    description: string;
+    technologies: string[];
+    github?: string;
+};
+
+export type TResumeProjectsProps = {
+    items: TResumeProjectItem[];
+    limit?: number;
+};

@@ -1,4 +1,5 @@
-import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/sections/elements/resume-section-heading.tsx";
+import { ResumeSection } from "@inewlegend/website/src/features/resume/sections/elements/resume-section.tsx";
+import { ResumeTextBlock } from "@inewlegend/website/src/features/resume/sections/elements/resume-text-block.tsx";
 
 export type ResumeAboutProps = {
     description: string;
@@ -6,10 +7,9 @@ export type ResumeAboutProps = {
 
 export function ResumeAbout( { description }: ResumeAboutProps ) {
     return (
-        <>
-            <ResumeSectionHeading title="About" />
-            <p className="text-justify text-[14px]">{ description }</p>
-        </>
+        <ResumeSection title="About">
+            <ResumeTextBlock size="md">{ description }</ResumeTextBlock>
+        </ResumeSection>
     );
 }
 

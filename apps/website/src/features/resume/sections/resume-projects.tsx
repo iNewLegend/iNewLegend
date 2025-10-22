@@ -1,25 +1,14 @@
-import { TechChip } from "@inewlegend/website/src/features/resume/ui/tech-chip.tsx";
+import { ResumeSection } from "@inewlegend/website/src/features/resume/sections/elements/resume-section.tsx";
+import { ResumeTextBlock } from "@inewlegend/website/src/features/resume/sections/elements/resume-text-block.tsx";
+import { ResumeTechStack } from "@inewlegend/website/src/features/resume/sections/elements/resume-tech-stack.tsx";
 
-import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/sections/elements/resume-section-heading.tsx";
+import type { TResumeProjectsProps } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
-export type ResumeProjectItem = {
-    title: string;
-    description: string;
-    technologies: string[];
-    github?: string;
-};
-
-export type ResumeProjectsProps = {
-    items: ResumeProjectItem[];
-    limit?: number;
-};
-
-export function ResumeProjects( { items, limit }: ResumeProjectsProps ) {
+export function ResumeProjects( { items, limit }: TResumeProjectsProps ) {
     const visible = typeof limit === "number" ? items.slice( 0, limit ) : items;
 
     return (
-        <>
-            <ResumeSectionHeading title="Projects" />
+        <ResumeSection title="Projects">
             { visible.map( ( project, index ) => (
                 <div key={ index } className="mb-5 pb-4">
                     <div className="flex justify-between items-start mb-1">
@@ -32,7 +21,7 @@ export function ResumeProjects( { items, limit }: ResumeProjectsProps ) {
                             { project.title }
                         </a>
                     </div>
-                    <p className="text-justify text-[15px] text-gray-800 mb-2">{ project.description }</p>
+                    <ResumeTextBlock size="lg" className="mb-2">{ project.description }</ResumeTextBlock>
                     <div className="flex leading-0 gap-2">
                         <div>
                             { project.github && (
@@ -43,57 +32,10 @@ export function ResumeProjects( { items, limit }: ResumeProjectsProps ) {
                             ) }
                         </div>
                     </div>
-                    <div className="flex flex-wrap gap-1.5 mt-2">
-                        { project.technologies.map( ( tech, index ) => (
-                            <TechChip key={ index } tech={ tech } />
-                        ) ) }
-                    </div>
+                    <ResumeTechStack technologies={ project.technologies } className="mt-2" />
                 </div>
             ) ) }
-        </>
-    );
-}
-
-/**
- * Compact variant that utilizes both page height and width using CSS multi-columns.
- * Items flow vertically and continue in the next column, tightly packing content.
- */
-export function ResumeCompactProjects( { items, limit }: ResumeProjectsProps ) {
-    const visible = typeof limit === "number" ? items.slice( 0, limit ) : items;
-
-    return (
-        <>
-            <ResumeSectionHeading title="Projects" />
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
-                { visible.map( ( project, index ) => (
-                    <div
-                        key={ index }
-                        className="mb-4 break-inside-avoid border-l-1 border-b-1 p-1 border-dashed rounded-[10px]"
-                    >
-                        <div className="flex justify-between items-start mb-1">
-                            <a
-                                className="font-semibold text-xs text-blue-700 hover:underline"
-                                href={ project.github }
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                { project.title }
-                            </a>
-                        </div>
-
-                        <p className="text-justify text-[11px] text-gray-800 mb-2">
-                            { project.description }
-                        </p>
-
-                        <div className="flex flex-wrap gap-0.5 pl-0.2 pb-0.2">
-                            { project.technologies.map( ( tech, index ) => (
-                                <TechChip key={ index } tech={ tech } />
-                            ) ) }
-                        </div>
-                    </div>
-                ) ) }
-            </div>
-        </>
+        </ResumeSection>
     );
 }
 
