@@ -52,7 +52,7 @@ export const fullstackConfig = {
             "location": "Onsite",
             "period": "2024 — 2025 (1+ years)",
             "description": "Matia unifies ETL, observability, catalog, and reverse ETL, so teams can focus on what they do best: driving actionable insights and accelerating innovation. As a Senior Full-Stack Engineer, I contributed across nearly all aspects of the development lifecycle. My work included building integrations, rewriting the frontend, doing peer reviews, translating Figma designs into functional features, adapting backend systems to support product requirements, and delivering end-to-end solutions that were actively used by customers.",
-            "compactDescription": "Built integrations and rewrote the frontend; shipped end‑to‑end features used by customers.",
+            "compactDescription": "Built ETL/Reverse ETL integrations, refactored features, conducted peer reviews, and shipped end‑to‑end features from Figma to production.",
             "technologies": [
                 "React",
                 "TypeScript",
@@ -70,7 +70,7 @@ export const fullstackConfig = {
             "location": "Remote",
             "period": "2022 — 2024 (2+ years)",
             "description": "I worked as a freelancer and started some projects to extend my knowledge. Created Vertix (Discord bot for managing voice channels) and ZenFlux (framework for building, publishing, and watching monorepo workspaces).",
-            "compactDescription": "Mostly a freelancer, worked on private projects in my free time eg: <a href='https://github.com/VertixGG/vertix.gg'>https://github.com/VertixGG/vertix.gg</a>",
+            "compactDescription": "Freelance full-stack development. Built Vertix (Discord bot with React UI and NestJS backend) and ZenFlux (TypeScript monorepo build framework with Rollup/SWC).",
             "technologies": [
                 "TypeScript",
                 "React",
@@ -91,7 +91,7 @@ export const fullstackConfig = {
             "location": "Hybrid",
             "period": "2019 — 2022 (3+ years)",
             "description": "Elementor is one of the most popular website builders in the world, used by 10% of the internet to build over 16M websites. As a full Stack developer, I worked in the Editor Core Team. I participated and contributed to building the infrastructure/core refactoring, created tools that helped my team in the development process, refactored the product core components and wrote many tests to increase code quality. I'm the 4th contributor of Elementor.",
-            "compactDescription": "Core editor refactors, internal tooling, and tests; top‑4 contributor improving reliability and DX.",
+            "compactDescription": "Editor Core Team: Refactored infrastructure components, built internal development tools, and wrote comprehensive test suites. 4th top contributor on a product used by 16M+ websites.",
             "technologies": [
                 "JavaScript",
                 "TypeScript",
@@ -129,7 +129,7 @@ export const fullstackConfig = {
             "location": "Remote",
             "period": "2014 — 2019 (5+ years)",
             "description": "RPG multiplayer game that was created by WebZen. Assembly was the first language I learned when I was in 10th grade. I learned reverse engineering using IDA PRO and OllyDBG while upgrading and maintaining the game servers. By changing the Entry Point of the game servers/client and hooking in my custom DLL, I was able to provide many add-ons and share the data between the game servers using a custom data server written in C++. Also, I created a game launcher in C# that updates the client and displays server updates.",
-            "compactDescription": "Maintained and extended MMORPG servers via reverse engineering; built C++ data server and launcher.",
+            "compactDescription": "Maintained and extended MMORPG servers via reverse engineering with IDA PRO and OllyDBG. Developed custom C++ data server for inter-server communication by hooking DLLs at entry points, and built C# launcher for client updates and patch distribution.",
             "technologies": [
                 "Assembly",
                 "C",
@@ -147,22 +147,23 @@ export const fullstackConfig = {
     "projects": [
         {
             "title": "Interactive Resume",
-            "description": "The current website, A modern, interactive resume website built with React, TypeScript, and Tailwind CSS. Features dynamic resume sections, PDF generation, and responsive design. Includes advanced state management for resume customization and real-time preview capabilities.",
+            "description": "The current website. Full-stack interactive resume with live theme customization and PDF generation. Features real-time design token editing (colors, typography, spacing), dynamic section reordering, and an Express backend with Puppeteer for server-side PDF rendering.",
             "technologies": [
                 "TypeScript",
                 "React",
+                "Express",
+                "Puppeteer",
                 "Tailwind CSS",
+                "SCSS",
                 "Vite",
                 "shadcn/ui",
-                "PDF Generation",
-                "State Management",
-                "Responsive Design"
+                "Design Tokens"
             ],
             "github": "https://github.com/iNewLegend/iNewLegend/tree/main/apps/website"
         },
         {
             "title": "Vertix",
-            "description": "A sophisticated Discord bot with complex UI generation for dynamic voice channel management. Features real-time interactive buttons interface, dynamic channel creation/deletion, advanced permission systems, and monorepo architecture with separate GUI, bot, and base packages. Built with TypeScript, React components, and modern development practices.",
+            "description": "A sophisticated Discord bot with complex UI generation for dynamic voice channel management. Features real-time interactive buttons interface, dynamic channel creation/deletion, advanced permission systems, and monorepo architecture with separate GUI, bot, and base packages.",
             "technologies": [
                 "TypeScript",
                 "React",
