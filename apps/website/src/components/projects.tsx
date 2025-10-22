@@ -1,10 +1,10 @@
-import { ExternalLink, Github } from "lucide-react";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@inewlegend/website/src/components/ui/card";
-import { Button } from "@inewlegend/website/src/components/ui/button";
 import { config } from "@inewlegend/website/src/config";
 
 export function Projects() {
+    const handleProjectClick = ( url: string ) => {
+        window.open( url, "_blank", "noopener,noreferrer" );
+    };
 
     return (
         <section id="projects" className="py-16 px-4 bg-muted/30">
@@ -18,7 +18,11 @@ export function Projects() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     { config.projects.map( ( project, index ) => (
-                        <Card key={ index } className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full">
+                        <Card
+                            key={ index }
+                            className="overflow-hidden hover:shadow-lg transition-shadow flex flex-col h-full cursor-pointer"
+                            onClick={ () => handleProjectClick( project.github ) }
+                        >
                             <CardHeader>
                                 <CardTitle className="text-xl">{ project.title }</CardTitle>
                             </CardHeader>
@@ -27,7 +31,7 @@ export function Projects() {
                                     <p className="text-muted-foreground mb-4">{ project.description }</p>
                                 </div>
 
-                                <div className="mb-4">
+                                <div>
                                     <div className="flex flex-wrap gap-2">
                                         { project.technologies.map( ( tech, techIndex ) => (
                                             <span
@@ -38,21 +42,6 @@ export function Projects() {
                                             </span>
                                         ) ) }
                                     </div>
-                                </div>
-
-                                <div className="flex gap-2">
-                                    <Button variant="outline" size="sm" className="flex-1" asChild>
-                                        <a href={ project.github } target="_blank" rel="noopener noreferrer">
-                                            <Github className="h-4 w-4 mr-2" />
-                                            Code
-                                        </a>
-                                    </Button>
-                                    <Button variant="outline" size="sm" className="flex-1" asChild>
-                                        <a href={ project.demo } target="_blank" rel="noopener noreferrer">
-                                            <ExternalLink className="h-4 w-4 mr-2" />
-                                            Demo
-                                        </a>
-                                    </Button>
                                 </div>
                             </CardContent>
                         </Card>
