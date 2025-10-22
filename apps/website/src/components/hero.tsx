@@ -25,12 +25,19 @@ export function Hero() {
     const [ generating, setGenerating ] = useState( false );
     const [ step, setStep ] = useState<string | null>( null );
     const [ autoConvert, setAutoConvert ] = useState( false );
+    const [ themeVars, setThemeVars ] = useState<Record<string, string>>( {} );
 
     const resumeSrc = useMemo( () => {
         const sp = toSearchParams( params );
+
+        // Add theme variables to URL
+        Object.entries( themeVars ).forEach( ( [ key, value ] ) => {
+            sp.set( `theme${ key }`, value );
+        } );
+
         const qs = sp.toString();
         return `/print/resume${ qs ? `?${ qs }` : "" }`;
-    }, [ params ] );
+    }, [ params, themeVars ] );
 
     const move = ( key: TResumeOrderKey, dir: "up" | "down" ) => {
         setParams( ( prev ) => {
@@ -154,7 +161,7 @@ export function Hero() {
                                 onMove={ move }
                                 onToggleCompact={ toggleCompactFor }
                             />
-                            <ResumeControlsThemeEditor />
+                            <ResumeControlsThemeEditor onThemeChange={ setThemeVars } />
                         </ResumeControls>
                         <ResumeControlsPreview src={ resumeSrc } params={ params } />
                     </ResumeControlsDialog>

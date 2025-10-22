@@ -16,7 +16,11 @@ interface ThemeSection {
     variables: ThemeVariable[];
 }
 
-export function ResumeControlsThemeEditor() {
+interface ResumeControlsThemeEditorProps {
+    onThemeChange?: ( variables: Record<string, string> ) => void;
+}
+
+export function ResumeControlsThemeEditor( { onThemeChange }: ResumeControlsThemeEditorProps = {} ) {
     const [ theme, setTheme ] = useState<ThemeSection[]>( [] );
 
     useEffect( () => {
@@ -95,14 +99,27 @@ export function ResumeControlsThemeEditor() {
             iframe.contentWindow.document.documentElement.style.setProperty( varName, value );
         }
 
-        setTheme( ( prev ) =>
-            prev.map( ( section ) => ( {
+        setTheme( ( prev ) => {
+            const updated = prev.map( ( section ) => ( {
                 ...section,
                 variables: section.variables.map( ( v ) =>
                     v.name === varName ? { ...v, value } : v
                 ),
-            } ) )
-        );
+            } ) );
+
+            // Notify parent of theme changes
+            if ( onThemeChange ) {
+                const allVars: Record<string, string> = {};
+                updated.forEach( ( section ) => {
+                    section.variables.forEach( ( v ) => {
+                        allVars[ v.name ] = v.value;
+                    } );
+                } );
+                onThemeChange( allVars );
+            }
+
+            return updated;
+        } );
     };
 
     const resetTheme = () => {

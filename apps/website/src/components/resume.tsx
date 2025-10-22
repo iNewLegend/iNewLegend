@@ -29,6 +29,15 @@ export function Resume() {
     const [ params, setParams ] = useState<TResumeParams>( () => parseResumeParams() );
 
     useEffect( () => {
+        // Apply theme variables from URL on initial load
+        const urlParams = new URLSearchParams( window.location.search );
+        urlParams.forEach( ( value, key ) => {
+            if ( key.startsWith( "theme--resume-" ) ) {
+                const varName = key.replace( "theme", "" );
+                document.documentElement.style.setProperty( varName, value );
+            }
+        } );
+
         const handler = ( e: MessageEvent ) => {
             if ( e.origin !== window.location.origin ) return;
             const data = e.data as { type?: string; payload?: TResumeParams };
