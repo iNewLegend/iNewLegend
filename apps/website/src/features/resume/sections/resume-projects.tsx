@@ -1,6 +1,6 @@
 import { TechChip } from "@inewlegend/website/src/features/resume/ui/tech-chip.tsx";
 
-import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/resume-section-heading.tsx";
+import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/sections/elements/resume-section-heading.tsx";
 
 export type ResumeProjectItem = {
     title: string;

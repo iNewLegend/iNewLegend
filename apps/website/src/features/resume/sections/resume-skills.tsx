@@ -1,5 +1,5 @@
 import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
-import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/resume-section-heading.tsx";
+import { ResumeSectionHeading } from "@inewlegend/website/src/features/resume/sections/elements/resume-section-heading.tsx";
 
 export type ResumeSkillsProps = {
     categories: Record<string, string[]>;
