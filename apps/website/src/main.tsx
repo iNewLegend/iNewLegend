@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "@inewlegend/website/src/app.tsx";
 import { Resume } from "@inewlegend/website/src/components/resume";
-import "@inewlegend/website/src/index.css";
+import "@inewlegend/website/src/index.scss";
 
 const router = createBrowserRouter( [
     {

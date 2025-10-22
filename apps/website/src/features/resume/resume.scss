@@ -1,0 +1,22 @@
+// Resume theme colors
+$resume-colors: (
+  accent: 217 91% 60%,
+  heading: 215 19% 35%,
+  name: 217 108% 69%,
+  subtitle: 215.4 16.3% 46.9%,
+  chip-bg: 210 100% 97%,
+  chip-text: 214 86% 40%,
+  chip-border: 210 100% 90%
+);
+
+// SCSS Mixin for resume variables
+@mixin generate-resume-vars($color-map) {
+  @each $name, $value in $color-map {
+    --resume-#{$name}-hsl: #{$value};
+  }
+}
+
+// Generate resume CSS variables
+:root {
+  @include generate-resume-vars($resume-colors);
+}
