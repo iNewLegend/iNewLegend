@@ -1,35 +1,78 @@
 # Leonid Vinikov - Portfolio Website
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.
+A modern, responsive portfolio website with advanced resume generation capabilities, built with React, TypeScript, and Tailwind CSS. Features a sophisticated resume builder with customizable themes, section ordering, and PDF export functionality.
 
 ## Features
 
 - **Responsive Design**: Optimized for all device sizes
 - **Modern UI**: Built with shadcn/ui components and Tailwind CSS
 - **TypeScript**: Full type safety throughout the application
-- **Smooth Navigation**: Single-page application with smooth scrolling
-- **Contact Form**: Interactive contact form for inquiries
-- **Project Showcase**: Display of recent work and projects
+- **Advanced Resume Builder**: Customizable resume sections with theme support
+- **PDF Export**: Generate professional PDF resumes
+- **Section Management**: Reorder and customize resume sections
+- **Theme System**: Multiple resume themes with customizable styling
+- **Backend Service**: Dedicated PDF generation service
+- **Monorepo Architecture**: Organized workspace with multiple applications
 
 ## Tech Stack
 
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, shadcn/ui components
+### Frontend
+- **Framework**: React 19, TypeScript, Vite
+- **Styling**: Tailwind CSS 4, shadcn/ui components, SCSS
 - **Icons**: Lucide React
-- **Build Tool**: Vite
+- **State Management**: React hooks and context
+- **PDF Generation**: Puppeteer integration
+
+### Backend
+- **Runtime**: Bun
+- **Framework**: Express.js
+- **PDF Generation**: Puppeteer with Chromium
+- **CORS**: Cross-origin resource sharing support
+- **Deployment**: Docker
+
+### Development
 - **Package Manager**: Bun
+- **Build Tool**: Vite
+- **Linting**: ESLint with TypeScript support
+- **Monorepo**: Workspace-based project structure
+
+## Project Structure
+
+```
+apps/website/
+├── src/
+│   ├── components/              # Main UI components
+│   │   ├── ui/                  # Reusable UI components (shadcn/ui)
+│   │   ├── hero/                # Hero section components
+│   │   ├── resume-controls/     # Resume management components
+│   │   └── *.tsx                # Page sections
+│   ├── features/
+│   │   └── resume/              # Resume feature modules
+│   │       ├── sections/        # Resume section components
+│   │       ├── resume-controls/  # Resume editing controls
+│   │       ├── ui/              # Resume-specific UI components
+│   │       └── *.ts             # Resume definitions and types
+│   ├── configs/                 # Configuration variants
+│   ├── lib/                     # Utility functions
+│   └── server/                  # Development server
+├── backend/                     # PDF generation service
+│   ├── src/
+│   └── Dockerfile
+└── dist/                        # Production build
+```
 
 ## Getting Started
 
 ### Prerequisites
 
 - [Bun](https://bun.sh/) installed on your system
+- Node.js 18+ (for backend dependencies)
 
 ### Installation
 
-1. Navigate to the website directory:
+1. Navigate to the project root:
    ```bash
-   cd apps/website
+   cd /path/to/iNewLegend
    ```
 
 2. Install dependencies:
@@ -39,69 +82,109 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 3. Start the development server:
    ```bash
-   bun run dev
+   bun run inewlegend:website:dev
    ```
 
 4. Open your browser and visit `http://localhost:5173`
 
 ### Available Scripts
 
-- `bun run dev` - Start development server
+#### Root Level Scripts
+- `bun run inewlegend:website:dev` - Start website development server
+- `bun run inewlegend:website:build` - Build website for production
+- `bun run inewlegend:website:deploy` - Deploy website
+- `bun run inewlegend:website:backend:deploy` - Deploy backend service
+- `bun run inewlegend:docs:dev` - Start documentation server
+- `bun run inewlegend:docs:build` - Build documentation
+- `bun run inewlegend:docs:deploy` - Deploy documentation
+
+#### Website Scripts
+- `bun run dev` - Start development server (frontend + backend)
 - `bun run build` - Build for production
 - `bun run preview` - Preview production build
 - `bun run lint` - Run ESLint
+- `bun run type-check` - TypeScript type checking
 
-## Project Structure
+## Resume Builder Features
 
-```
-src/
-├── components/          # React components
-│   ├── ui/             # Reusable UI components (shadcn/ui)
-│   ├── Header.tsx      # Navigation header
-│   ├── Hero.tsx        # Hero section
-│   ├── About.tsx       # About section
-│   ├── Experience.tsx  # Experience section
-│   ├── Projects.tsx    # Projects showcase
-│   ├── Contact.tsx     # Contact form
-│   └── Footer.tsx      # Footer
-├── lib/                # Utility functions
-├── App.tsx             # Main application component
-├── main.tsx            # Application entry point
-└── index.css           # Global styles
-```
+### Section Management
+- **Customizable Sections**: About, Skills, Experience, Projects, What I Do, What I'm Looking For
+- **Section Ordering**: Drag and drop to reorder sections
+- **Compact Mode**: Toggle compact view for specific sections
+- **Dynamic Content**: Real-time preview of changes
 
-## Customization
+### Theme System
+- **Multiple Themes**: Various professional resume themes
+- **Customizable Colors**: Adjust color schemes and typography
+- **Responsive Design**: Optimized for different screen sizes
+- **Print Optimization**: PDF-ready styling
 
-### Updating Content
+### PDF Generation
+- **Backend Service**: Dedicated PDF generation service
+- **High Quality**: Professional PDF output
+- **Custom Filenames**: Configurable PDF naming
+- **CORS Support**: Secure cross-origin requests
 
-1. **Personal Information**: Update the content in each component file
-2. **Projects**: Modify the `projects` array in `Projects.tsx`
-3. **Experience**: Update the `experiences` array in `Experience.tsx`
-4. **Skills**: Modify the `skills` array in `About.tsx`
+## Configuration
 
-### Styling
+### Environment Variables
 
-- Global styles are in `src/index.css`
-- Component-specific styles use Tailwind CSS classes
-- Theme customization can be done in `tailwind.config.js`
+#### Frontend
+- `VITE_WEBSITE_PROFILE`: Set to "frontend" or "fullstack" to switch between configurations
+
+#### Backend
+- `PORT`: Server port (default: 3000)
+- `NODE_ENV`: Environment (development/production)
+- `CORS_ORIGIN`: Allowed origin for CORS
+- `DEFAULT_FILENAME`: Default PDF filename
+
+### Profile Configurations
+
+The website supports multiple profile configurations:
+- **Fullstack**: Complete developer profile
+- **Frontend**: Frontend-focused profile
 
 ## Deployment
 
-The application can be deployed to any static hosting service:
+### Website Deployment
 
 1. Build the application:
    ```bash
-   bun run build
+   bun run inewlegend:website:build
    ```
 
-2. Deploy the `dist` folder to your hosting service
+2. Deploy using the provided script:
+   ```bash
+   bun run inewlegend:website:deploy
+   ```
+
+### Backend Deployment
+
+1. Deploy the PDF service:
+   ```bash
+   bun run inewlegend:website:backend:deploy
+   ```
 
 ### Recommended Hosting Platforms
 
-- [Vercel](https://vercel.com/)
-- [Netlify](https://netlify.com/)
-- [GitHub Pages](https://pages.github.com/)
-- [AWS S3 + CloudFront](https://aws.amazon.com/)
+- **Frontend**: Vercel, Netlify, GitHub Pages
+- **Backend**: Dokku, Railway, Render
+- **Full Stack**: AWS, DigitalOcean, Linode
+
+## Development
+
+### Adding New Resume Sections
+
+1. Create section component in `src/features/resume/sections/`
+2. Add section key to `RESUME_SECTION_KEYS` in `resume.definitions.ts`
+3. Update section ordering in default parameters
+4. Add section to resume controls if needed
+
+### Customizing Themes
+
+1. Modify theme definitions in `src/features/resume/resume-theme.ts`
+2. Update SCSS variables in `src/features/resume/resume.scss`
+3. Test theme changes across different sections
 
 ## License
 
