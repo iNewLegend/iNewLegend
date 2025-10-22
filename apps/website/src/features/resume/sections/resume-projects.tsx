@@ -1,6 +1,7 @@
 import { ResumeSection } from "@inewlegend/website/src/features/resume/sections/elements/resume-section.tsx";
 import { ResumeTextBlock } from "@inewlegend/website/src/features/resume/sections/elements/resume-text-block.tsx";
 import { ResumeTechStack } from "@inewlegend/website/src/features/resume/sections/elements/resume-tech-stack.tsx";
+import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
 
 import type { TResumeProjectsProps } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
@@ -10,10 +11,10 @@ export function ResumeProjects( { items, limit }: TResumeProjectsProps ) {
     return (
         <ResumeSection title="Projects">
             { visible.map( ( project, index ) => (
-                <div key={ index } className="mb-5 pb-4">
+                <div key={ index } className={ resumeTheme.layout.spacing.section }>
                     <div className="flex justify-between items-start mb-1">
                         <a
-                            className="font-semibold text-gray-900 hover:underline"
+                            className={ resumeTheme.components.links.project }
                             href={ project.github }
                             target="_blank"
                             rel="noopener noreferrer"
@@ -26,8 +27,8 @@ export function ResumeProjects( { items, limit }: TResumeProjectsProps ) {
                         <div>
                             { project.github && (
                                 <div>
-                                    <span className="text-xs text-gray-500">github: </span>
-                                    <a className="text-xs text-blue-700 hover:underline" href={ project.github } target="_blank" rel="noopener noreferrer">{ project.github }</a>
+                                    <span className={ `${ resumeTheme.text.sizes.xs } ${ resumeTheme.colors.muted }` }>github: </span>
+                                    <a className={ resumeTheme.components.links.github } href={ project.github } target="_blank" rel="noopener noreferrer">{ project.github }</a>
                                 </div>
                             ) }
                         </div>

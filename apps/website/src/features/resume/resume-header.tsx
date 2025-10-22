@@ -17,16 +17,16 @@ export type ResumeHeaderProps = {
 
 export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
     return (
-        <div className={ `text-center ${ resumeTheme.header.border } pb-2` }>
-            <h1 className={ `text-2xl font-bold tracking-tight ${ resumeTheme.header.nameColor }` }>{ personal.name }</h1>
+        <div className={ `text-center ${ resumeTheme.components.header.border } pb-2` }>
+            <h1 className={ `text-2xl font-bold tracking-tight ${ resumeTheme.components.header.nameColor }` }>{ personal.name }</h1>
 
-            <div className={ `text-base ${ resumeTheme.header.subtitleColor }` }>{ subtitle }</div>
+            <div className={ `text-base ${ resumeTheme.components.header.subtitleColor }` }>{ subtitle }</div>
 
-            <div className="flex justify-center items-center gap-2 flex-wrap text-[10.5px] text-gray-700 pt-1">
-                <a href={ `mailto:${ personal.email }` } className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50">
+            <div className={ `flex justify-center items-center gap-2 flex-wrap ${ resumeTheme.components.links.contact } pt-1` }>
+                <a href={ `mailto:${ personal.email }` } className={ `${ resumeTheme.components.header.contactChip } ${ resumeTheme.components.header.contactChipHover }` }>
                     { personal.email }
                 </a>
-                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200">
+                <span className={ resumeTheme.components.header.contactChip }>
                     { personal.phone }
                 </span>
 
@@ -34,7 +34,7 @@ export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
                     href={ `https://www.google.com/maps/search/?api=1&query=${ encodeURIComponent( personal.location ) }` }
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50"
+                    className={ `${ resumeTheme.components.header.contactChip } ${ resumeTheme.components.header.contactChipHover }` }
                 >
                     { personal.location }
                 </a>
@@ -49,7 +49,7 @@ export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
                         href={ link.url }
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-50"
+                        className={ `${ resumeTheme.components.header.contactChip } ${ resumeTheme.components.header.contactChipHover }` }
                     >
                         { link.text }
                     </a>

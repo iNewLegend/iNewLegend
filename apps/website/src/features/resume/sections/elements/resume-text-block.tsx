@@ -1,17 +1,11 @@
 import type { ReactNode } from "react";
+import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
 
 export type ResumeTextBlockProps = {
     children: ReactNode;
     size?: "xs" | "sm" | "md" | "lg";
     className?: string;
     justify?: boolean;
-};
-
-const sizeClasses = {
-    xs: "text-[11px]",
-    sm: "text-[12px]",
-    md: "text-[14px]",
-    lg: "text-[15px]"
 };
 
 export function ResumeTextBlock( {
@@ -23,7 +17,7 @@ export function ResumeTextBlock( {
     const justifyClass = justify ? "text-justify" : "";
 
     return (
-        <p className={ `${ justifyClass } ${ sizeClasses[ size ] } text-gray-800 ${ className }` }>
+        <p className={ `${ justifyClass } ${ resumeTheme.text.sizes[ size ] } ${ resumeTheme.colors.secondary } ${ className }` }>
             { children }
         </p>
     );

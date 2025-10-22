@@ -8,13 +8,13 @@ export type ResumeSkillsProps = {
 export function ResumeSkills({ categories }: ResumeSkillsProps) {
     return (
         <ResumeSection title="Skills & Technologies">
-            <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+            <div className={ resumeTheme.layout.grid.skills }>
                 {Object.entries(categories).map(([category, skillList]) => (
                     <div key={category}>
-                        <h3 className="text-gray-800 font-medium mb-2">{category}</h3>
+                        <h3 className={ `${ resumeTheme.colors.secondary } font-medium mb-2` }>{category}</h3>
                         <div className="flex flex-wrap gap-1.5">
                             {skillList.map((skill, index) => (
-                                <span key={index} className={`px-2 py-0.5 rounded-full border text-[11px] ${resumeTheme.techChip}`}>{skill}</span>
+                                <span key={index} className={`px-2 py-0.5 rounded-full border ${ resumeTheme.text.sizes.xs } ${resumeTheme.components.techChip}`}>{skill}</span>
                             ))}
                         </div>
                     </div>
