@@ -260,19 +260,15 @@ $resume-letter-spacing: (
 
 .resume-item-spacing {
   padding-bottom: var(--resume-spacing-item-padding);
-  border-bottom: 1px;
-  border-style: dashed;
-  border-color: var(--resume-border-secondary);
+  border-bottom: 1px dashed var(--resume-border-secondary);
   margin-top: var(--resume-spacing-item-margin-top);
 }
 
 .resume-compact-spacing {
   margin-bottom: var(--resume-spacing-compact-margin);
   break-inside: avoid;
-  border-left: 1px;
-  border-bottom: 1px;
+  border-left: 1px dashed var(--resume-border-secondary);
+  border-bottom: 1px dashed var(--resume-border-secondary);
   padding: var(--resume-spacing-compact-padding);
-  border-style: dashed;
-  border-color: var(--resume-border-secondary);
   border-radius: 10px;
 }
