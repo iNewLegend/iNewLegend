@@ -76,7 +76,7 @@ export function Resume() {
             <div className="flex flex-col gap-2">
                 { orderedKeys.map( ( key ) => {
                     const node = renderSection[ key ]?.();
-                    return node ? <div key={ key }>{ node }</div> : null;
+                    return node ? <div key={ key } className="last:*:border-b-0">{ node }</div> : null;
                 } ) }
             </div>
         </div>

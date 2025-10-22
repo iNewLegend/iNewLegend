@@ -118,7 +118,7 @@ export const resumeTheme: ResumeTheme = {
             contactChipHover: "hover:bg-resume-contact-chip-hover",
         },
         section: {
-            container: "border-b border-solid border-resume-accent last:border-0",
+            container: "border-b border-solid border-resume-accent",
             accentBar: "bg-resume-accent",
         },
         techChip: "text-resume-xs bg-resume-chip-bg text-resume-chip-text border border-resume-chip",
