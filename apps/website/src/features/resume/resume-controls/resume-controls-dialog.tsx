@@ -48,7 +48,7 @@ export function ResumeControlsDialog( { open, onOpenChange, children }: ResumeDi
             <CustomDialogContent className="max-w-[1200px] w-[95vw] h-[90vh] p-0 overflow-hidden border-0 shadow-2xl bg-white">
                 <div className="flex flex-col h-full bg-gradient-to-br from-slate-50 to-white">
                     { children }
-                    <div className="border-t border-slate-200 bg-slate-100/50 h-px"></div>
+                    <div className="border-t border-resume-secondary bg-slate-100/50 h-px"></div>
                 </div>
             </CustomDialogContent>
         </Dialog>

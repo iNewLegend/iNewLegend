@@ -18,9 +18,9 @@ export type ResumeHeaderProps = {
 export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
     return (
         <div className={ `text-center ${ resumeTheme.components.header.border } pb-2` }>
-            <h1 className={ `text-2xl font-bold tracking-tight ${ resumeTheme.components.header.nameColor }` }>{ personal.name }</h1>
+            <h1 className={ `${ resumeTheme.text.sizes.lg } ${ resumeTheme.text.weights.bold } tracking-tight ${ resumeTheme.colors.name }` }>{ personal.name }</h1>
 
-            <div className={ `text-base ${ resumeTheme.components.header.subtitleColor }` }>{ subtitle }</div>
+            <div className={ `${ resumeTheme.text.sizes.md } ${ resumeTheme.text.weights.normal } ${ resumeTheme.colors.subtitle }` }>{ subtitle }</div>
 
             <div className={ `flex justify-center items-center gap-2 flex-wrap ${ resumeTheme.components.links.contact } pt-1` }>
                 <a href={ `mailto:${ personal.email }` } className={ `${ resumeTheme.components.header.contactChip } ${ resumeTheme.components.header.contactChipHover }` }>

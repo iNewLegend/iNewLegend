@@ -1,6 +1,7 @@
 import { ResumeSection } from "@inewlegend/website/src/features/resume/sections/elements/resume-section.tsx";
 import { ResumeTextBlock } from "@inewlegend/website/src/features/resume/sections/elements/resume-text-block.tsx";
 import { ResumeTechStack } from "@inewlegend/website/src/features/resume/sections/elements/resume-tech-stack.tsx";
+import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
 
 import type { TResumeProjectItem, TResumeProjectsProps } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
@@ -22,11 +23,11 @@ export function ResumeCompactProjects({ items, limit }: TResumeCompactProjectsPr
                 {visible.map((project, index) => (
                     <div
                         key={index}
-                        className="mb-4 break-inside-avoid border-l-1 border-b-1 p-1 border-dashed rounded-[10px]"
+                        className={ resumeTheme.layout.spacing.compact }
                     >
                         <div className="flex justify-between items-start mb-1">
                             <a
-                                className="font-semibold text-xs text-blue-700 hover:underline"
+                                className={ `${ resumeTheme.text.weights.semibold } ${ resumeTheme.text.sizes.xs } ${ resumeTheme.colors.accent } hover:underline` }
                                 href={project.github}
                                 target="_blank"
                                 rel="noopener noreferrer"

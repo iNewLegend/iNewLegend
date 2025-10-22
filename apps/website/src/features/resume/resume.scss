@@ -1,24 +1,32 @@
 // Resume theme colors
 $resume-colors: (
-  accent: #3b82f6,
+  accent: #3b4ef6,
   heading: #4b5563,
   name: #60a5fa,
   subtitle: #6b7280,
   chip-bg: #f0f9ff,
   chip-text: #1d4ed8,
-  chip-border: #dbeafe
+  chip-border: #dbeafe,
+  primary: #111827,
+  secondary: #374151,
+  muted: #6b7280,
+  background: #ffffff,
+  foreground: #111827,
+  contact-chip-bg: #f3f4f6,
+  contact-chip-hover: #f9fafb
 );
 
 // Border colors
 $resume-border-colors: (
   primary: #d1d5db,
   secondary: #e5e7eb,
-  accent: #3b82f6
+  accent: #A8CCFF60,
+  chip: #dbeafe
 );
 
 // Text sizes
 $resume-text-sizes: (
-  xs: 11px,
+  xs: 10.5px,
   sm: 12px,
   md: 14px,
   lg: 15px
@@ -32,15 +40,6 @@ $resume-font-weights: (
   bold: 700
 );
 
-// Spacing values
-$resume-spacing: (
-  xs: 0.25rem,
-  sm: 0.5rem,
-  md: 1rem,
-  lg: 1.5rem,
-  xl: 2rem
-);
-
 // Border radius values
 $resume-border-radius: (
   sm: 0.25rem,
@@ -49,10 +48,45 @@ $resume-border-radius: (
   full: 9999px
 );
 
+// Spacing values - consolidated
+$resume-spacing: (
+  xs: 0.25rem,
+  sm: 0.5rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 2rem,
+  section-margin: 1.25rem,
+  section-padding: 1rem,
+  item-padding: 0.75rem,
+  item-margin-top: 0.125rem,
+  compact-margin: 1rem,
+  compact-padding: 0.25rem,
+  compact-skill-margin: 0.5rem,
+  grid-gap: 1.25rem,
+  grid-compact-gap: 1rem,
+  grid-x-gap: 1.5rem,
+  grid-y-gap: 0.25rem
+);
+
+// Line heights
+$resume-line-heights: (
+  tight: 1.25,
+  normal: 1.5,
+  relaxed: 1.75
+);
+
+// Letter spacing
+$resume-letter-spacing: (
+  tight: -0.025em,
+  normal: 0,
+  wide: 0.025em,
+  wider: 0.05em
+);
+
 // SCSS Mixins for generating variables
 @mixin generate-resume-vars($color-map) {
   @each $name, $value in $color-map {
-    --resume-#{$name}-hsl: #{$value};
+    --resume-#{$name}: #{$value};
   }
 }
 
@@ -82,7 +116,19 @@ $resume-border-radius: (
 
 @mixin generate-border-colors($color-map) {
   @each $name, $value in $color-map {
-    --resume-border-#{$name}-hsl: #{$value};
+    --resume-border-#{$name}: #{$value};
+  }
+}
+
+@mixin generate-line-heights($height-map) {
+  @each $name, $value in $height-map {
+    --resume-line-height-#{$name}: #{$value};
+  }
+}
+
+@mixin generate-letter-spacing($spacing-map) {
+  @each $name, $value in $spacing-map {
+    --resume-letter-spacing-#{$name}: #{$value};
   }
 }
 
@@ -94,4 +140,139 @@ $resume-border-radius: (
   @include generate-spacing($resume-spacing);
   @include generate-border-radius($resume-border-radius);
   @include generate-border-colors($resume-border-colors);
+  @include generate-line-heights($resume-line-heights);
+  @include generate-letter-spacing($resume-letter-spacing);
+}
+
+// Border color utility classes
+.border-resume-accent {
+  border-color: var(--resume-border-accent);
+}
+
+.border-resume-secondary {
+  border-color: var(--resume-border-secondary);
+}
+
+.border-resume-chip {
+  border-color: var(--resume-border-chip);
+}
+
+// Text size utility classes
+.text-resume-xs {
+  font-size: var(--resume-text-xs);
+}
+
+.text-resume-sm {
+  font-size: var(--resume-text-sm);
+}
+
+.text-resume-md {
+  font-size: var(--resume-text-md);
+}
+
+.text-resume-lg {
+  font-size: var(--resume-text-lg);
+}
+
+// Font weight utility classes
+.font-resume-normal {
+  font-weight: var(--resume-font-normal);
+}
+
+.font-resume-medium {
+  font-weight: var(--resume-font-medium);
+}
+
+.font-resume-semibold {
+  font-weight: var(--resume-font-semibold);
+}
+
+.font-resume-bold {
+  font-weight: var(--resume-font-bold);
+}
+
+// Color utility classes
+.text-resume-primary {
+  color: var(--resume-primary);
+}
+
+.text-resume-secondary {
+  color: var(--resume-secondary);
+}
+
+.text-resume-muted {
+  color: var(--resume-muted);
+}
+
+.text-resume-accent {
+  color: var(--resume-accent);
+}
+
+.text-resume-name {
+  color: var(--resume-name);
+}
+
+.text-resume-subtitle {
+  color: var(--resume-subtitle);
+}
+
+.text-resume-heading {
+  color: var(--resume-heading);
+}
+
+.text-resume-foreground {
+  color: var(--resume-foreground);
+}
+
+.bg-resume-chip-bg {
+  background-color: var(--resume-chip-bg);
+}
+
+.text-resume-chip-text {
+  color: var(--resume-chip-text);
+}
+
+.border-resume-chip-border {
+  border-color: var(--resume-chip-border);
+}
+
+.bg-resume-accent {
+  background-color: var(--resume-accent);
+}
+
+.bg-resume-background {
+  background-color: var(--resume-background);
+}
+
+.bg-resume-contact-chip-bg {
+  background-color: var(--resume-contact-chip-bg);
+}
+
+.hover\:bg-resume-contact-chip-hover:hover {
+  background-color: var(--resume-contact-chip-hover);
+}
+
+// Layout utility classes
+.resume-section-spacing {
+  margin-bottom: var(--resume-spacing-section-margin);
+  padding-bottom: var(--resume-spacing-section-padding);
+}
+
+.resume-item-spacing {
+  padding-bottom: var(--resume-spacing-item-padding);
+  border-bottom: 1px;
+  border-style: dashed;
+  border-color: var(--resume-border-secondary);
+  margin-top: var(--resume-spacing-item-margin-top);
+}
+
+.resume-compact-spacing {
+  margin-bottom: var(--resume-spacing-compact-margin);
+  break-inside: avoid;
+  border-left: 1px;
+  border-bottom: 1px;
+  padding: var(--resume-spacing-compact-padding);
+  border-style: dashed;
+  border-color: var(--resume-border-secondary);
+  border-radius: 10px;
 }

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun add -d sass)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

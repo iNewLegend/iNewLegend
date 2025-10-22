@@ -24,7 +24,7 @@ export function ResumeTextBlock( {
     };
 
     return (
-        <p className={ `${ justifyClass } ${ sizeClasses[ size ] } ${ resumeTheme.colors.secondary } ${ className }` }>
+        <p className={ `${ justifyClass } ${ resumeTheme.text.sizes[ size ] } ${ resumeTheme.colors.secondary } ${ className }` }>
             { children }
         </p>
     );

@@ -1,5 +1,4 @@
-@import "tailwindcss";
-@import "./features/resume/resume.scss";
+@use "tailwindcss";
 
 @source "./**/*.{ts,tsx}";
 

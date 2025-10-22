@@ -20,10 +20,10 @@ export function ResumeExperience({ items, isCompact }: TResumeExperienceProps) {
                 <div key={index} className={ resumeTheme.layout.spacing.item }>
                     <div className="flex justify-between items-start gap-4">
                         <div>
-                            <div className={ `text-sm ${ resumeTheme.colors.primary }` }>{exp.title}</div>
-                            <div className={ `text-sm ${ resumeTheme.colors.muted }` }>{exp.company} • {exp.location}</div>
+                            <div className={ `${ resumeTheme.text.sizes.sm } ${ resumeTheme.colors.primary }` }>{exp.title}</div>
+                            <div className={ `${ resumeTheme.text.sizes.sm } ${ resumeTheme.colors.muted }` }>{exp.company} • {exp.location}</div>
                         </div>
-                        <div className={ `text-xs ${ resumeTheme.colors.muted } whitespace-nowrap` }>{exp.period}</div>
+                        <div className={ `${ resumeTheme.text.sizes.xs } ${ resumeTheme.colors.muted } whitespace-nowrap` }>{exp.period}</div>
                     </div>
                     {!isCompact && (
                         <div
