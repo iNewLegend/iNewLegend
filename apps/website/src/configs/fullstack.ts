@@ -217,20 +217,19 @@ export const fullstackConfig = {
             "github": "https://github.com/zenflux/zenflux"
         },
         {
-            "title": "Web Crawler",
-            "url": "https://github.com/iNewLegend/web-crawler",
-            "description": "A full-stack web crawler with a Laravel backend and Angular frontend, featuring MongoDB integration, memory caching, and extensive crawling capabilities.",
+            "title": "Chrome Extension Elements Highlight",
+            "url": "https://github.com/iNewLegend/chrome-extension-elements-highlight",
+            "description": "A React + Vite + Tailwind + shadcn/ui powered Chrome extension that lets you highlight DOM elements on any visited page and lays the groundwork for adding contextual notes. Features Shadow DOM isolation, popup UI, background service worker, and dev-friendly watch builds with auto-reload.",
             "technologies": [
-                "PHP",
-                "Laravel",
-                "Angular",
-                "MongoDB",
                 "TypeScript",
-                "Blade",
-                "Web Crawling",
-                "Memory Cache"
+                "React",
+                "Vite",
+                "Tailwind CSS",
+                "shadcn/ui",
+                "Zustand",
+                "pnpm Workspaces",
             ],
-            "github": "https://github.com/iNewLegend/web-crawler"
+            "github": "https://github.com/iNewLegend/chrome-extension-elements-highlight"
         }
     ],
     "skills": {
