@@ -6,6 +6,6 @@ alwaysApply: true
 
 # Use Small steps/chunks for editing
 
-- Each edit request should be in small chunks/steps as possible
-- Every request that require changes, should be parted to small chunks
-- For each step we tests before we procced to the next
+- Each edit request should be in as small chunks/steps as possible
+- Every request that requires changes should be split into small chunks
+- For each step we test before we proceed to the next

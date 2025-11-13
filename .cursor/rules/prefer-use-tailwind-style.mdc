@@ -1,9 +1,9 @@
 ---
-description: # Perfer use tailwind
+description: Prefer use tailwind
 globs: *.tsx,*ts
 alwaysApply: true
 ---
 
-# Perfer use tailwind
+# Prefer use tailwind
 
-prefer use tailwind where possible
+Prefer use tailwind where possible

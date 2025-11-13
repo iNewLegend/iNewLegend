@@ -1,6 +1,6 @@
 ---
-description: use shadcn
+description: Prefer use built-in logger
 globs: *.tsx,*ts
 alwaysApply: true
 ---
-prfer use built in loggeer
+Prefer use built-in logger

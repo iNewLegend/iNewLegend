@@ -1,0 +1,11 @@
+---
+description: Forbid using TypeScript path aliases (tsconfig paths)
+globs: **
+alwaysApply: true
+---
+
+# Forbid TypeScript path aliases
+
+- Do not add or modify `compilerOptions.paths` in any `tsconfig*.json`
+- Use monorepo workspace imports only: `@zenflux/<package>/...`
+- Do not use relative imports for cross-package references

@@ -6,4 +6,4 @@ alwaysApply: true
 
 # Never use relative imports
 
-always use imports that are in workspace eg '@vertix.gg/flow/'.
+Always use imports that are in workspace, e.g., '@vertix.gg/flow/'.

@@ -1,7 +1,7 @@
 ---
-description: Always find the root cause instead of using hacks or way around
+description: Always find the root cause instead of using hacks or workarounds
 globs: *.tsx,*ts
 alwaysApply: true
 ---
 
-# Always find the root cause instead of using hacks or way around
+# Always find the root cause instead of using hacks or workarounds

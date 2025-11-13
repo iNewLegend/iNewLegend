@@ -1,0 +1,34 @@
+---
+description: Use monorepo workspace imports instead of relative or alias imports
+globs: *.tsx,*.ts
+alwaysApply: true
+---
+
+# Use Monorepo Workspace Imports
+
+Always use full monorepo workspace paths for imports instead of relative paths or aliases.
+
+## Format
+Use the pattern: `@zenflux/<project-name>/path/to/file`
+
+## Examples
+
+✅ Correct:
+```typescript
+import { Button } from "@zenflux/app-budget-allocation/src/components/ui/button";
+import { API } from "@zenflux/react-api/src";
+import { useCommanderCommand } from "@zenflux/react-commander/use-commands";
+```
+
+❌ Incorrect:
+```typescript
+import { Button } from "@/components/ui/button";
+import { Button } from "./button";
+import { Button } from "../components/button";
+```
+
+## Why
+- Ensures consistency across the monorepo
+- Makes dependencies explicit and clear
+- Avoids confusion with relative paths
+- Works better with monorepo tooling

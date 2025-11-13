@@ -1,6 +1,0 @@
----
-description: this-project-use-pnpm-its-monorepo-workspace
-globs: **
-alwaysApply: true
----
-this-project-use-pnpm-its-monorepo-workspace

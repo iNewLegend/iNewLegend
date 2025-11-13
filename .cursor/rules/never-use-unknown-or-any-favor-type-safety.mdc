@@ -1,0 +1,115 @@
+---
+description: Never use unknown or any types, favor type-safe code with generics and avoid type casting
+globs: *.tsx,*.ts
+alwaysApply: true
+---
+
+# Never Use `unknown` or `any` - Favor Type Safety
+
+Avoid using `unknown` and `any` types. Use proper TypeScript typing with generics to maintain type safety throughout the codebase. Avoid type casting whenever possible.
+
+## Rules
+
+1. **Never use `any`** - It defeats the purpose of TypeScript
+2. **Never use `unknown`** - Use proper types or generics instead
+3. **Favor generics** - Use generic type parameters for flexible, type-safe code
+4. **Avoid type casting** - Use type guards, narrowing, or proper types instead of `as` casts
+5. **Use type inference** - Let TypeScript infer types when possible
+
+## Examples
+
+### ✅ Correct - Using Generics
+
+```typescript
+interface State {
+    channels: Channel[];
+    selected: Record<string, boolean>;
+}
+
+function getState<TState>(): TState {
+    return context.getState<TState>();
+}
+
+const state = getState<State>();
+```
+
+### ✅ Correct - Proper Interface with Index Signature
+
+```typescript
+interface SavePayload {
+    key: string;
+    channels: Channel[];
+    [ key: string ]: string | Channel[];
+}
+```
+
+### ✅ Correct - Type-Safe Function Parameters
+
+```typescript
+function updateList(dto: UpdateListDto): Channel[] {
+    const payload: Record<string, string | Channel[]> = {
+        key: dto.key,
+        channels: dto.channels
+    };
+    return payload;
+}
+```
+
+### ❌ Incorrect - Using `any`
+
+```typescript
+function handleData(data: any) {
+    return data.something;
+}
+
+const state: any = getState();
+```
+
+### ❌ Incorrect - Using `unknown`
+
+```typescript
+function processData(input: unknown) {
+    return input as SomeType;
+}
+
+await this.api.fetch("POST", "path", input as unknown as Record<string, unknown>);
+```
+
+### ❌ Incorrect - Excessive Type Casting
+
+```typescript
+const currentState = state.currentState as ChannelsListState;
+const prevState = state.prevState as ChannelsListState;
+```
+
+### ✅ Better - Use Proper Typing
+
+```typescript
+function onUpdate(context: Context, state: {
+    currentState: Readonly<ChannelsListState>,
+    prevState: Readonly<ChannelsListState>,
+}) {
+    const { currentState, prevState } = state;
+}
+```
+
+## When Type Assertions Are Acceptable
+
+Only use type assertions (`as`) when:
+1. You have validated the data with type guards
+2. You're dealing with external APIs and have runtime checks
+3. TypeScript's type inference is provably wrong (rare)
+
+```typescript
+if (isChannel(data)) {
+    const channel = data as Channel;
+}
+```
+
+## Why This Matters
+
+- **Type Safety**: Catch errors at compile time, not runtime
+- **Better IDE Support**: Get accurate autocomplete and error detection
+- **Self-Documenting**: Types serve as inline documentation
+- **Refactoring Safety**: Changes propagate through the type system
+- **Code Quality**: Forces you to think about data structures upfront
