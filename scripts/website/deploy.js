@@ -20,6 +20,7 @@ const {
     DEPLOY_WEBSITE_SSH_PORT,
     DEPLOY_WEBSITE_SSH_USER,
     DEPLOY_WEBSITE_SSH_PASS,
+    DEPLOY_WEBSITE_SSH_KEY_PATH,
     DEPLOY_WEBSITE_SSH_ALGO,
     DEPLOY_WEBSITE_SSH_PWD,
     DEPLOY_WEBSITE_PUBLIC_URL
@@ -210,15 +211,37 @@ function uploadFiles() {
             reject(err);
         });
         
-        // Connect to server
         const sshConfig = {
             host: DEPLOY_WEBSITE_SSH_HOST,
             port: parseInt(DEPLOY_WEBSITE_SSH_PORT),
             username: DEPLOY_WEBSITE_SSH_USER,
-            password: DEPLOY_WEBSITE_SSH_PASS,
         };
         
-        console.log('\n🔐 Connecting to server...');
+        if (DEPLOY_WEBSITE_SSH_KEY_PATH) {
+            const keyPath = DEPLOY_WEBSITE_SSH_KEY_PATH.replace(/^~/, os.homedir());
+            if (existsSync(keyPath)) {
+                try {
+                    sshConfig.privateKey = readFileSync(keyPath);
+                    console.log('\n🔐 Connecting to server using SSH key...');
+                } catch (err) {
+                    console.error(`❌ Failed to read SSH key file: ${err.message}`);
+                    reject(err);
+                    return;
+                }
+            } else {
+                console.error(`❌ SSH key file not found: ${keyPath}`);
+                reject(new Error(`SSH key file not found: ${keyPath}`));
+                return;
+            }
+        } else if (DEPLOY_WEBSITE_SSH_PASS) {
+            sshConfig.password = DEPLOY_WEBSITE_SSH_PASS;
+            console.log('\n🔐 Connecting to server using password...');
+        } else {
+            console.error('❌ No authentication method provided. Set either DEPLOY_WEBSITE_SSH_PASS or DEPLOY_WEBSITE_SSH_KEY_PATH');
+            reject(new Error('No authentication method provided'));
+            return;
+        }
+        
         conn.connect(sshConfig);
     });
 }

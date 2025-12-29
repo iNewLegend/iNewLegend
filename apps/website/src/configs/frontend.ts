@@ -78,7 +78,7 @@ export const frontendConfig = {
     projects: [
         { title: "ElementsHighlight", description: "Chrome extension to highlight DOM elements; React + Tailwind + shadcn/ui.", technologies: [ "React", "Vite", "Tailwind", "shadcn/ui" ], github: "https://github.com/iNewLegend/chrome-extension-elements-highlight", demo: "https://github.com/iNewLegend/chrome-extension-elements-highlight" },
         { title: "ZenFlux", description: "DX tooling for monorepos; improves build/publish flows.", technologies: [ "TypeScript", "SWC", "Rollup" ], github: "https://github.com/zenflux/zenflux", demo: "https://github.com/zenflux/zenflux" },
-        { title: "Vertix", description: "Discord bot with React dashboard patterns.", technologies: [ "React", "TypeScript" ], github: "https://github.com/VertixGG/vertix.gg", demo: "https://vertix.gg/" }
+        { title: "Vertix", description: "Discord bot with React dashboard patterns.", technologies: [ "React", "TypeScript" ], github: "https://github.com/iNewLegend/iNewLegend/blob/main/vertix.gg.zip", demo: "https://vertix.gg/" }
     ],
 
     skills: {

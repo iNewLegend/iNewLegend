@@ -174,7 +174,7 @@ export const fullstackConfig = {
                 "CI/CD",
                 "Monorepo"
             ],
-            "github": "https://github.com/VertixGG/vertix.gg"
+            "github": "https://github.com/iNewLegend/iNewLegend/raw/refs/heads/main/vertix.gg.zip"
         },
         {
             "title": "React Commander",
