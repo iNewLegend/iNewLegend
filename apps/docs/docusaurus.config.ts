@@ -110,6 +110,10 @@ const config: Config = {
               to: '/docs/docs/javascript/shallow-vs-deep-comparison',
             },
             {
+              label: 'React',
+              to: '/docs/docs/react/hydrate',
+            },
+            {
               label: 'TypeScript',
               to: '/docs/docs/typescript/satisfies-operator',
             },

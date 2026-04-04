@@ -525,3 +525,46 @@ const input = Buffer.from("hello world");
 const compressed = brotliCompressSync(input);
 const decompressed = brotliDecompressSync(compressed).toString();
 ```
+
+<!-- ----------------------------------------------------------- -->
+
+## Hydrate — `hy·drate`
+
+**Hydrate** is a [verb](#verb) that means to add water or moisture to something. In programming, specifically React, it refers to attaching event listeners and making server-rendered HTML interactive on the client side.
+
+### Non-Technical Interpretation
+
+In everyday life, hydration refers to adding water to something. For example, rehydrating dried food by adding water restores it to a usable state while preserving its original structure.
+
+### Example (Non-Programming Context)
+
+Consider preparing instant soup:
+**Hydration Process**:
+1. **Dried State**: The soup mix contains dehydrated ingredients.
+2. **Add Water**: Hot water is added to the mix.
+3. **Result**: The ingredients absorb water and become edible, restoring their original form.
+
+### Technical Interpretation
+
+In React, hydration is the process where React attaches event listeners to server-rendered HTML, making the static markup interactive without recreating DOM nodes.
+
+### Example (Programming Context)
+
+Consider a React application using Server-Side Rendering:
+**Hydration Process**:
+1. **Server Render**: The server generates HTML and sends it to the browser.
+2. **Initial Display**: The browser displays the static HTML immediately.
+3. **Hydration**: React "hydrates" the existing DOM by attaching event handlers.
+
+```jsx
+import { hydrateRoot } from 'react-dom/client';
+import App from './App';
+
+const container = document.getElementById('root');
+hydrateRoot(container, <App />);
+```
+
+### Hydration vs Render
+
+- **`createRoot().render()`**: Creates DOM nodes from scratch
+- **`hydrateRoot()`**: Preserves existing HTML and attaches React to it
