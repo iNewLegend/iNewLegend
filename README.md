@@ -8,7 +8,7 @@
 
 - 🎯 Practicing with different technologies at [vertix.gg](https://github.com/VertixGG/vertix.gg), [ZenFlux](https://github.com/ZenFlux/)
 
-- ☰ I'm one of elementor top [contributors](https://github.com/elementor/elementor/graphs/contributors)
+- ⚡ Open to work
 <!--
 ---
 <p align="center">
