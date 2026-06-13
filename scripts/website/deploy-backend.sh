@@ -18,7 +18,7 @@ ssh -i $KEY -o StrictHostKeyChecking=no ubuntu@$SERVER "mkdir -p ~/$APP_NAME"
 
 # Copy files to server (excluding node_modules, .git, etc.)
 echo "📁 Copying files..."
-rsync -av --progress --exclude='node_modules' --exclude='.git' --exclude='*.log' --exclude='.DS_Store' --exclude='dist' -e "ssh -i $KEY -o StrictHostKeyChecking=no" ../../apps/website/backend/ ubuntu@$SERVER:~/$APP_NAME/
+rsync -av --progress --exclude='node_modules' --exclude='.git' --exclude='*.log' --exclude='.DS_Store' --exclude='dist' -e "ssh -i $KEY -o StrictHostKeyChecking=no" ../../apps/website-backend/ ubuntu@$SERVER:~/$APP_NAME/
 
 # Build and run Docker container
 echo "🐳 Building Docker image..."

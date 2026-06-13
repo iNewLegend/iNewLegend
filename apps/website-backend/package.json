@@ -9,7 +9,7 @@
     "start": "bun dist/index.js",
     "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0",
     "type-check": "bun --no-install tsc --noEmit",
-    "deploy": "cd ../../../scripts/website/ && bash deploy-backend.sh"
+    "deploy": "cd ../../scripts/website/ && bash deploy-backend.sh"
   },
   "dependencies": {
     "@sparticuz/chromium": "^141.0.0",

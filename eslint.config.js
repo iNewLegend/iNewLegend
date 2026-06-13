@@ -4,7 +4,6 @@ import util from "util";
 const baseConfig = await zLintGetConfig( {
     workspaces: [
         ... zLintGetWorkspaces(),
-        "apps/website/backend",
     ]
 });
 
