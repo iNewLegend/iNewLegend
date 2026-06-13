@@ -45,4 +45,3 @@ export function ResumeExperience( { items, isCompact }: TResumeExperienceProps )
         </ResumeSection>
     );
 }
-

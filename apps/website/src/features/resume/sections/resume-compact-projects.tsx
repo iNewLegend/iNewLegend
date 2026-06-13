@@ -3,7 +3,7 @@ import { ResumeTextBlock } from "@inewlegend/website/src/features/resume/section
 import { ResumeTechStack } from "@inewlegend/website/src/features/resume/sections/elements/resume-tech-stack.tsx";
 import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
 
-import type { TResumeProjectItem, TResumeProjectsProps } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
+import type { TResumeProjectItem } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
 export type TResumeCompactProjectsProps = {
     items: TResumeProjectItem[];

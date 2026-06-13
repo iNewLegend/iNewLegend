@@ -13,14 +13,28 @@ export type ResumePersonalInfo = {
 export type ResumeHeaderProps = {
     personal: ResumePersonalInfo;
     subtitle: string;
+    highlights?: string[];
 };
 
-export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
+export function ResumeHeader( { personal, subtitle, highlights = [] }: ResumeHeaderProps ) {
     return (
         <div className={ `text-center ${ resumeTheme.components.header.border } pb-2` }>
             <h1 className={ `${ resumeTheme.text.sizes.lg } ${ resumeTheme.text.weights.bold } tracking-tight ${ resumeTheme.colors.name }` }>{ personal.name }</h1>
 
             <div className={ `${ resumeTheme.text.sizes.md } ${ resumeTheme.text.weights.normal } ${ resumeTheme.colors.subtitle }` }>{ subtitle }</div>
+
+            { highlights.length > 0 && (
+                <div className="flex justify-center items-center gap-2 flex-wrap pt-2 pb-1">
+                    { highlights.map( ( highlight ) => (
+                        <span
+                            key={ highlight }
+                            className={ `inline-flex items-center rounded-full px-3 py-1 ${ resumeTheme.text.sizes.xs } ${ resumeTheme.text.weights.semibold } ${ resumeTheme.colors.primary } bg-resume-chip-bg border border-resume-chip-border` }
+                        >
+                            { highlight }
+                        </span>
+                    ) ) }
+                </div>
+            ) }
 
             <div className={ `flex justify-center items-center gap-2 flex-wrap ${ resumeTheme.components.links.contact } pt-1` }>
                 <a href={ `mailto:${ personal.email }` } className={ `${ resumeTheme.components.header.contactChip } ${ resumeTheme.components.header.contactChipHover }` }>
@@ -58,4 +72,3 @@ export function ResumeHeader( { personal, subtitle }: ResumeHeaderProps ) {
         </div>
     );
 }
-

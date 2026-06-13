@@ -71,7 +71,11 @@ export function Resume() {
 
     return (
         <div id="resume-content" className={ `${ resumeTheme.container } leading-relaxed p-6 pt-2 mx-auto` }>
-            <ResumeHeader personal={ personal } subtitle={ hero.subtitle } />
+            <ResumeHeader
+                personal={ personal }
+                subtitle={ hero.subtitle }
+                highlights={ hero.highlights }
+            />
 
             <div className="flex flex-col gap-2">
                 { orderedKeys.map( ( key ) => {
@@ -82,4 +86,3 @@ export function Resume() {
         </div>
     );
 }
-

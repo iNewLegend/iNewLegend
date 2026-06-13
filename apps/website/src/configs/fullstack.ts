@@ -11,8 +11,13 @@ export const fullstackConfig = {
     },
     "hero": {
         "title": "Hi, I'm",
-        "subtitle": "Senior Frontend / Full‑Stack Developer",
-        "description": "I'm a developer with more then 5 years of experience building reliable, scalable systems across frontend and backend. I focus on data and the logic that powers user interfaces, designing clean APIs, refactoring core, and shipping end‑to‑end features. I'm persistent with complex problems and committed to maintainable, well‑tested code."
+        "subtitle": "Senior Full-Stack / Frontend Engineer | React, TypeScript, Node.js, PHP",
+        "highlights": [
+            "5+ years building end-to-end systems",
+            "Top 4 contributor at Elementor",
+            "Worked on product used by 16M+ websites"
+        ],
+        "description": "Senior full-stack / frontend engineer with 5+ years building React, TypeScript, Node.js, and PHP systems across product, platform, and developer-experience work. I ship end-to-end features, design stable APIs, refactor core architecture, and raise quality through testing and peer review. Experience spans ETL and data tooling, internal developer platforms, and high-scale products including Elementor's editor core."
     },
     "about": {
         "title": "About Me",
@@ -51,8 +56,8 @@ export const fullstackConfig = {
             "company": "Matia",
             "location": "Onsite",
             "period": "2024 — 2025 (1+ years)",
-            "description": "Matia unifies ETL, observability, catalog, and reverse ETL, so teams can focus on what they do best: driving actionable insights and accelerating innovation. As a Senior Full-Stack Engineer, I contributed across nearly all aspects of the development lifecycle. My work included building integrations, rewriting the frontend, doing peer reviews, translating Figma designs into functional features, adapting backend systems to support product requirements, and delivering end-to-end solutions that were actively used by customers.",
-            "compactDescription": "Built ETL/Reverse ETL integrations, refactored features, conducted peer reviews, and shipped end‑to‑end features from Figma to production.",
+            "description": "Matia unifies ETL, observability, catalog, and reverse ETL, so teams can focus on what they do best: driving actionable insights and accelerating innovation. As a Senior Full-Stack Engineer, I contributed across nearly all aspects of the development lifecycle. My work included building integrations, rewriting the frontend, doing peer reviews, translating Figma designs into functional features, adapting backend systems to support product requirements, and delivering end-to-end solutions that were actively used by customers. Notably, I designed advanced React components — including a dynamic multi‑step form framework wired to the backend — first used for Snowflake source/destination configuration, but architected as a reusable base across any integration source/destination.",
+            "compactDescription": "Built ETL/Reverse ETL integrations, refactored features, conducted peer reviews, and shipped end‑to‑end features from Figma to production. Designed a dynamic multi‑step React form framework wired to the backend — first used for Snowflake source/destination setup, reusable across other integration sources/destinations.",
             "technologies": [
                 "React",
                 "TypeScript",
@@ -69,18 +74,20 @@ export const fullstackConfig = {
             "company": "Self-Employed",
             "location": "Remote",
             "period": "2022 — 2024 (2+ years)",
-            "description": "I worked as a freelancer and started some projects to extend my knowledge. Created Vertix (Discord bot for managing voice channels) and ZenFlux (framework for building, publishing, and watching monorepo workspaces).",
-            "compactDescription": "Freelance full-stack development. Built Vertix (Discord bot with React UI and NestJS backend) and ZenFlux (TypeScript monorepo build framework with Rollup/SWC).",
+            "description": "Freelance full-stack work plus deep open-source engineering. Designed and built Vertix — an advanced Discord platform modelled as a state-machine UI framework: declarative flows/transitions, hash-based component IDs that solve Discord's 100-char `custom_id` limit, an @xyflow/react visual editor that hot-reloads JSON flows into the running bot, an MCP server exposing flows as AI tool calls, and i18n across 7 languages — all spanning a Bun monorepo of 6 apps and 9 packages (discord.js v14, Prisma with dual schemas, MongoDB replica set, Redis). Also built ZenFlux — a TypeScript monorepo build framework wrapping Rollup/SWC.",
+            "compactDescription": "Designed Vertix — Discord state-machine UI framework with @xyflow/react visual editor that hot-reloads flows into the running bot, hash-based component IDs bypassing Discord's 100-char limit, MCP server, and 7-language i18n; spans 6 apps + 9 packages in a Bun monorepo (discord.js v14, Prisma, MongoDB, Redis). Also built ZenFlux TS monorepo build framework.",
             "technologies": [
                 "TypeScript",
                 "React",
-                "NestJS",
+                "Bun",
+                "Fastify",
                 "Prisma",
                 "MongoDB",
-                "Jest",
-                "Playwright",
+                "Redis",
                 "Discord.js",
-                "AWS EC2",
+                "Vite",
+                "Tailwind CSS",
+                "Jest",
                 "Rollup",
                 "SWC"
             ]
@@ -90,8 +97,8 @@ export const fullstackConfig = {
             "company": "Elementor",
             "location": "Hybrid",
             "period": "2019 — 2022 (3+ years)",
-            "description": "Elementor is one of the most popular website builders in the world, used by 10% of the internet to build over 16M websites. As a full Stack developer, I worked in the Editor Core Team. I participated and contributed to building the infrastructure/core refactoring, created tools that helped my team in the development process, refactored the product core components and wrote many tests to increase code quality. I'm the 4th contributor of Elementor.",
-            "compactDescription": "Editor Core Team: Refactored infrastructure components, built internal development tools, and wrote comprehensive test suites. 4th top contributor on a product used by 16M+ websites.",
+            "description": "Elementor powers ~10% of the internet and 16M+ websites. On the Editor Core Team, I authored 1,500+ commits across 320+ merged PRs — ranking as the 4th all-time contributor on the main 6.9k★ repo. Work spanned core infrastructure refactors, internal dev tools that accelerated team workflows, and broad test coverage to raise code quality.",
+            "compactDescription": "Editor Core Team — 4th all-time contributor (1,500+ commits, 320+ merged PRs) on Elementor's main 6.9k★ repo, powering 16M+ websites. Refactored core infrastructure, built internal dev tools, and authored extensive test suites.",
             "technologies": [
                 "JavaScript",
                 "TypeScript",
@@ -104,12 +111,12 @@ export const fullstackConfig = {
             ]
         },
         {
-            "title": "Developer & Linux, VoIP Servers Engineer",
+            "title": "Developer & Support Engineer (VoIP / Linux)",
             "company": "VoiceSpin",
             "location": "Hybrid",
             "period": "2017 — 2019 (2+ years)",
-            "description": "VoiceSpin is a company that provides cloud-based VoIP communication and customer engagement solutions to businesses. Created/Maintained tools for support engineers, developed dedicated custom features for customers, and integration with products in our/their end.",
-            "compactDescription": "Built internal tools and custom VoIP features; create custom apps for customers. integrated customer systems and supported production.",
+            "description": "VoiceSpin provides cloud-based VoIP communication and customer engagement solutions. Operated in a hybrid support-engineer + developer role: built and maintained internal tools used by the support team, developed custom VoIP features and apps for enterprise customers, and delivered integrations between our platform and customer systems.",
+            "compactDescription": "Hybrid support-engineer + developer role: built tools used by the support team, developed custom VoIP features and apps for enterprise customers, and shipped integrations between our platform and customer systems.",
             "technologies": [
                 "PHP",
                 "JavaScript",
@@ -163,18 +170,22 @@ export const fullstackConfig = {
         },
         {
             "title": "Vertix",
-            "description": "A sophisticated Discord bot with complex UI generation for dynamic voice channel management. Features real-time interactive buttons interface, dynamic channel creation/deletion, advanced permission systems, and monorepo architecture with separate GUI, bot, and base packages.",
+            "description": "An advanced Discord platform built as a state-machine UI framework. Declarative flows/transitions, hash-based component IDs that bypass Discord's 100-char `custom_id` limit, an @xyflow/react visual editor that hot-reloads JSON flows into the running bot, MCP server exposing flows as AI tool calls, and i18n in 7 languages. Spans a Bun monorepo of 6 apps + 9 packages: Discord bot, Fastify REST API, React dashboard, MCP server, marketing site, and logger.",
             "technologies": [
                 "TypeScript",
                 "React",
+                "Bun",
+                "Fastify",
                 "Prisma",
                 "MongoDB",
-                "Jest",
+                "Redis",
                 "Discord.js",
-                "CI/CD",
+                "@xyflow/react",
+                "Vite",
+                "Tailwind CSS",
                 "Monorepo"
             ],
-            "github": "https://github.com/iNewLegend/iNewLegend/raw/refs/heads/main/vertix.gg.zip"
+            "github": "https://github.com/VertixGG/vertix.gg"
         },
         {
             "title": "React Commander",

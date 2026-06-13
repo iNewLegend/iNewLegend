@@ -15,13 +15,6 @@ export function ResumeTextBlock( {
     justify = true
 }: ResumeTextBlockProps ) {
     const justifyClass = justify ? "text-justify" : "";
-    
-    const sizeClasses = {
-        xs: "text-[11px]",
-        sm: "text-[12px]", 
-        md: "text-[14px]",
-        lg: "text-[15px]"
-    };
 
     return (
         <p className={ `${ justifyClass } ${ resumeTheme.text.sizes[ size ] } ${ resumeTheme.colors.secondary } ${ className }` }>
