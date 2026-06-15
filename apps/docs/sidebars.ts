@@ -49,8 +49,9 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'React',
       items: [
-        'react/hydrate',
+        'react/mount-vs-render',
         'react/reconciliation',
+        'react/hydrate',
       ],
     },
     {
