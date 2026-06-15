@@ -47,6 +47,14 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'React',
+      items: [
+        'react/hydrate',
+        'react/reconciliation',
+      ],
+    },
+    {
+      type: 'category',
       label: 'TypeScript',
       items: [
         'typescript/satisfies-operator',
