@@ -4,6 +4,8 @@
 
 React's answer comes from three signals — **type**, **position**, and **key** — and they decide whether a component's state survives an update or gets thrown away.
 
+![How React identifies a component instance](/images/react-reconciliation.png)
+
 ## How React identifies a component instance
 
 A React component instance is uniquely identified by:
