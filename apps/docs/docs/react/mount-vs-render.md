@@ -7,9 +7,7 @@ A common confusion: "every render is a mount, right?" No. They are different thi
 - **Re-render** — every render after the first.
 - **Unmount** — the instance is destroyed and removed from the DOM. **Once**, at the end.
 
-![React mount vs render lifecycle flow](/images/react-mount-vs-render.svg)
-
-The orange hexagons (`MOUNT`, `UNMOUNT`) fire **once per instance lifetime**. Everything between them — Render, Reconcile, Commit, Effects — is the **loop** that runs every time something triggers a re-render.
+![React mount vs render cheatsheet — lifecycle, triggers, pipeline, effect timing](/images/react-mount-vs-render.svg)
 
 ## The lifecycle of one instance
 
