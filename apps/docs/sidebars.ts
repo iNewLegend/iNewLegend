@@ -50,6 +50,7 @@ const sidebars: SidebarsConfig = {
       label: 'React',
       items: [
         'react/mount-vs-render',
+        'react/render-and-effect-order',
         'react/reconciliation',
         'react/hydrate',
       ],
