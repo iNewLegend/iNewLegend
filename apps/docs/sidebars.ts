@@ -51,6 +51,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'react/mount-vs-render',
         'react/render-and-effect-order',
+        'react/effect-vs-layout-effect',
         'react/reconciliation',
         'react/hydrate',
       ],
