@@ -64,14 +64,9 @@ app.post( "/html-to-pdf", async ( req, res ) => {
 
             await page.emulateMediaType( "screen" );
 
-            const { width, height } = await page.evaluate( () => ( {
-                width: document.documentElement.scrollWidth,
-                height: document.documentElement.scrollHeight,
-            } ) );
-
             const pdfData = await page.pdf( {
-                width: `${ width }px`,
-                height: `${ height }px`,
+                width: `${ 1200 }px`,
+                height: `${ 1800 }px`,
                 printBackground: true,
                 margin: { top: 0, right: 0, bottom: 0, left: 0 },
             } );
