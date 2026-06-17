@@ -52,5 +52,5 @@ jobs:
           DEPLOY_WEBSITE_PUBLIC_URL=https://inewlegend.com
           EOF
 
-      - name: Deploy docs
-        run: bun run inewlegend:docs:deploy
+      - name: Deploy website
+        run: bun run inewlegend:website:backend:deploy
