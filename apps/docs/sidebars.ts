@@ -54,6 +54,7 @@ const sidebars: SidebarsConfig = {
         'react/effect-vs-layout-effect',
         'react/stale-closures',
         'react/use-imperative-handle',
+        'react/context-re-render-trap',
         'react/reconciliation',
         'react/hydrate',
       ],

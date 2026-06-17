@@ -40,16 +40,29 @@ function Parent() {
 
 The actual `<input>` DOM node stays behind the controlled API.
 
-## When you'd reach for it
+## actions = ref, data = lift state up
 
-- **Imperative actions the parent legitimately needs** — focus management, scroll position, animation triggers, video play/pause, opening or closing a popover from outside.
-- **You want to enforce a boundary** — if the parent could grab the raw DOM node, it might do something fragile that breaks when you refactor the child's internals. The imperative handle is a stable API contract.
-- **The child is a composite of multiple elements** and "the ref" doesn't naturally map to a single DOM node. With `useImperativeHandle`, the child decides what the ref means.
+That's the whole rule for this hook. Before reaching for `useImperativeHandle`, ask one question:
 
-## When NOT to use it
+> **Are you moving data, or triggering an action?**
 
-- **If declarative state works, use that.** Refs are an escape hatch. Most parent-child communication should go through props, not method calls on a child's handle.
-- **If you just want to forward one ref to one DOM element**, `forwardRef` alone is enough — no `useImperativeHandle` needed:
+Examples:
+
+- `play()` / `pause()` — imperative *actions* with no declarative equivalent → **ref is fine**
+- `show("Saved!")` — firing a notification is a one-shot *action* → **ref is fine**
+- `getFormData()` — reading the child's form values → **wrong tool. Lift state up.**
+
+The third one is the trap. Reading the child's form values is **pulling data up**, not triggering an action. The child owns state the parent needs — that's a *data-flow* problem, and the React answer is to **lift state up** (parent owns the form state, passes it down) or use a controlled-component pattern. Reaching in with a ref to *read state* is fighting React's one-way data flow.
+
+**The giveaway:** a method that **returns the child's data** (`get…`, `read…`, `currentValueOf…`) is almost always data-flow in disguise → don't use a ref. A method that **does something** (`play`, `focus`, `scroll`, `show`, `reset`) is an action → ref is appropriate.
+
+The valid cases for the imperative handle generally fall into:
+
+- **Imperative actions the parent legitimately needs** — focus, scroll, animation triggers, video play/pause, opening or closing a popover from outside.
+- **You want to enforce a stable boundary** — the imperative handle is an API contract; the raw DOM node isn't.
+- **The child is a composite** of multiple elements and "the ref" doesn't map naturally to a single DOM node.
+
+And if you're just forwarding one ref to one DOM element, `forwardRef` alone is enough — no `useImperativeHandle` needed:
 
 ```jsx
 const Input = forwardRef((props, ref) => <input ref={ref} {...props} />);
@@ -75,5 +88,5 @@ useImperativeHandle(ref, createHandle, deps?)
 
 - `useImperativeHandle` lets a child expose a **controlled API** through a ref instead of the raw DOM node.
 - Default `forwardRef` is "all-or-nothing" (the DOM node); `useImperativeHandle` is "some specific methods".
-- Use it for imperative actions (focus, scroll, play) where declarative props would be awkward.
+- **The rule: actions = ref, data = lift state up.** A method that *does something* (`play`, `focus`, `scroll`, `show`, `reset`) is an action → ref is appropriate. A method that *returns data* (`get…`, `read…`, `currentValueOf…`) is data-flow in disguise → lift state up instead.
 - Don't reach for it if props/state can solve the same problem. Refs are an escape hatch.
