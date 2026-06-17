@@ -1,0 +1,56 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-website
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Configure SSH
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Write .env for deploy script
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          cat > .env <<EOF
+          DEPLOY_WEBSITE_SSH_HOST=$DEPLOY_HOST
+          DEPLOY_WEBSITE_SSH_PORT=22
+          DEPLOY_WEBSITE_SSH_USER=ubuntu
+          DEPLOY_WEBSITE_SSH_KEY_PATH=$HOME/.ssh/deploy_key
+          DEPLOY_WEBSITE_SSH_PWD=/home/ubuntu
+          DEPLOY_WEBSITE_PUBLIC_URL=https://inewlegend.com
+          EOF
+
+      - name: Deploy docs
+        run: bun run inewlegend:docs:deploy
