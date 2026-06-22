@@ -42,6 +42,8 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'JavaScript',
       items: [
+        'javascript/var-let-const',
+        'javascript/event-loop',
         'javascript/shallow-vs-deep-comparison',
       ],
     },
