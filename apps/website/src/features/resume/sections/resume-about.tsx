@@ -7,7 +7,7 @@ export type ResumeAboutProps = {
 
 export function ResumeAbout( { description }: ResumeAboutProps ) {
     return (
-        <ResumeSection title="About">
+        <ResumeSection title="Summary">
             <ResumeTextBlock size="md">{ description }</ResumeTextBlock>
         </ResumeSection>
     );

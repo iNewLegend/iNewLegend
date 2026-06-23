@@ -33,8 +33,13 @@ export type ResumeTheme = {
     layout: {
         grid: {
             list: string;
+            listAts: string;
             skills: string;
+            skillsAts: string;
             compactSkills: string;
+            compactSkillsAts: string;
+            compactProjects: string;
+            compactProjectsAts: string;
         };
         spacing: {
             section: string;
@@ -98,8 +103,13 @@ export const resumeTheme: ResumeTheme = {
     layout: {
         grid: {
             list: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1 leading-snug list-none m-0 p-0",
+            listAts: "grid grid-cols-1 gap-x-6 gap-y-1 leading-snug list-none m-0 p-0",
             skills: "grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3",
-            compactSkills: "grid gap-4 grid-cols-1 sm:grid-cols-2 pb-2",
+            skillsAts: "grid gap-3 grid-cols-1",
+            compactSkills: "grid gap-x-6 gap-y-1.5 grid-cols-1 sm:grid-cols-2 pb-0",
+            compactSkillsAts: "grid gap-1.5 grid-cols-1 pb-0",
+            compactProjects: "columns-1 md:columns-2 lg:columns-3 gap-6",
+            compactProjectsAts: "columns-1 gap-6",
         },
         spacing: {
             section: "resume-section-spacing",

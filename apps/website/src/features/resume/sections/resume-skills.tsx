@@ -1,14 +1,18 @@
 import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
 import { ResumeSection } from "@inewlegend/website/src/features/resume/sections/elements/resume-section.tsx";
+import { useResumeAts } from "@inewlegend/website/src/features/resume/resume-ats-context.ts";
 
 export type ResumeSkillsProps = {
     categories: Record<string, string[]>;
 };
 
 export function ResumeSkills( { categories }: ResumeSkillsProps ) {
+    const ats = useResumeAts();
+    const gridClass = ats ? resumeTheme.layout.grid.skillsAts : resumeTheme.layout.grid.skills;
+
     return (
         <ResumeSection title="Skills & Technologies">
-            <div className={ resumeTheme.layout.grid.skills }>
+            <div className={ gridClass }>
                 { Object.entries( categories ).map( ( [ category, skillList ] ) => (
                     <div key={ category }>
                         <h3 className={ `${ resumeTheme.colors.secondary } ${ resumeTheme.text.weights.medium } mb-2` }>{ category }</h3>

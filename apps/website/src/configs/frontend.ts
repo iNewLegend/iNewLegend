@@ -61,8 +61,8 @@ export const frontendConfig = {
             technologies: [ "React", "TypeScript", "Zustand", "Tailwind", "Vite", "Jest", "Playwright" ]
         },
         {
-            title: "Freelance + Open Source Developer",
-            company: "Self-Employed",
+            title: "Frontend Engineer (Freelance & Open Source)",
+            company: "Independent",
             location: "Remote",
             period: "July 2022 — June 2024",
             description: "Built React frontends and deep OSS engineering. Designed and built Vertix — an advanced Discord platform with a state-machine UI framework: a React + @xyflow/react visual flow editor that hot-reloads JSON into the running bot, declarative flows/transitions, hash-based component IDs bypassing Discord's 100-char `custom_id` limit, and a 6-app / 9-package Bun monorepo (React dashboard, REST API, MCP server). Also built ZenFlux — a TypeScript monorepo build framework wrapping Rollup/SWC. Focused on DX, typed APIs, and robust UI patterns.",
@@ -84,6 +84,15 @@ export const frontendConfig = {
         { title: "ElementsHighlight", description: "Chrome extension to highlight DOM elements; React + Tailwind + shadcn/ui.", technologies: [ "React", "Vite", "Tailwind", "shadcn/ui" ], github: "https://github.com/iNewLegend/chrome-extension-elements-highlight", demo: "https://github.com/iNewLegend/chrome-extension-elements-highlight" },
         { title: "ZenFlux", description: "DX tooling for monorepos; improves build/publish flows.", technologies: [ "TypeScript", "SWC", "Rollup" ], github: "https://github.com/zenflux/zenflux", demo: "https://github.com/zenflux/zenflux" },
         { title: "Vertix", description: "Discord platform with a React dashboard powered by an @xyflow/react visual flow editor that hot-reloads JSON state-machine UIs into the running bot.", technologies: [ "React", "TypeScript", "Vite", "Tailwind CSS", "@xyflow/react", "Zustand", "Radix UI" ], github: "https://github.com/VertixGG/vertix.gg", demo: "https://vertix.gg/" }
+    ],
+
+    education: [
+        {
+            institution: "John Bryce",
+            credential: "Web / Multimedia Management & Webmaster",
+            period: "2012 — 2013",
+            description: "PHP, CodeIgniter, REST APIs, OOP, and web mastering. Primarily a self-taught engineer — continuously learning through open-source work and shipping production systems."
+        }
     ],
 
     skills: {

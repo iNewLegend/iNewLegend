@@ -29,9 +29,12 @@ export function parseResumeParams(
             ? rawOrder
             : [ ...RESUME_DEFAULT_PARAMS[ "order" ] ];
 
+    const ats = qs.get( RESUME_PARAM_KEYS.ATS ) === "1";
+
     return {
         ...RESUME_DEFAULT_PARAMS,
 
+        ats,
         order: finalOrder,
     };
 }
@@ -54,6 +57,9 @@ export function toSearchParams( params: TResumeParams ): URLSearchParams {
     RESUME_SECTION_WITH_COMPACT_KEYS.forEach( ( k ) => {
         if ( params.compact[ k ] ) sp.set( `${ RESUME_PARAM_KEYS.COMPACT }${ k.charAt( 0 ).toUpperCase() + k.slice( 1 ) }`, "1" );
     } );
+
+    // Emit ATS-safe mode flag when enabled
+    if ( params.ats ) sp.set( RESUME_PARAM_KEYS.ATS, "1" );
 
     // Emit order (always include to reflect current sorting)
     const order = getEffectiveOrder( params );

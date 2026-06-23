@@ -1,4 +1,4 @@
-import { Download } from "lucide-react";
+import { Download, ScanLine } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 import { ResumeControlsSectionEditor } from "@inewlegend/website/src/features/resume/resume-controls/resume-controls-section-editor.tsx";
@@ -51,6 +51,10 @@ export function Hero() {
             next.splice( target, 0, item );
             return { ...prev, order: next };
         } );
+    };
+
+    const toggleAts = () => {
+        setParams( ( prev ) => ( { ...prev, ats: !prev.ats } ) );
     };
 
     const toggleCompactFor = ( key: TResumeOrderKey ) => {
@@ -156,6 +160,17 @@ export function Hero() {
                             step={ step }
                             onConvertToPdf={ handleConvertToPdf }
                         >
+                            <Button
+                                variant={ params.ats ? "default" : "outline" }
+                                size="sm"
+                                onClick={ toggleAts }
+                                aria-pressed={ params.ats }
+                                title="ATS-safe mode: single-column layout so applicant tracking systems parse the PDF cleanly"
+                                className={ params.ats ? "bg-blue-600 hover:bg-blue-700 text-white" : "" }
+                            >
+                                <ScanLine className="mr-2 h-4 w-4" />
+                                { params.ats ? "ATS Mode: On" : "ATS Mode" }
+                            </Button>
                             <ResumeControlsSectionEditor
                                 params={ params }
                                 onMove={ move }

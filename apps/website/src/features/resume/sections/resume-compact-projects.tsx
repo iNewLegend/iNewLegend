@@ -2,6 +2,7 @@ import { ResumeSection } from "@inewlegend/website/src/features/resume/sections/
 import { ResumeTextBlock } from "@inewlegend/website/src/features/resume/sections/elements/resume-text-block.tsx";
 import { ResumeTechStack } from "@inewlegend/website/src/features/resume/sections/elements/resume-tech-stack.tsx";
 import { resumeTheme } from "@inewlegend/website/src/features/resume/resume-theme.ts";
+import { useResumeAts } from "@inewlegend/website/src/features/resume/resume-ats-context.ts";
 
 import type { TResumeProjectItem } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
@@ -16,10 +17,12 @@ export type TResumeCompactProjectsProps = {
  */
 export function ResumeCompactProjects({ items, limit }: TResumeCompactProjectsProps) {
     const visible = typeof limit === "number" ? items.slice(0, limit) : items;
+    const ats = useResumeAts();
+    const gridClass = ats ? resumeTheme.layout.grid.compactProjectsAts : resumeTheme.layout.grid.compactProjects;
 
     return (
         <ResumeSection title="Projects">
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
+            <div className={ gridClass }>
                 {visible.map((project, index) => (
                     <div
                         key={index}

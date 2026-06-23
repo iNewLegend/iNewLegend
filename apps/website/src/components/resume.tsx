@@ -21,10 +21,15 @@ import { ResumeHeader } from "@inewlegend/website/src/features/resume/resume-hea
 import { ResumeProjects } from "@inewlegend/website/src/features/resume/sections/resume-projects.tsx";
 import { ResumeCompactProjects } from "@inewlegend/website/src/features/resume/sections/resume-compact-projects.tsx";
 
-import type { RESUME_SECTION_KEYS, TResumeExperienceItem, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
+import { ResumeEducation } from "@inewlegend/website/src/features/resume/sections/resume-education.tsx";
+
+import { ResumeAtsContext } from "@inewlegend/website/src/features/resume/resume-ats-context.ts";
+
+import type { RESUME_SECTION_KEYS, TResumeEducationItem, TResumeExperienceItem, TResumeParams } from "@inewlegend/website/src/features/resume/resume.definitions.ts";
 
 export function Resume() {
     const { personal, hero, whatIDo, whatILookingFor, experience, projects } = config;
+    const education = ( config as { education?: TResumeEducationItem[] } ).education ?? [];
 
     const [ params, setParams ] = useState<TResumeParams>( () => parseResumeParams() );
 
@@ -66,23 +71,26 @@ export function Resume() {
         whatILookingFor: () => <ResumeWhatILookingFor whatILookingForTitle={ whatILookingFor.title } whatILookingForItems={ whatILookingFor.items } />,
         experience: () => <ResumeExperience items={ experience as TResumeExperienceItem[] } isCompact={ params.compact.experience } />,
         projects: () => params.compact.projects ? <ResumeCompactProjects items={ projects } /> :
-            <ResumeProjects items={ projects } />
+            <ResumeProjects items={ projects } />,
+        education: () => <ResumeEducation items={ education } />
     };
 
     return (
-        <div id="resume-content" className={ `${ resumeTheme.container } leading-relaxed p-6 pt-2 mx-auto` }>
-            <ResumeHeader
-                personal={ personal }
-                subtitle={ hero.subtitle }
-                highlights={ hero.highlights }
-            />
+        <ResumeAtsContext.Provider value={ params.ats }>
+            <div id="resume-content" className={ `${ resumeTheme.container } leading-relaxed px-6 pt-2 pb-3 mx-auto` }>
+                <ResumeHeader
+                    personal={ personal }
+                    subtitle={ hero.subtitle }
+                    highlights={ hero.highlights }
+                />
 
-            <div className="flex flex-col gap-2">
-                { orderedKeys.map( ( key ) => {
-                    const node = renderSection[ key ]?.();
-                    return node ? <div key={ key } className="last:*:border-b-0">{ node }</div> : null;
-                } ) }
+                <div className="flex flex-col gap-1">
+                    { orderedKeys.map( ( key ) => {
+                        const node = renderSection[ key ]?.();
+                        return node ? <div key={ key } className="last:*:border-b-0">{ node }</div> : null;
+                    } ) }
+                </div>
             </div>
-        </div>
+        </ResumeAtsContext.Provider>
     );
 }

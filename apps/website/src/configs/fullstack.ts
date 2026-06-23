@@ -36,7 +36,7 @@ export const fullstackConfig = {
             "Implement thorough testing (unit, integration, E2E) and CI/CD",
             "Build developer tools and improve platform DX and monorepos",
             "Deliver end‑to‑end features across frontend, backend",
-            "Utilize tools like Cursor AI, and LLMs to improve productivity"
+            "Utilize tools like Cursor, Claude code, and LLMs to improve productivity"
         ]
     },
     "whatILookingFor": {
@@ -70,8 +70,8 @@ export const fullstackConfig = {
             ]
         },
         {
-            "title": "Freelance",
-            "company": "Self-Employed",
+            "title": "Full-Stack Engineer (Freelance & Open Source)",
+            "company": "Independent",
             "location": "Remote",
             "period": "2022 — 2024 (2+ years)",
             "description": "Freelance full-stack work plus deep open-source engineering. Designed and built Vertix — an advanced Discord platform modelled as a state-machine UI framework: declarative flows/transitions, hash-based component IDs that solve Discord's 100-char `custom_id` limit, an @xyflow/react visual editor that hot-reloads JSON flows into the running bot, an MCP server exposing flows as AI tool calls, and i18n across 7 languages — all spanning a Bun monorepo of 6 apps and 9 packages (discord.js v14, Prisma with dual schemas, MongoDB replica set, Redis). Also built ZenFlux — a TypeScript monorepo build framework wrapping Rollup/SWC.",
@@ -241,6 +241,14 @@ export const fullstackConfig = {
                 "pnpm Workspaces",
             ],
             "github": "https://github.com/iNewLegend/chrome-extension-elements-highlight"
+        }
+    ],
+    "education": [
+        {
+            "institution": "John Bryce",
+            "credential": "Web / Multimedia Management & Webmaster",
+            "period": "2012 — 2013",
+            "description": "PHP, CodeIgniter, REST APIs, OOP, and web mastering. Primarily a self-taught engineer — continuously learning through open-source work and shipping production systems."
         }
     ],
     "skills": {

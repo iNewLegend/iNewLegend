@@ -5,7 +5,8 @@ export const RESUME_SECTION_KEYS = [
     "whatIDo",
     "whatILookingFor",
     "experience",
-    "projects"
+    "projects",
+    "education"
 ] as const;
 
 export const RESUME_SECTION_WITH_COMPACT_KEYS = [
@@ -16,10 +17,12 @@ export const RESUME_SECTION_WITH_COMPACT_KEYS = [
 
 export const RESUME_PARAM_KEYS = {
     COMPACT: "compact",
-    ORDER: "order"
+    ORDER: "order",
+    ATS: "ats"
 } as const;
 
 export const RESUME_DEFAULT_PARAMS: TResumeParams = {
+    ats: false,
     compact: {
         skills: true,
         experience: true,
@@ -31,7 +34,8 @@ export const RESUME_DEFAULT_PARAMS: TResumeParams = {
         "whatILookingFor",
         "skills",
         "experience",
-        "projects"
+        "projects",
+        "education"
     ]
 };
 
@@ -43,6 +47,9 @@ export type TResumeCompactParams = {
 };
 
 export type TResumeParams = {
+    // ATS-safe mode: collapse multi-column sections to a single column
+    ats: boolean
+
     // Per-section compact flags
     compact: TResumeCompactParams
 
@@ -75,4 +82,15 @@ export type TResumeProjectItem = {
 export type TResumeProjectsProps = {
     items: TResumeProjectItem[];
     limit?: number;
+};
+
+export type TResumeEducationItem = {
+    institution: string;
+    credential: string;
+    period: string;
+    description?: string;
+};
+
+export type TResumeEducationProps = {
+    items: TResumeEducationItem[];
 };
